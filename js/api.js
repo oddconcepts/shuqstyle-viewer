@@ -1,0 +1,76 @@
+var API_VERSION     = "v0";
+var API_HOST        = "https://dl-api.oddconcepts.kr";
+var API_PORT        = "";
+
+function api_detection_url(cb, url) {
+    var url = API_HOST + "/" + API_VERSION +
+        "/detect?url=" + encodeURIComponent(url);
+
+    $.ajax({
+        url: url,
+        type: "get",
+        dataType: "json",
+        async: true,
+        beforeSend : function(xhr){
+            xhr.setRequestHeader("ApiKey", window.localStorage.getItem("apikey"));
+        },
+        success: function (data) {
+            return cb(data);
+        },
+        error: function (data) {
+            return cb(null);
+        }
+    });
+}
+
+function api_detection_file(cb, base64, extension) {
+    var url = API_HOST + ":" + API_PORT + "/" + API_VERSION +
+        "/detect";
+
+    base64 = base64.replace("data:" + extension + ";base64,", "");
+
+    var formData = new FormData();
+    var file = uri_to_blob(base64, "image/" + extension);
+    formData.append("file", file);
+
+    $.ajax({
+        url: url,
+        type: "post",
+        data: formData,
+        enctype: "multipart/form-data",
+        processData: false,
+        contentType: false,
+        dataType: "json",
+        async: true,
+        beforeSend : function(xhr){
+            xhr.setRequestHeader("ApiKey", window.localStorage.getItem("apikey"));
+        },
+        success: function (data) {
+            return cb(data);
+        },
+        error: function (data) {
+            return cb(null);
+        }
+    });
+}
+
+function api_search(cb, region_id, category_id, count) {
+    var url = API_HOST + ":" + API_PORT + "/" + API_VERSION +
+        "/search/" + region_id + "?category=" + category_id + '&count=' + count;
+
+    $.ajax({
+        url: url,
+        type: "get",
+        dataType: "json",
+        async: true,
+        beforeSend : function(xhr){
+            xhr.setRequestHeader("ApiKey", window.localStorage.getItem("apikey"));
+        },
+        success: function (data) {
+            return cb(data);
+        },
+        error: function (data) {
+            return cb(null);
+        }
+    });
+}

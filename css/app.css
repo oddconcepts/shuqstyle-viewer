@@ -1,0 +1,99 @@
+/* ==============
+   Html, Body
+   ============== */
+
+html, body {
+    height: 100%;
+    background-color: #ffffff;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* ==============
+   Navigation Bar
+   ============== */
+
+.navbar {
+    max-width: 960px;
+    margin: 0 auto;
+    height: 60px;
+    padding: 0 40px 0 40px;
+    background-color: #ffffff;
+}
+
+.navbar > .title {
+    margin: 10px 0;
+    float: left;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: -2px;
+    color: #000000;
+    line-height: 40px;
+}
+
+.navbar > a.title {
+    text-decoration: none;
+}
+
+.navbar > .logo {
+    margin: 15px 0;
+    float: right;
+}
+
+.navbar > .logo img {
+    width: 30px;
+    height: 30px;
+}
+
+.navbar > .menu {
+    margin: 10px 0;
+    float: right;
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 40px;
+}
+
+.navbar > .menu > a {
+    margin-left: 20px;
+    color: #9b9b9b;
+    -o-transition: 1s;
+    -ms-transition: 1s;
+    -moz-transition: 1s;
+    -webkit-transition: 1s;
+    transition: 1s;
+}
+
+.navbar > .menu > a.btn.primary {
+    margin-left: 20px;
+    padding: 8px 16px 8px 16px;
+    background-color: #0088cc;
+    color: #ffffff;
+}
+
+.navbar > .menu > a:hover {
+    color: #ffffff;
+}
+
+.navbar > .menu > .input-url {
+    width: 400px;
+    padding: 0 10px 0 10px;
+    border: none;
+    font-weight: 200;
+}
+
+#api-key-scrollin {
+    margin-top: -50px;
+    -webkit-transition: margin 0.4s;
+    transition: margin 0.4s;
+}
+
+#input_apikey {
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 15px;
+    font-weight: 200;
+    border: 1px solid #dcdcdc;
+    border-radius: 0;
+    -webkit-appearance: none;
+}

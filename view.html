@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>ShuqStyle</title>
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,800,700italic,800italic'>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/cropper/2.3.3/cropper.min.css">
+    <link rel="stylesheet" href="/css/3rdparty/normalize.css">
+    <link rel="stylesheet" href="/css/3rdparty/goalProgress.css">
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/app.view.css">
+</head>
+<body>
+<div id="api-key-scrollin">
+    <input type="text" id="input_apikey" value="" placeholder="API Key">
+</div>
+<div class="navbar" id="navbar">
+    <a class="title" href="javascript:location.replace('/')">ShuqStyle</a>
+    <div class="logo">
+        <a href="javascript:show_api_key_scrollin()" id="settings"><img src="/images/settings.svg"></a>
+    </div>
+</div>
+<div class="main">
+    <div class="cropper-view">
+        <div class="inside">
+            <div class="image-view" id="image_view" style="">
+                <img class="thumbnail-view" id="thumbnail_view">
+            </div>
+        </div>
+    </div>
+    <div class="results-detection" id="results_detection">
+        <div class="inside">
+            <div class="head">
+                <div class="divider"></div>
+                <div class="title">Automatic Detection</div>
+            </div>
+            <div class="detection-list" id="detection_list"></div>
+        </div>
+    </div>
+    <div class="results-classification fade-in" id="results_classification">
+        <div class="inside">
+            <div class="head">
+                <div class="divider"></div>
+                <div class="title">Prediction</div>
+            </div>
+            <div class="sub-title">Clothing Body Parts</div>
+            <div class="chart-container">
+                <canvas id="classification_chart_parts"></canvas>
+            </div>
+            <div class="sub-title">Clothing Category</div>
+            <div class="chart-container">
+                <canvas id="classification_chart_categories"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="results-search fade-in" id="results_search">
+        <div class="inside">
+            <div class="head">
+                <div class="divider"></div>
+                <div class="title">Similarity Search</div>
+            </div>
+            <div class="searchable-category-list" id="searchable_category_list"></div>
+            <div class="list" id="search_list"></div>
+        </div>
+    </div>
+</div>
+<div class="loader-modal" id="loader_modal"><div class="loader"></div></div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/mobile-detect.js/1.3.3/mobile-detect.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js"></script>
+<script src="/js/3rdparty/cropper.js"></script>
+<script src="/js/3rdparty/goalProgress.min.js"></script>
+<script src="/js/3rdparty/masonry.pkgd.js"></script>
+<script src="/js/3rdparty/imagesloaded.pkgd.js"></script>
+<script src="/js/3rdparty/URI.js"></script>
+<script type="text/javascript" src="/js/3rdparty/ftscroller.js"></script>
+<script src="/js/utils.js"></script>
+<script src="/js/ui.js"></script>
+<script src="/js/api.js"></script>
+<script src="/js/app.view.js"></script>
+</body>
+</html>

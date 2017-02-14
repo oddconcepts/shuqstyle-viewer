@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>ShuqStyle</title>
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,800,700italic,800italic'>
+    <link rel="stylesheet" href="/css/3rdparty/normalize.css">
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/app.index.css">
+</head>
+<body>
+<div id="api-key-scrollin">
+    <input type="text" id="input_apikey" value="" placeholder="API Key">
+</div>
+<div class="navbar" id="navbar">
+    <a class="title" href="javascript:location.replace('/')">ShuqStyle</a>
+    <div class="logo">
+        <a href="javascript:show_api_key_scrollin()" id="settings"><img src="/images/settings.svg"></a>
+    </div>
+</div>
+<div class="main">
+    <div class="abstract">
+        <div class="inside">
+            Deep learning based<br />
+            <div class="hl">Visual Fashion Intelligence Platform</div>
+        </div>
+    </div>
+    <div class="demo-images">
+        <div class="inside">
+            <div class="head">
+                <div class="divider"></div>
+                <div class="title">Try it now!</div>
+            </div>
+            <div class="list">
+                <a class="upload-button" href="javascript:document.getElementById('file').click()">UPLOAD</a>
+                <input type="file" name="file" id="file" onchange="upload()" style="display: none;">
+                <a href="javascript:view_demo('http://viewer.shuq.com/demos/demo_01.jpg')"><img style="background-image: url('demos/demo_01.jpg')"></a>
+                <a href="javascript:view_demo('http://viewer.shuq.com/demos/demo_02.jpg')"><img style="background-image: url('demos/demo_02.jpg')"></a>
+                <a href="javascript:view_demo('http://viewer.shuq.com/demos/demo_03.jpg')"><img style="background-image: url('demos/demo_03.jpg')"></a>
+                <a href="javascript:view_demo('http://viewer.shuq.com/demos/demo_04.jpg')"><img style="background-image: url('demos/demo_04.jpg')"></a>
+                <a href="javascript:view_demo('http://viewer.shuq.com/demos/demo_05.jpg')"><img style="background-image: url('demos/demo_05.jpg')"></a>
+                <a href="javascript:view_demo('http://viewer.shuq.com/demos/demo_06.jpg')"><img style="background-image: url('demos/demo_06.jpg')"></a>
+                <a href="javascript:view_demo('http://viewer.shuq.com/demos/demo_07.jpg')"><img style="background-image: url('demos/demo_07.jpg')"></a>
+                <a href="javascript:view_demo('http://viewer.shuq.com/demos/demo_08.jpg')"><img style="background-image: url('demos/demo_08.jpg')"></a>
+                <a href="javascript:view_demo('http://viewer.shuq.com/demos/demo_09.jpg')"><img style="background-image: url('demos/demo_09.jpg')"></a>
+                <a href="javascript:view_demo('http://viewer.shuq.com/demos/demo_10.jpg')"><img style="background-image: url('demos/demo_10.jpg')"></a>
+                <a href="javascript:view_demo('http://viewer.shuq.com/demos/demo_11.jpg')"><img style="background-image: url('demos/demo_11.jpg')"></a>
+                <a href="javascript:view_demo('http://viewer.shuq.com/demos/demo_12.jpg')"><img style="background-image: url('demos/demo_12.jpg')"></a>
+                <a href="javascript:view_demo('http://viewer.shuq.com/demos/demo_13.jpg')"><img style="background-image: url('demos/demo_13.jpg')"></a>
+                <a href="javascript:view_demo('http://viewer.shuq.com/demos/demo_14.jpg')"><img style="background-image: url('demos/demo_14.jpg')"></a>
+                <a href="javascript:view_demo('http://viewer.shuq.com/demos/demo_15.jpg')"><img style="background-image: url('demos/demo_15.jpg')"></a>
+                <a href="javascript:view_demo('http://viewer.shuq.com/demos/demo_16.jpg')"><img style="background-image: url('demos/demo_16.jpg')"></a>
+            </div>
+        </div>
+    </div>
+    <div style="clear: both;"></div>
+    <div class="demo-inputs">
+        <div class="inside">
+            <div class="input-url">
+                <input type="text" id="input_url" value="" placeholder="Paste an image url">
+            </div>
+        </div>
+    </div>
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/mobile-detect.js/1.3.3/mobile-detect.min.js"></script>
+<script type="text/javascript" src="/js/3rdparty/ftscroller.js"></script>
+<script src="/js/utils.js"></script>
+<script src="/js/ui.js"></script>
+</body>
+</html>
