@@ -1,7 +1,13 @@
 $(document).ready(function() {
     $("input[type=text]").keypress(function(e) {
-        if (e.keyCode == 13)
-            view_demo($("#input_url").val());
+        if (e.keyCode == 13) {
+            if ($('#input_apikey').is(':focus') && $('#input_apikey').val() != '') {
+                return $('#input_apikey').blur()
+            }
+            else if ($("#input_url").val() != '') {
+                view_demo($("#input_url").val());
+            }
+        }
     });
 
     $('#input_apikey').blur(function(e) {
@@ -13,6 +19,11 @@ $(document).ready(function() {
         bouncing: false,
         scrollbars: false
     });
+
+    var apiKey = window.localStorage.getItem("apikey");
+
+    if (apiKey != null)
+        $('#input_apikey').val(apiKey);
 });
 
 function view_demo(url) {
