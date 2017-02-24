@@ -20,7 +20,8 @@ function scroll(elem){
 }
 
 function upload() {
-    localStorage.clear();
+    window.localStorage.removeItem("base64");
+    window.localStorage.removeItem("extension");
 
     if (!window.localStorage) {
         alert("Your browser does not support file upload.");
@@ -55,8 +56,8 @@ function upload() {
         rd.readAsDataURL(this);
     };
     file[0].files[0].convertToBase64(function (base64) {
-        localStorage.setItem("base64", base64);
-        localStorage.setItem("extension", extension);
+        window.localStorage.setItem("base64", base64);
+        window.localStorage.setItem("extension", extension);
         location.href = "/view.html?type=file";
     });
 }
