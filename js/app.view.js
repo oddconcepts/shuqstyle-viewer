@@ -55,6 +55,7 @@ var current_sex;
 var current_category_ids = [];
 var detection_results_elems = [];
 var cropper;
+var classification_map = {};
 
 $(document).ready(function() {
     var uri = new URI(location.href);
@@ -96,11 +97,28 @@ $(document).ready(function() {
 
         var region = null;
 
+        var top_score = 0.0;
+        var top_category_id = null;
+        var top_region_id = null;
+        var top_details = null;
+
         if (results.status && keys.length > 0) {
             if (list[keys[0]].length > 0) {
                 region = list[keys[0]][0];
                 var category_id = parseInt(keys[0]);
                 var region_id = list[keys[0]][0].id;
+                var details = list[keys[0]][0].details;
+                var score = list[keys[0]][0].score;
+
+                if (score > top_score) {
+                    top_score = score;
+                    top_category_id = category_id;
+                    top_region_id = region_id;
+                    top_details = details;
+                }
+
+                var classification_map_id = category_id + '_' + region_id;
+                classification_map[classification_map_id] = details;
 
                 // 여성 의류 카테고리는 강제 변환
                 if (category_id == SKIRTS || category_id == DRESSES)
@@ -110,10 +128,22 @@ $(document).ready(function() {
 
                 // show detection results
                 show_detection_results(list);
-
-                // select detection results
-                select_detection_results(category_id, region_id);
             }
+        }
+
+        if (top_category_id != null && top_region_id != null) {
+            select_sex(details.sex.label, region_id, category_id);
+
+            gendered_category = category_id;
+            gendered_category |= details.sex.label == 'male' ? M_BIT : F_BIT;
+
+            select_detection_results(gendered_category, region_id);
+        }
+
+        if (top_details != null) {
+            window.setTimeout(function() {
+                show_classification_results(details);
+            }, 50);
         }
 
         // init cropper
@@ -152,6 +182,14 @@ function show_detection_results(list) {
         for (var j=0; j<list[key].length; j++) {
             var category_id = key;
             var region_id = list[key][j].id;
+            var details = list[key][j].details;
+
+            // TODO: Remove this routing
+            if (details.length > 0)
+                details = details[0];
+
+            var classification_map_id = category_id + '_' + region_id;
+            classification_map[classification_map_id] = details;
 
             var elem_id = "detection_" + category_id + "_" + region_id;
             // convert
@@ -189,6 +227,73 @@ function show_detection_results(list) {
     }
 }
 
+function show_classification_results(details) {
+    if (details == null)
+        return;
+
+    document.getElementById("results_classification").style.display = "block";
+
+    // print sex chart
+    var sex_labels = null;
+    if (details.sex.label == 'female')
+        sex_labels = ['female', 'male'];
+    else
+        sex_labels = ['male', 'female'];
+    var sex_data = [details.sex.probability, 1-details.sex.probability];
+    show_chart(document.getElementById("classification_chart_sex"),
+               sex_labels, sex_data);
+
+    // print cloth chart
+    var cate_b_labels = [];
+    var cate_b_data = [];
+    for (var i=0; i<details.cate_b.length; i++) {
+        cate_b_labels.push(details.cate_b[i].label);
+        cate_b_data.push(details.cate_b[i].probability);
+    }
+    show_chart(document.getElementById("classification_chart_cloth"),
+               cate_b_labels, cate_b_data);
+}
+
+function show_chart(ctx, labels, data) {
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                data: data,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            legend: {
+                display: false
+            },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            }
+        }
+    });
+}
 
 function init_cropper(url, region) {
     document.getElementById("thumbnail_view").src = url;
@@ -261,22 +366,28 @@ function change_cropper(region, category_id, region_id) {
 
     // select detection results
     select_detection_results(category_id, region_id);
+
+    // show classification results
+    var classification_map_id = category_id + '_' + region_id;
+    show_classification_results(classification_map[classification_map_id]);
 }
 
 function select_detection_results(category_id, region_id) {
     if (category_id == null || region_id == null)
         return;
 
+    var unmasked_category_id = parseInt(category_id) & 536870911;
+
     // remove class
     for (var i=0; i<detection_results_elems.length; i++) {
         $("#" + detection_results_elems[i]).removeClass("select");
     }
 
-    var elem_id = "detection_" + category_id + "_" + region_id;
+    var elem_id = "detection_" + unmasked_category_id + "_" + region_id;
     // convert
     elem_id = elem_id.replace(/,/gi, "_");
 
-    var progress_id = "detection_progress_" + category_id + "_" + region_id;
+    var progress_id = "detection_progress_" + unmasked_category_id + "_" + region_id;
     // convert
     progress_id = progress_id.replace(/,/gi, "_");
 
@@ -329,11 +440,21 @@ function init_search_category(region_id, category_id) {
     document.getElementById("searchable_category_list").innerHTML = contents;
 }
 
-function select_sex(sex, region_id) {
+function select_sex(sex, region_id, category_id) {
     current_sex = sex;
     current_category_ids = [];
 
-    search(region_id, CATEGORY[current_sex][0].caid);
+    if (category_id === undefined) {
+        search(region_id, CATEGORY[current_sex][0].caid);
+    }
+    else {
+        var category_selectable = $('.category-list .category');
+        category_selectable.each(function (e) {
+            if (category_selectable[e].innerText == CATEGORY_ID_TO_NAME[category_id]) {
+                $(category_selectable[e]).addClass('select')
+            }
+        });
+    }
 }
 
 function search(region_id, category_id, use_scroll) {

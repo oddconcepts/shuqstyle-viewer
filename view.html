@@ -35,7 +35,7 @@
         <div class="inside">
             <div class="head">
                 <div class="divider"></div>
-                <div class="title">Automatic Detection</div>
+                <div class="title">Regions</div>
             </div>
             <div class="detection-list" id="detection_list"></div>
         </div>
@@ -44,15 +44,19 @@
         <div class="inside">
             <div class="head">
                 <div class="divider"></div>
-                <div class="title">Prediction</div>
+                <div class="title">Details</div>
             </div>
-            <div class="sub-title">Clothing Body Parts</div>
-            <div class="chart-container">
-                <canvas id="classification_chart_parts"></canvas>
+            <div class="chart-block">
+              <div class="sub-title">Gender</div>
+              <div class="chart-container">
+                  <canvas id="classification_chart_sex"></canvas>
+              </div>
             </div>
-            <div class="sub-title">Clothing Category</div>
-            <div class="chart-container">
-                <canvas id="classification_chart_categories"></canvas>
+            <div class="chart-block">
+              <div class="sub-title">Product Category</div>
+              <div class="chart-container">
+                  <canvas id="classification_chart_cloth"></canvas>
+              </div>
             </div>
         </div>
     </div>
@@ -70,7 +74,7 @@
 <div class="loader-modal" id="loader_modal"><div class="loader"></div></div>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="//cdn.jsdelivr.net/mobile-detect.js/1.3.3/mobile-detect.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <script src="/js/3rdparty/cropper.js"></script>
 <script src="/js/3rdparty/goalProgress.min.js"></script>
 <script src="/js/3rdparty/masonry.pkgd.js"></script>

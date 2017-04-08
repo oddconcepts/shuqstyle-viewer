@@ -120,6 +120,7 @@
 
 .main > .results-classification {
     display: none;
+    background-color: #f5f5f5;
 }
 
 .main > .results-classification > .inside {
@@ -132,21 +133,23 @@
 .main > .results-classification .sub-title {
     margin-top: 20px;
     font-size: 14px;
-    font-weight: 200;
+    font-weight: 600;
     color: #754bbf;
 }
 
 .main > .results-classification .chart-container {
     width: 100%;
-    max-width: 600px;
-    height: 150px;
-    /*margin-left: auto;*/
-    /*margin-right: auto;*/
-    margin-top: 40px;
+    max-width: 400px;
+    padding: 20px 0 10px 20px;
+    margin-top: 20px;
+    background: #ffffff;
 }
 
-.main > .results-classification canvas {
+.main > .results-classification .chart-block {
+    display: inline-block;
+    margin-right: 2em;
 }
+
 
 /* ==============
    Search Results
@@ -160,7 +163,6 @@
 
 .main > .results-search {
     display: none;
-    background-color: #f5f5f5;
 }
 
 .main > .results-search > .inside {

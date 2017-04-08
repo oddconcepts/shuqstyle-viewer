@@ -4,7 +4,7 @@ var API_PORT        = "";
 
 function api_detection_url(cb, url) {
     var url = API_HOST + "/" + API_VERSION +
-        "/detect?url=" + encodeURIComponent(url);
+        "/detect?details=1&url=" + encodeURIComponent(url);
 
     $.ajax({
         url: url,
@@ -25,7 +25,7 @@ function api_detection_url(cb, url) {
 
 function api_detection_file(cb, base64, extension) {
     var url = API_HOST + ":" + API_PORT + "/" + API_VERSION +
-        "/detect";
+        "/detect?details=1";
 
     base64 = base64.replace("data:" + extension + ";base64,", "");
 
