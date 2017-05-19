@@ -128,6 +128,9 @@ $(document).ready(function() {
 
                 // show detection results
                 show_detection_results(list);
+
+                // select detection results
+                select_detection_results(category_id, region_id);
             }
         }
 
@@ -325,6 +328,7 @@ function change_cropper(region, category_id, region_id) {
     var display_width = image_view.clientWidth;
     var display_height = image_view.clientHeight;
 
+/*
     var resize_size = 500;
     var resize_width = current_image_size.width;
     var resize_height = current_image_size.height;
@@ -350,6 +354,12 @@ function change_cropper(region, category_id, region_id) {
     var display_top = oy1*(display_height/current_image_size.height);
     var display_width = ox2*(display_width/current_image_size.width) - display_left;
     var display_height = oy2*(display_height/current_image_size.height) - display_top;
+*/
+
+    var display_left = display_width*region.rx1;
+    var display_top = display_height*region.ry1;
+    var display_width = display_width*region.rx2 - display_left;
+    var display_height = display_height*region.ry2 - display_top;
 
     // enable cropper
     $("#thumbnail_view").cropper('enable');
@@ -376,91 +386,93 @@ function select_detection_results(category_id, region_id) {
     if (category_id == null || region_id == null)
         return;
 
-    var unmasked_category_id = parseInt(category_id) & 536870911;
+    // 여성 의류 both category_id로 변환
+    if ((category_id^F_BIT) <= 32)
+        category_id = category_id^F_BIT;
 
     // remove class
     for (var i=0; i<detection_results_elems.length; i++) {
         $("#" + detection_results_elems[i]).removeClass("select");
     }
 
-    var elem_id = "detection_" + unmasked_category_id + "_" + region_id;
+    var elem_id = "detection_" + category_id + "_" + region_id;
     // convert
     elem_id = elem_id.replace(/,/gi, "_");
 
-    var progress_id = "detection_progress_" + unmasked_category_id + "_" + region_id;
+    var progress_id = "detection_progress_" + category_id + "_" + region_id;
     // convert
     progress_id = progress_id.replace(/,/gi, "_");
 
     // add class
     $("#" + elem_id).addClass("select");
 
+    // 여성 의류 category_id 복원
+    if (category_id == SKIRTS || category_id == DRESSES)
+        category_id = category_id|F_BIT;
+
     // search
-    search(region_id, category_id);
+    search(region_id, category_id, true, false);
 }
 
-function init_search_category(region_id, category_id) {
+function init_search_category(region_id, category_id, init) {
     var contents = "";
+
+    current_sex = get_sex(category_id);
 
     // Sex
     contents += "<div class='sex-list'>";
     if (current_sex == "male") {
-        contents += "<a class=\"sex select\" href=\"javascript:select_sex('male', '" + region_id + "')\">Male</a>";
+        contents += "<a class=\"sex select\">Male</a>";
         contents += "<a class=\"sex\" href=\"javascript:select_sex('female', '" + region_id + "')\">Female</a>";
         contents += "<a class=\"sex\" href=\"javascript:select_sex('both', '" + region_id + "')\">Both</a>";
     }
     else if (current_sex == "female") {
         contents += "<a class=\"sex\" href=\"javascript:select_sex('male', '" + region_id + "')\">Male</a>";
-        contents += "<a class=\"sex select\" href=\"javascript:select_sex('female', '" + region_id + "')\">Female</a>";
+        contents += "<a class=\"sex select\">Female</a>";
         contents += "<a class=\"sex\" href=\"javascript:select_sex('both', '" + region_id + "')\">Both</a>";
     } else if (current_sex == "both") {
         contents += "<a class=\"sex\" href=\"javascript:select_sex('male', '" + region_id + "')\">Male</a>";
         contents += "<a class=\"sex\" href=\"javascript:select_sex('female', '" + region_id + "')\">Female</a>";
-        contents += "<a class=\"sex select\" href=\"javascript:select_sex('both', '" + region_id + "')\">Both</a>";
+        contents += "<a class=\"sex select\">Both</a>";
     }
     contents += "</div>";
 
-    var ccids = current_category_ids.indexOf(category_id);
-    if (ccids < 0) {
-        current_category_ids.push(category_id);
+    if (!init) {
+        var ccids = current_category_ids.indexOf(category_id);
+        if (ccids < 0) {
+            current_category_ids.push(category_id);
+        } else {
+            if (current_category_ids.length > 1)
+                current_category_ids.splice(ccids, 1);
+        }
     } else {
-        if (current_category_ids.length > 1)
-            current_category_ids.splice(ccids, 1);
+        current_category_ids = [category_id];
     }
 
     // Category
     contents += "<div class='category-list'>";
     for (var i=0; i<CATEGORY[current_sex].length; i++) {
         if (current_category_ids.indexOf(CATEGORY[current_sex][i].caid) < 0)
-            contents += "<a class=\"category\" href=\"javascript:search('" + region_id + "', " + CATEGORY[current_sex][i].caid + ", true)\">" + CATEGORY[current_sex][i].name + "</a>";
+            contents += "<a class=\"category\" href=\"javascript:search('" + region_id + "', " + CATEGORY[current_sex][i].caid + ", false, true)\">" + CATEGORY[current_sex][i].name + "</a>";
         else
-            contents += "<a class=\"category select\" href=\"javascript:search('" + region_id + "', " + CATEGORY[current_sex][i].caid + ", true)\">" + CATEGORY[current_sex][i].name + "</a>";
+            contents += "<a class=\"category select\" href=\"javascript:search('" + region_id + "', " + CATEGORY[current_sex][i].caid + ", false, true)\">" + CATEGORY[current_sex][i].name + "</a>";
     }
     contents += "</div>";
 
     document.getElementById("searchable_category_list").innerHTML = contents;
 }
 
-function select_sex(sex, region_id, category_id) {
+function select_sex(sex, region_id) {
     current_sex = sex;
     current_category_ids = [];
 
-    if (category_id === undefined) {
-        search(region_id, CATEGORY[current_sex][0].caid);
-    }
-    else {
-        var category_selectable = $('.category-list .category');
-        category_selectable.each(function (e) {
-            if (category_selectable[e].innerText == CATEGORY_ID_TO_NAME[category_id]) {
-                $(category_selectable[e]).addClass('select')
-            }
-        });
-    }
+    search(region_id, CATEGORY[current_sex][0].caid, false, false);
 }
 
-function search(region_id, category_id, use_scroll) {
+function search(region_id, category_id, init, use_scroll) {
     document.getElementById("results_search").style.display = "block";
 
-    init_search_category(region_id, category_id);
+    init_search_category(region_id, category_id, init);
 
     // clear results
     document.getElementById("search_list").innerHTML = "<div class='blank-space'>&nbsp;</div>";
