@@ -20,13 +20,13 @@ function scroll(elem){
 }
 
 function upload() {
-    window.localStorage.removeItem("base64");
-    window.localStorage.removeItem("extension");
-
     if (!window.localStorage) {
         alert("Your browser does not support file upload.");
         return;
     }
+
+    window.localStorage.removeItem("base64");
+    window.localStorage.removeItem("extension");
 
     var file = $("#file");
     var extension = file[0].files[0].type;
@@ -47,14 +47,15 @@ function upload() {
     // converted to base64 format
     File.prototype.convertToBase64 = function (callback) {
         var rd = new FileReader();
-        rd.onload = function (e) {
-            callback(e.target.result);
+        rd.onload = function (d) {
+            callback(d.target.result);
         };
         rd.onerror = function (e) {
             callback(null);
         };
         rd.readAsDataURL(this);
     };
+
     file[0].files[0].convertToBase64(function (base64) {
         window.localStorage.setItem("base64", base64);
         window.localStorage.setItem("extension", extension);

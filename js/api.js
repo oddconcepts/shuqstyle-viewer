@@ -25,7 +25,7 @@ function api_detection_url(cb, url) {
 
 function api_detection_file(cb, base64, extension) {
     var url = API_HOST + ":" + API_PORT + "/" + API_VERSION +
-        "/detect?details=1";
+        "/detect?details=1&fileid=" + CryptoJS.MD5(base64).toString();
 
     base64 = base64.replace("data:" + extension + ";base64,", "");
 
