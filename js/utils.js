@@ -59,7 +59,7 @@ function upload() {
     file[0].files[0].convertToBase64(function (base64) {
         window.localStorage.setItem("base64", base64);
         window.localStorage.setItem("extension", extension);
-        location.href = "/view.html?type=file";
+        location.href = "./view.html?type=file";
     });
 }
 

@@ -487,7 +487,7 @@ function search(region_id, category_id, init, use_scroll) {
         var elem = document.createElement("div");
         elem.className = "grid-item";
         elem.innerHTML = '<img class="thumbnail" src="images/spacer.gif" style="background-image: url(\'' + image_url + '\'); background-position: ' + background_pos + '">' +
-            '<a href="/view.html?type=url&url=' + encodeURIComponent(image_url) + '"><div class="view-button"><img src="images/icon_search.svg"></div></a>' +
+            '<a href="./view.html?type=url&url=' + encodeURIComponent(image_url) + '"><div class="view-button"><img src="images/icon_search.svg"></div></a>' +
             '<div class="name"><a href="' + link + '">' + name + '</a></div>' +
             '<div class="price"><a href="' + link + '">' + commify(price) + ' KRW</a></div>';
         var $elem = $(elem);

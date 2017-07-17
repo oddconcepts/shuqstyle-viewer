@@ -33,7 +33,7 @@ function view_demo(url) {
     }
 
     var image_url = url;
-    location.href = "/view.html?type=url&url=" + encodeURIComponent(image_url);
+    location.href = "./view.html?type=url&url=" + encodeURIComponent(image_url);
 }
 
 function show_api_key_scrollin() {
