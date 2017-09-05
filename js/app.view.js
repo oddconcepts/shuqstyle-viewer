@@ -1,3 +1,5 @@
+var GENDER_MASK = 1610612736;
+var DATA_MASK = 536870911;
 var M_BIT = 1073741824;
 var F_BIT = 536870912;
 var DRESSES = 1;
@@ -52,10 +54,13 @@ var CATEGORY_ID_TO_NAME = {
 var current_image_url;
 var current_image_size = {"width": 0, "height": 0};
 var current_sex;
+var current_category_code = 0;
 var current_category_ids = [];
 var detection_results_elems = [];
 var cropper;
 var classification_map = {};
+var re_search = false;
+
 
 $(document).ready(function() {
     var uri = new URI(location.href);
@@ -67,6 +72,8 @@ $(document).ready(function() {
         return;
     } else if (type == "url") {
         var image_url = params["url"];
+        if ("cc" in params)
+            current_category_code = parseInt(params["cc"]);
     } else if (type == "file") {
         var image_url = localStorage.getItem("base64");
         var image_extension = localStorage.getItem("extension");
@@ -89,61 +96,81 @@ $(document).ready(function() {
 
         hide_loader_modal();
 
-        var list = results.list;
-        var keys = [];
-        for (var k in results.list) {
-            keys.push(k);
+        re_search = false;
+        if (get_category(current_category_code) == OUTERS && (TOPS in results.list)) {
+            results.list[OUTERS] = results.list[TOPS];
         }
 
+        var list = results.list;
+        var keys = [];
+        var cc_idx = 0;
+        var cc_inc = true;
+        for (var k in results.list) {
+            keys.push(parseInt(k));
+        }
+
+        cc_idx = keys.indexOf(get_category(current_category_code));
         var region = null;
 
-        var top_score = 0.0;
-        var top_category_id = null;
-        var top_region_id = null;
-        var top_details = null;
+        // var top_score = 0.0;
+        // var top_category_id = null;
+        // var top_region_id = null;
+        // var top_details = null;
 
+        if (cc_idx < 0)
+            cc_idx = 0;
         if (results.status && keys.length > 0) {
-            if (list[keys[0]].length > 0) {
-                region = list[keys[0]][0];
-                var category_id = parseInt(keys[0]);
-                var region_id = list[keys[0]][0].id;
-                var details = list[keys[0]][0].details;
-                var score = list[keys[0]][0].score;
+            if (list[keys[cc_idx]].length > 0) {
+                region = list[keys[cc_idx]][0];
+                var category_id = parseInt(keys[cc_idx]);
+                var region_id = list[keys[cc_idx]][0].id;
+                var details = list[keys[cc_idx]][0].details;
+                var score = list[keys[cc_idx]][0].score;
 
-                if (score > top_score) {
-                    top_score = score;
-                    top_category_id = category_id;
-                    top_region_id = region_id;
-                    top_details = details;
-                }
+                // if (score > 0.0) {
+                //     top_score = score;
+                //     top_category_id = category_id;
+                //     top_region_id = region_id;
+                //     top_details = details;
+                // }
 
                 var classification_map_id = category_id + '_' + region_id;
                 classification_map[classification_map_id] = details;
 
                 // 여성 의류 카테고리는 강제 변환
-                if (category_id == SKIRTS || category_id == DRESSES)
-                    category_id = category_id|F_BIT;
+                if (category_id == SKIRTS || category_id == DRESSES) {
+                    category_id = category_id | F_BIT;
+                    current_category_code = category_id;
+                }
 
-                current_sex = get_sex(category_id);
+                // current_sex = get_sex(category_id);
 
                 // show detection results
                 show_detection_results(list);
-
-                // select detection results
-                select_detection_results(category_id, region_id);
+                //
+                // // select detection results
+                // select_detection_results(category_id, region_id);
             }
         }
 
-        if (top_category_id != null && top_region_id != null) {
-            select_sex(details.sex.label, region_id, category_id);
+        if (score > 0.0 && category_id != null && region_id != null) {
+            if (current_category_code > 0) {
+                current_sex = get_sex(current_category_code);
+            } else {
+                current_sex = details.sex.label;
+                current_category_code = get_sex(current_sex) | get_category(category_id);
+            }
 
-            gendered_category = category_id;
-            gendered_category |= details.sex.label == 'male' ? M_BIT : F_BIT;
-
-            select_detection_results(gendered_category, region_id);
+            if (get_category(category_id) == get_category(current_category_code)) {
+                select_sex(current_sex, region_id, current_category_code);
+                re_search = true;
+                select_detection_results(current_category_code, region_id);
+            }else {
+                console.log("error in ")
+            }
         }
 
-        if (top_details != null) {
+        if (details != null) {
             window.setTimeout(function() {
                 show_classification_results(details);
             }, 50);
@@ -166,13 +193,26 @@ function error_and_go_home(msg) {
     location.replace("/");
 }
 
-function get_sex(category_id) {
-    if ((category_id^F_BIT) <= 32)
-        return "female"
-    if ((category_id^M_BIT) <= 32)
-        return "male"
-    if (category_id <= 32)
-        return "both"
+function get_sex(gender_code) {
+    if (typeof(gender_code) == "string") {
+        if (gender_code == "female")
+            return F_BIT;
+        if (gender_code == "male")
+            return M_BIT;
+        return 0;
+    }
+    if (typeof(gender_code) == "number") {
+        if ((gender_code&GENDER_MASK) == F_BIT)
+            return "female";
+        if ((gender_code&GENDER_MASK) == M_BIT)
+            return "male";
+        return "both";
+    }
+}
+
+function get_category(category_id) {
+    // return category_id^(F_BIT | M_BIT)
+    return category_id & DATA_MASK;
 }
 
 function show_detection_results(list) {
@@ -386,10 +426,6 @@ function select_detection_results(category_id, region_id) {
     if (category_id == null || region_id == null)
         return;
 
-    // 여성 의류 both category_id로 변환
-    if ((category_id^F_BIT) <= 32)
-        category_id = category_id^F_BIT;
-
     // remove class
     for (var i=0; i<detection_results_elems.length; i++) {
         $("#" + detection_results_elems[i]).removeClass("select");
@@ -406,12 +442,14 @@ function select_detection_results(category_id, region_id) {
     // add class
     $("#" + elem_id).addClass("select");
 
+    current_category_code = get_sex(current_category_code) | category_id;
     // 여성 의류 category_id 복원
-    if (category_id == SKIRTS || category_id == DRESSES)
-        category_id = category_id|F_BIT;
+    // if (category_id == SKIRTS || category_id == DRESSES)
+    //     category_id = category_id|F_BIT;
 
     // search
-    search(region_id, category_id, true, false);
+    if (re_search)
+        search(region_id, current_category_code, true, false);
 }
 
 function init_search_category(region_id, category_id, init) {
@@ -466,7 +504,9 @@ function select_sex(sex, region_id) {
     current_sex = sex;
     current_category_ids = [];
 
-    search(region_id, CATEGORY[current_sex][0].caid, false, false);
+    current_category_code = get_sex(sex) | get_category(current_category_code);
+    if (re_search)
+        search(region_id, current_category_code, false, false);
 }
 
 function search(region_id, category_id, init, use_scroll) {
@@ -483,11 +523,11 @@ function search(region_id, category_id, init, use_scroll) {
         gutter: 5
     });
 
-    function addItemElem(name, price, link, image_url, background_pos) {
+    function addItemElem(name, price, link, image_url, background_pos, cc) {
         var elem = document.createElement("div");
         elem.className = "grid-item";
         elem.innerHTML = '<img class="thumbnail" src="images/spacer.gif" style="background-image: url(\'' + image_url + '\'); background-position: ' + background_pos + '">' +
-            '<a href="./view.html?type=url&url=' + encodeURIComponent(image_url) + '"><div class="view-button"><img src="images/icon_search.svg"></div></a>' +
+            '<a href="./view.html?type=url&url=' + encodeURIComponent(image_url) + '&cc=' + cc + '"><div class="view-button"><img src="images/icon_search.svg"></div></a>' +
             '<div class="name"><a href="' + link + '">' + name + '</a></div>' +
             '<div class="price"><a href="' + link + '">' + commify(price) + ' KRW</a></div>';
         var $elem = $(elem);
@@ -513,7 +553,7 @@ function search(region_id, category_id, init, use_scroll) {
                 var r = list[j].region;
                 var backgroundPos = Math.floor((r[0] + (r[2] - r[0]) / 2) /
                     list[j].size_info[0] * 100) + '% ';
-                addItemElem(list[j].name, list[j].price, list[j].product_url, list[j].image_url, backgroundPos);
+                addItemElem(list[j].name, list[j].price, list[j].product_url, list[j].image_url, backgroundPos, list[j].category_code);
             }
         }
 

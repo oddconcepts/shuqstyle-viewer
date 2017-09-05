@@ -13,7 +13,7 @@ $(document).ready(function() {
     $('#input_apikey').blur(function(e) {
         window.localStorage.setItem("apikey", e.target.value);
         $('#api-key-scrollin').css('margin-top', '-50px');
-    })
+    });
 
     var scroller = new FTScroller(document.querySelector('body'), {
         bouncing: false,
