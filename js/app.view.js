@@ -538,6 +538,15 @@ function search(region_id, category_id, init, use_scroll) {
         document.querySelector('.blank-space').style.display = 'none';
         hide_loader_modal();
 
+        var status = results['status'];
+
+        // v0
+        if (status == undefined) {}
+        // v1
+        else {
+          results = results['list'];
+        }
+
         var keys = [];
         for (var k in results) {
             keys.push(k);
