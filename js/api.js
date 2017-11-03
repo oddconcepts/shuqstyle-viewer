@@ -1,76 +1,124 @@
-var API_VERSION     = "v0";
 var API_HOST        = "https://dl-api.oddconcepts.kr";
-var API_PORT        = "";
 
-function api_detection_url(cb, url) {
-    var url = API_HOST + "/" + API_VERSION +
-        "/detect?details=1&url=" + encodeURIComponent(url);
 
-    $.ajax({
-        url: url,
-        type: "get",
-        dataType: "json",
-        async: true,
-        beforeSend : function(xhr){
-            xhr.setRequestHeader("ApiKey", window.localStorage.getItem("apikey"));
-        },
-        success: function (data) {
-            return cb(data);
-        },
-        error: function (data) {
-            return cb(null);
-        }
-    });
+function api_detection_url(cb, image_url) {
+    var use_v1 = window.localStorage.getItem("use_v1");
+
+    if (use_v1 === "true") {
+        var ss = shuqstyle({
+            apiKey: window.localStorage.getItem("apikey").toString(),
+                optimizeRegions: false});
+
+        ss.detect(image_url)
+            .then(function (rs) {
+                return cb(rs);
+            })
+            .then(undefined, function (e) {
+                return cb(null);
+            })
+    }
+    else {
+        var url = API_HOST + "/v0/detect?details=1&url=" + encodeURIComponent(image_url);
+
+        $.ajax({
+            url: url,
+            type: "get",
+            dataType: "json",
+            async: true,
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("ApiKey", window.localStorage.getItem("apikey"));
+            },
+            success: function (data) {
+                return cb(data);
+            },
+            error: function (data) {
+                return cb(null);
+            }
+        });
+    }
 }
 
 function api_detection_file(cb, base64, extension) {
-    var url = API_HOST + ":" + API_PORT + "/" + API_VERSION +
-        "/detect?details=1&fileid=" + CryptoJS.MD5(base64).toString();
-
+    var use_v1 = window.localStorage.getItem("use_v1");
     base64 = base64.replace("data:" + extension + ";base64,", "");
 
-    var formData = new FormData();
-    var file = uri_to_blob(base64, "image/" + extension);
-    formData.append("file", file);
+    if (use_v1 === "true") {
+        var ss = shuqstyle({
+            apiKey: window.localStorage.getItem("apikey").toString(),
+            optimizeRegions: false});
 
-    $.ajax({
-        url: url,
-        type: "post",
-        data: formData,
-        enctype: "multipart/form-data",
-        processData: false,
-        contentType: false,
-        dataType: "json",
-        async: true,
-        beforeSend : function(xhr){
-            xhr.setRequestHeader("ApiKey", window.localStorage.getItem("apikey"));
-        },
-        success: function (data) {
-            return cb(data);
-        },
-        error: function (data) {
-            return cb(null);
-        }
-    });
+        ss.detect(convertToByteArray(base64), extension)
+            .then(function (rs) {
+                return cb(rs);
+            })
+            .then(undefined, function (e) {
+                return cb(null);
+            })
+    }
+    else {
+        var url = API_HOST + "/v0/detect?details=0&fileid=" + CryptoJS.MD5(base64).toString();
+
+        var formData = new FormData();
+        var file = uri_to_blob(base64, "image/" + extension);
+        formData.append("file", file);
+
+        $.ajax({
+            url: url,
+            type: "post",
+            data: formData,
+            enctype: "multipart/form-data",
+            processData: false,
+            contentType: false,
+            dataType: "json",
+            async: true,
+            beforeSend : function(xhr){
+                xhr.setRequestHeader("ApiKey", window.localStorage.getItem("apikey"));
+            },
+            success: function (data) {
+                return cb(data);
+            },
+            error: function (data) {
+                return cb(null);
+            }
+        });
+    }
 }
 
-function api_search(cb, region_id, category_id, count) {
-    var url = API_HOST + ":" + API_PORT + "/" + API_VERSION +
-        "/search/" + region_id + "?category=" + category_id + '&count=' + count;
+function api_search(cb, region, search_category, count) {
+    var use_v1 = window.localStorage.getItem("use_v1");
 
-    $.ajax({
-        url: url,
-        type: "get",
-        dataType: "json",
-        async: true,
-        beforeSend : function(xhr){
-            xhr.setRequestHeader("ApiKey", window.localStorage.getItem("apikey"));
-        },
-        success: function (data) {
-            return cb(data);
-        },
-        error: function (data) {
-            return cb(null);
-        }
-    });
+    if (use_v1 === "true") {
+        var ss = shuqstyle({
+            apiKey: window.localStorage.getItem("apikey").toString(),
+            searchResultCount: 34});
+
+        ss.search(region, search_category)
+            .then(function (data) {
+                return cb(data);
+            })
+            .then(undefined, function (e) {
+                return cb(null);
+            })
+    }
+    else {
+        var url = API_HOST + "/v0/search/" + region.id +
+            "?category=" + search_category +
+            '&count=' + count;
+
+        $.ajax({
+            url: url,
+            type: "get",
+            dataType: "json",
+            async: true,
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("ApiKey", window.localStorage.getItem("apikey"));
+            },
+            success: function (data) {
+                return cb(data);
+            },
+            error: function (data) {
+                return cb(null);
+            }
+        });
+    }
 }

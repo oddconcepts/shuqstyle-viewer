@@ -24,7 +24,6 @@ function upload() {
         alert("Your browser does not support file upload.");
         return;
     }
-
     window.localStorage.removeItem("base64");
     window.localStorage.removeItem("extension");
 
@@ -35,7 +34,7 @@ function upload() {
     extensions = ["image/jpeg", "image/png"];
 
     if (extensions.indexOf(extension) <0) {
-        alert(type + " is not supported.")
+        alert(type + " is not supported.");
         return
     }
 
@@ -70,4 +69,12 @@ function uri_to_blob(dataURI, mime) {
         ia[i] = byteString.charCodeAt(i);
     var blob = new Blob([ia], {type: mime});
     return blob;
+}
+
+function convertToByteArray(data) {
+    var byteString = window.atob(data);
+    var ia = new Uint8Array(byteString.length);
+    for (var i = 0; i < byteString.length; i++)
+        ia[i] = byteString.charCodeAt(i);
+    return ia;
 }

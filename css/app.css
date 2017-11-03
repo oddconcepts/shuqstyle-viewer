@@ -80,20 +80,26 @@ html, body {
     font-weight: 200;
 }
 
-#api-key-scrollin {
+#setting-div {
     margin-top: -50px;
     -webkit-transition: margin 0.4s;
     transition: margin 0.4s;
 }
 
 #input_apikey {
-    width: 100%;
+    width: 90%;
     height: 50px;
     padding: 10px;
+    display: inline-block;
     box-sizing: border-box;
     font-size: 15px;
     font-weight: 200;
     border: 1px solid #dcdcdc;
     border-radius: 0;
     -webkit-appearance: none;
+}
+
+#input_version {
+    display: inline-block;
+    padding: 5px;
 }
