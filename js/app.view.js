@@ -272,11 +272,21 @@ function show_detection_results(results) {
 
     var contents = "";
     var progress_list = [];
+    var idx_list = {};
 
     for (idx in results) {
         var region = JSON.parse(JSON.stringify(results[idx]));
         var category_id = region.category.code;
         var region_id = region.id;
+
+        var v = 1;
+        if (idx_list[region.category.code] === undefined) {
+            idx_list[region.category.code] = 1;
+        }
+        else {
+            idx_list[region.category.code] += 1;
+            v = idx_list[region.category.code];
+        }
 
         var classification_map_id = category_id + "_" + region_id;
         classification_map[classification_map_id] = {
@@ -298,7 +308,7 @@ function show_detection_results(results) {
         var r_json = JSON.stringify(region);
         contents += "<div class='item' id='" + elem_id + "'>" +
             "<a href='javascript:change_cropper(" + r_json + ")'>" +
-            CATEGORY_ID_TO_NAME[category_id] + " #" + (idx+1) + "</a>" + "<div id='" + progress_id + "'></div>" +
+            CATEGORY_ID_TO_NAME[category_id] + " #" + v + "</a>" + "<div id='" + progress_id + "'></div>" +
             "</div>";
 
     }
