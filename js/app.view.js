@@ -133,30 +133,37 @@ $(document).ready(function() {
         sortable = [];
 
         for (cate_code in rs) {
-                for (r_idx in rs[cate_code]) {
-                    var region = rs[cate_code][r_idx];
+            for (r_idx in rs[cate_code]) {
+                var region = rs[cate_code][r_idx];
 
-                    region.colors = [];
-                    region.gender = {
-                        'code': get_gender(region.details.sex.label),
-                        'score': region.details.sex.probability
-                    };
-                    region.sub_category = [];
-                    for (var i=0; i<region.details.cate_b.length; i++) {
+                var d = (region.details !== undefined);
+                var f = (parseInt(cate_code)&SKIRTS !== 0 || parseInt(cate_code)&DRESSES !== 0);
+
+                region.colors = [];
+                region.gender = {
+                    'code': d? get_gender(region.details.sex.label): f? F_BIT: GENDER_MASK,
+                    'score': d? region.details.sex.probability: f? 1: 0.5
+                };
+                region.sub_category = [];
+                if (d) {
+                    for (var i = 0; i < region.details.cate_b.length; i++) {
                         region.sub_category.push(
-                            {'code': region.details.cate_b[i].label,
-                            'score': region.details.cate_b[i].probability})
+                            {
+                                'code': region.details.cate_b[i].label,
+                                'score': region.details.cate_b[i].probability
+                            })
                     }
-                    region.category = {'code': parseInt(cate_code), 'score': region.score};
-
-                    delete region['details'];
-                    delete region['x1'];
-                    delete region['x2'];
-                    delete region['y1'];
-                    delete region['y2'];
-
-                    sortable.push(region);
                 }
+                region.category = {'code': parseInt(cate_code), 'score': region.score};
+
+                if (d)   delete region['details'];
+                delete region['x1'];
+                delete region['x2'];
+                delete region['y1'];
+                delete region['y2'];
+
+                sortable.push(region);
+            }
         }
         sortable.sort(function (a, b) {
             return b.score - a.score;
