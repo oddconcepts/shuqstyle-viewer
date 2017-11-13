@@ -150,7 +150,6 @@ $(document).ready(function() {
                     region.category = {'code': parseInt(cate_code), 'score': region.score};
 
                     delete region['details'];
-                    delete region['score'];
                     delete region['x1'];
                     delete region['x2'];
                     delete region['y1'];
@@ -303,7 +302,7 @@ function show_detection_results(results) {
 
         var progress_id = "detectioin_progress_" + category_id + "_" + region_id;
         progress_id = progress_id.replace(/,/gi, "_");
-        progress_list.push({"id": progress_id, "score": region.category.score});
+        progress_list.push({"id": progress_id, "score": region.score});
 
         var r_json = JSON.stringify(region);
         contents += "<div class='item' id='" + elem_id + "'>" +
