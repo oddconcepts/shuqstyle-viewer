@@ -18,7 +18,7 @@ function api_detection_url(cb, image_url) {
             })
     }
     else {
-        var url = API_HOST + "/v0/detect?details=0&url=" + encodeURIComponent(image_url);
+        var url = API_HOST + "/v0/detect?url=" + encodeURIComponent(image_url);
 
         $.ajax({
             url: url,
