@@ -2,13 +2,29 @@ $(document).ready(function() {
     $("input[type=text]").keypress(function(e) {
         if (e.keyCode == 13) {
             if ($('#input_apikey').is(':focus') && $('#input_apikey').val() != '') {
-                return $('#input_apikey').blur()
+                window.localStorage.setItem("apikey", $("input_apikey").val());
+                set_version();
+                show_api_key_scrollin();
             }
             else if ($("#input_url").val() != '') {
                 view_demo($("#input_url").val());
             }
         }
     });
+
+    $('#input_version').keypress(function(e) {
+        if (e.keyCode == 13) {
+            if ($('#input_version').is(':focus') && $('#input_apikey').val() != '') {
+                window.localStorage.setItem("apikey", $("input_apikey").val());
+                set_version();
+                show_api_key_scrollin();
+            }
+            else if ($("#input_url").val() != '') {
+                view_demo($("#input_url").val());
+            }
+        }
+    });
+
 
     var scroller = new FTScroller(document.querySelector('body'), {
         bouncing: false,
@@ -45,6 +61,7 @@ function show_api_key_scrollin() {
     var setting = $('#setting-div');
     if (setting.css('margin-top') === "0px") {
         window.localStorage.setItem("apikey", $('#input_apikey').val());
+        set_version();
         setting.css('margin-top', '-50px');
     }
     else
