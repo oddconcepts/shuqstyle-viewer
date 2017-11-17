@@ -56,7 +56,7 @@ function api_detection_file(cb, base64, extension) {
             })
     }
     else {
-        var url = API_HOST + "/v0/detect?details=0&fileid=" + CryptoJS.MD5(base64).toString();
+        var url = API_HOST + "/v0/detect?fileid=" + CryptoJS.MD5(base64).toString();
 
         var formData = new FormData();
         var file = uri_to_blob(base64, "image/" + extension);
