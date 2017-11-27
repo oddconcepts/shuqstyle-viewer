@@ -214,8 +214,9 @@ $(document).ready(function() {
                     current_category_code = activated_region.gender.code | get_category(category_code);
 
                 select_gender(activated_region);
-                re_search = true;
                 select_detection_results(activated_region);
+
+                re_search = true;
             }
 
             if (classification_map[category_code + '_' + region_id] !== null) {
