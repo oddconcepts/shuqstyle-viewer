@@ -92,6 +92,8 @@ var CATEGORY_ID_TO_NAME = {
     32: "Outers"
 };
 
+var DL_PROXY = 'https://dl-img.oddconcepts.kr/';
+
 var current_image_url;
 var current_image_size = {"width": 0, "height": 0};
 var current_category_code = 0;
@@ -112,7 +114,7 @@ $(document).ready(function() {
         error_and_go_home("Type does not exist.");
         return;
     } else if (type === "url") {
-        image_url = params["url"];
+        image_url = DL_PROXY + params["url"];
         if ("cc" in params)
             current_category_code = parseInt(params["cc"]);
     } else if (type === "file") {
