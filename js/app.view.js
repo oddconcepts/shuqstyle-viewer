@@ -114,7 +114,9 @@ $(document).ready(function() {
         error_and_go_home("Type does not exist.");
         return;
     } else if (type === "url") {
-        image_url = DL_PROXY + params["url"];
+        image_url = params["url"];
+        if (image_url.substr(0, 7) === 'http://')
+            image_url = DL_PROXY + image_url;
         if ("cc" in params)
             current_category_code = parseInt(params["cc"]);
     } else if (type === "file") {
