@@ -113,7 +113,7 @@ $(document).ready(function() {
     var image_url = undefined;
 
     if (apikey !== undefined)
-            window.localStorage.setItem("apikey", apikey);
+        window.localStorage.setItem("apikey", apikey);
 
     if (type === undefined) {
         error_and_go_home("Type does not exist.");
