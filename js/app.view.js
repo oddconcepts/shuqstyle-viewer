@@ -108,7 +108,12 @@ $(document).ready(function() {
     var uri = new URI(location.href);
     var params = uri.search(true);
     var type = params["type"];
+    var apikey = params["apikey"];
+
     var image_url = undefined;
+
+    if (apikey !== undefined)
+        window.localStorage.setItem("apikey", apikey);
 
     if (type === undefined) {
         error_and_go_home("Type does not exist.");
