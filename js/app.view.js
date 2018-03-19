@@ -92,7 +92,8 @@ var CATEGORY_ID_TO_NAME = {
     32: "Outers"
 };
 
-var DL_PROXY = 'https://dl-img.oddconcepts.kr/';
+//var DL_PROXY = 'https://dl-img.oddconcepts.kr/';
+var DL_PROXY = '';
 
 var current_image_url;
 var current_image_size = {"width": 0, "height": 0};
