@@ -8,6 +8,8 @@ var SHORTS = 4;
 var SKIRTS = 8;
 var TOPS = 16;
 var OUTERS = 32;
+var BAGS = 64;
+var SHOES = 128;
 
 var SUB_CATEGORY = {
     1: 'DRESSES',
@@ -89,7 +91,9 @@ var CATEGORY_ID_TO_NAME = {
     4: "Shorts",
     8: "Skirts",
     16: "Tops",
-    32: "Outers"
+    32: "Outers",
+    64: "Bags",
+    128: "Shoes"
 };
 
 //var DL_PROXY = 'https://dl-img.oddconcepts.kr/';
