@@ -8,8 +8,27 @@ var SHORTS = 4;
 var SKIRTS = 8;
 var TOPS = 16;
 var OUTERS = 32;
-var BAGS = 64;
-var SHOES = 128;
+var UNDERWEAR_TOP = 64;
+var UNDERWEAR_BOTTOM = 128;
+var UNDERWEAR_ONEPIECE = 256;
+var SWIMSUITS_TOP = 512;
+var SWIMSUITS_BOTTOM = 1024;
+var SWIMSUITS_ONEPIECE = 2048;
+var TOTEBAGS = 4096;
+var SHOULDER_CROSSBAGS = 8192;
+var BACKPACKS = 16384;
+var BUMBAGS = 32768;
+var CLUTCHBAGS = 65536;
+var POUCHBAGS = 131072;
+var BRIEFCASES = 262144;
+var SPORTS_BAGS = 524288;
+var SUITCASES = 1048576;
+var BOOTS = 2097152;
+var HEELS_PUMPS = 4194304;
+var LOAFERS = 8388608;
+var SANDALS = 16777216;
+var SNEAKERS = 33554432;
+var SPORTS_SHOES = 67108864;
 
 var SUB_CATEGORY = {
     1: 'DRESSES',
@@ -18,30 +37,24 @@ var SUB_CATEGORY = {
     8: 'SKIRTS',
     16: 'TOPS',
     32: 'OUTERS',
-    268435456: 'BLOUSE',
-    134217728: 'CARDIGAN',
-    67108864: 'COAT',
-    33554432: 'JACKET',
-    16777216: 'JEANS',
-    8388608: 'JUMPER',
-    4194304: 'KNIT',
-    2097152: 'LEGGINGS',
-    1048576: 'SHIRT',
-    524288: 'SLACKS',
-    262144: 'TSHIRT'
+    232: 'CARDIGAN',
+    233: 'JUMPER',
+    234: 'COAT',
+    235: 'JACKET',
+    236: 'VEST',
+    237: 'TSHIRT',
+    238: 'SWEATSHIRTS',
+    239: 'HOODIES',
+    240: 'KNIT',
+    241: 'BLOUSE',
+    242: 'SHIRT',
+    243: 'BUSTIERS',
+    249: 'LONG_PANTS',
+    250: 'CAPRI_PANTS',
+    252: 'LONG_SKIRTS',
+    253: 'MIDI_SKIRTS',
+    254: 'MINI_SKIRTS'
 };
-
-var BLOUSE = 268435456;
-var CARDIGAN = 134217728;
-var COAT = 67108864;
-var JACKET = 33554432;
-var JEANS = 16777216;
-var JUMPER = 8388608;
-var KNIT = 4194304;
-var LEGGINGS = 2097152;
-var SHIRT = 1048576;
-var SLACKS = 524288;
-var TSHIRT = 262144;
 
 var BLACK = 1;
 var GRAY = 2;
@@ -63,6 +76,7 @@ var PINK = 17;
 var RED = 18;
 
 var CATEGORY = {
+    "caids": [TOPS, PANTS, SHORTS, OUTERS, SKIRTS, DRESSES],
     1073741824: [
         {"name": "Tops", "caid": TOPS},
         {"name": "Pants", "caid": PANTS},
@@ -85,15 +99,82 @@ var CATEGORY = {
     ]
 };
 
+var SHOES = {
+    "caids": [BOOTS, LOAFERS, SANDALS, SNEAKERS, HEELS_PUMPS, SPORTS_SHOES],
+    1073741824: [
+        {"name": "Boots", "caid": BOOTS},
+        {"name": "Loafers", "caid": LOAFERS},
+        {"name": "Sandals", "caid": SANDALS},
+        {"name": "Sneakers", "caid": SNEAKERS}
+    ],
+    536870912: [
+        {"name": "Boots", "caid": BOOTS},
+        {"name": "Heels/Pumps", "caid": HEELS_PUMPS},
+        {"name": "Loafers", "caid": LOAFERS},
+        {"name": "Sandals", "caid": SANDALS},
+        {"name": "Sneakers", "caid": SNEAKERS}
+    ],
+    1610612736: [
+        {"name": "Boots", "caid": BOOTS},
+        {"name": "Sandals", "caid": SANDALS},
+        {"name": "Sneakers", "caid": SNEAKERS},
+        {"name": "Sports", "caid": SPORTS_SHOES}
+    ]
+};
+
+var BAGS = {
+    "caids": [SHOULDER_CROSSBAGS, BRIEFCASES, TOTEBAGS, CLUTCHBAGS, POUCHBAGS, BACKPACKS,
+    SUITCASES, BUMBAGS, SPORTS_BAGS],
+    1073741824: [
+        {"name": "Shoulder/Cross bags", "caid": SHOULDER_CROSSBAGS},
+        {"name": "Briefcases", "caid": BRIEFCASES}
+    ],
+    536870912: [
+        {"name": "Tote bags", "caid": TOTEBAGS},
+        {"name": "Shoulder/Cross bags", "caid": SHOULDER_CROSSBAGS},
+        {"name": "Clutch bags", "caid": CLUTCHBAGS},
+        {"name": "Pouch bags", "caid": POUCHBAGS},
+        {"name": "Backpacks", "caid": BACKPACKS}
+    ],
+    1610612736: [
+        {"name": "Tote bags", "caid": TOTEBAGS},
+        {"name": "Shoulder/Cross bags", "caid": SHOULDER_CROSSBAGS},
+        {"name": "Clutch bags", "caid": CLUTCHBAGS},
+        {"name": "Backpacks", "caid": BACKPACKS},
+        {"name": "Suitcases", "caid": SUITCASES},
+        {"name": "Bum bags", "caid": BUMBAGS},
+        {"name": "Sports bags", "caid": SPORTS_BAGS}
+    ]
+};
+
 var CATEGORY_ID_TO_NAME = {
-    1: "Dresses",
-    2: "Pants",
-    4: "Shorts",
-    8: "Skirts",
-    16: "Tops",
-    32: "Outers",
-    64: "Bags",
-    128: "Shoes"
+    1: "dresses",
+    2: "pants",
+    4: "shorts",
+    8: "skirts",
+    16: "tops",
+    32: "outers",
+    64: "underwear tops",
+    128: "underwear bottoms",
+    256: "underwear onepiece",
+    512: "swimsuits tops",
+    1024: "swimsuits bottoms",
+    2048: "swimsuits onepiece",
+    4096: "tote bags",
+    8192: "shoulder/closs bags",
+    16384: "backpacks",
+    32768: "bum bags",
+    65536: "clutch bags",
+    131072: "pouch bags",
+    262144: "briefcases",
+    524288: "sports bags",
+    1048576: "suitcases",
+    2097152: "boots",
+    4194304: "heels/pumps",
+    8388608: "loafers",
+    16777216: "sandals",
+    33554432: "sneakers",
+    67108864: "sports shoes"
 };
 
 //var DL_PROXY = 'https://dl-img.oddconcepts.kr/';
@@ -570,18 +651,49 @@ function init_search_category(region, additional_category, init) {
     }
 
     var r_json = JSON.stringify(region);
-    // Category
-    contents += "<div class='category-list'>";
-    for (var i=0; i<CATEGORY[current_gender].length; i++) {
-        if (current_category_ids.indexOf(CATEGORY[current_gender][i].caid) < 0) {
-            contents += "<a class=\"category\" href=\'javascript:search(" + r_json +
-                ", " + CATEGORY[current_gender][i].caid + ", false, true)\'>" + CATEGORY[current_gender][i].name + "</a>";
-        } else {
-            contents += "<a class=\"category select\" href=\'javascript:search(" + r_json +
-                ", " + CATEGORY[current_gender][i].caid + ", false, true)\'>" + CATEGORY[current_gender][i].name + "</a>";
+
+    if (CATEGORY["caids"].indexOf(region.category.code) >= 0) {
+        // Category
+        contents += "<div class='category-list'>";
+        for (var i = 0; i < CATEGORY[current_gender].length; i++) {
+            if (current_category_ids.indexOf(CATEGORY[current_gender][i].caid) < 0) {
+                contents += "<a class=\"category\" href=\'javascript:search(" + r_json +
+                    ", " + CATEGORY[current_gender][i].caid + ", false, true)\'>" + CATEGORY[current_gender][i].name + "</a>";
+            } else {
+                contents += "<a class=\"category select\" href=\'javascript:search(" + r_json +
+                    ", " + CATEGORY[current_gender][i].caid + ", false, true)\'>" + CATEGORY[current_gender][i].name + "</a>";
+            }
         }
+        contents += "</div>";
     }
-    contents += "</div>";
+    else if (SHOES["caids"].indexOf(region.category.code) >= 0) {
+        // Shoes
+        contents += "<div class='category-list'>";
+        for (var i = 0; i < SHOES[current_gender].length; i++) {
+            if (current_category_ids.indexOf(SHOES[current_gender][i].caid) < 0) {
+                contents += "<a class=\"category\" href=\'javascript:search(" + r_json +
+                    ", " + SHOES[current_gender][i].caid + ", false, true)\'>" + SHOES[current_gender][i].name + "</a>";
+            } else {
+                contents += "<a class=\"category select\" href=\'javascript:search(" + r_json +
+                    ", " + SHOES[current_gender][i].caid + ", false, true)\'>" + SHOES[current_gender][i].name + "</a>";
+            }
+        }
+        contents += "</div>";
+    }
+    else if (BAGS["caids"].indexOf(region.category.code) >= 0) {
+        // Bags
+        contents += "<div class='category-list'>";
+        for (var i = 0; i < BAGS[current_gender].length; i++) {
+            if (current_category_ids.indexOf(BAGS[current_gender][i].caid) < 0) {
+                contents += "<a class=\"category\" href=\'javascript:search(" + r_json +
+                    ", " + BAGS[current_gender][i].caid + ", false, true)\'>" + BAGS[current_gender][i].name + "</a>";
+            } else {
+                contents += "<a class=\"category select\" href=\'javascript:search(" + r_json +
+                    ", " + BAGS[current_gender][i].caid + ", false, true)\'>" + BAGS[current_gender][i].name + "</a>";
+            }
+        }
+        contents += "</div>";
+    }
 
     document.getElementById("searchable_category_list").innerHTML = contents;
 }
