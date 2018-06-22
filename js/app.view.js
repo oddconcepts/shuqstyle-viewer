@@ -49,11 +49,46 @@ var SUB_CATEGORY = {
     241: 'BLOUSE',
     242: 'SHIRT',
     243: 'BUSTIERS',
-    249: 'LONG_PANTS',
-    250: 'CAPRI_PANTS',
-    252: 'LONG_SKIRTS',
-    253: 'MIDI_SKIRTS',
-    254: 'MINI_SKIRTS'
+    249: 'LONG PANTS',
+    250: 'CAPRI PANTS',
+    251: 'SHORT PANTS',
+    252: 'LONG SKIRTS',
+    253: 'MIDI SKIRTS',
+    254: 'MINI SKIRTS',
+    261: 'DRESSES',
+    262: 'JUMPSUITS',
+    268: 'BOOTIES',
+    269: 'ANKLE BOOTS',
+    270: 'WALKERS',
+    271: 'LONG BOOTS',
+    272: 'HALF BOOTS',
+    273: 'RAIN BOOTS',
+    274: 'BOOTS',
+    275: 'PUMPS',
+    276: 'STILETTO HEELS',
+    277: 'WEDGE HEELS',
+    278: 'TOE OPEN HEELS',
+    279: 'SLING BACK SHOES',
+    280: 'MARY JANE SHOES/STRAP HEELS',
+    281: 'FLAT SHOES',
+    282: 'LOAFERS',
+    283: 'BLOAFERS',
+    284: 'OXFORD SHOES',
+    285: 'FLAT SANDALS',
+    286: 'PLATFORM SANDALS',
+    287: 'WEDGE SANDALS',
+    288: 'GLADIATOR SANDALS',
+    289: 'STRAP SANDALS',
+    290: 'SLIPPERS',
+    291: 'FLIP FLOPS',
+    292: 'MULES',
+    293: 'HIGHTOP SHOES',
+    294: 'SNEAKERS',
+    295: 'SLIP ON SHOES',
+    296: 'DRESS SHOES',
+    297: 'BOAT SHOES',
+    298: 'SANDALS',
+    299: 'TRACKING SHOES'
 };
 
 var BLACK = 1;
@@ -446,7 +481,7 @@ function show_classification_results(details) {
     for (var i=0; i<details.sub_category.length; i++) {
         var label = details.sub_category[i].code;
         if (typeof (label) === "number")
-            sub_cate_labels.push(SUB_CATEGORY[details.sub_category[i].code]);
+            sub_cate_labels.push(SUB_CATEGORY[details.sub_category[i].code].toLowerCase());
         else
             sub_cate_labels.push(details.sub_category[i].code);
         sub_cate_data.push(details.sub_category[i].score);
