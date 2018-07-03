@@ -92,7 +92,11 @@ function api_search(cb, region, search_category, count) {
             apiKey: window.localStorage.getItem("apikey").toString(),
             searchResultCount: 34});
 
-        flex_query = { sub_category: region.sub_category.code}
+	if (region.sub_category.code == 0)
+	    flex_query = undefined;
+	else
+            flex_query = { "sub_category": region.sub_category.code }
+
         ss.search(region, search_category, flex_query)
             .then(function (data) {
                 return cb(data);
