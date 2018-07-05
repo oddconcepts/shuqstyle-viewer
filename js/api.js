@@ -1,6 +1,22 @@
 var API_HOST        = "https://dl-api.oddconcepts.kr";
 
 
+function api_category_map(cb) {
+    var url = '/static/category.json';
+    $.ajax({
+        url: url,
+        type: 'get',
+        dataType: 'json',
+        async: false,
+        success: function (data) {
+            return cb(data);
+        },
+        error: function (data) {
+            return cb(null);
+        }
+    });
+}
+
 function api_detection_url(cb, image_url) {
     var use_v1 = window.localStorage.getItem("use_v1");
 
