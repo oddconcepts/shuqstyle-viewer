@@ -30,7 +30,7 @@ var SANDALS = 16777216;
 var SNEAKERS = 33554432;
 var SPORTS_SHOES = 67108864;
 
-var SUB_CATEGORY = {
+var SUB_CATEGORY_NAME = {
     1: 'DRESSES',
     2: 'PANTS',
     4: 'SHORTS',
@@ -110,79 +110,7 @@ var PURPLE = 16;
 var PINK = 17;
 var RED = 18;
 
-var CATEGORY = {
-    "caids": [TOPS, PANTS, SHORTS, OUTERS, SKIRTS, DRESSES],
-    1073741824: [
-        {"name": "Tops", "caid": TOPS},
-        {"name": "Pants", "caid": PANTS},
-        {"name": "Shorts", "caid": SHORTS},
-        {"name": "Outers", "caid": OUTERS}
-    ],
-    536870912: [
-        {"name": "Tops", "caid": TOPS},
-        {"name": "Pants", "caid": PANTS},
-        {"name": "Shorts", "caid": SHORTS},
-        {"name": "Skirts", "caid": SKIRTS},
-        {"name": "Dresses", "caid": DRESSES},
-        {"name": "Outers", "caid": OUTERS}
-    ],
-    1610612736: [
-        {"name": "Tops", "caid": TOPS},
-        {"name": "Pants", "caid": PANTS},
-        {"name": "Shorts", "caid": SHORTS},
-        {"name": "Outers", "caid": OUTERS}
-    ]
-};
-
-var SHOES = {
-    "caids": [BOOTS, LOAFERS, SANDALS, SNEAKERS, HEELS_PUMPS, SPORTS_SHOES],
-    1073741824: [
-        {"name": "Boots", "caid": BOOTS},
-        {"name": "Loafers", "caid": LOAFERS},
-        {"name": "Sandals", "caid": SANDALS},
-        {"name": "Sneakers", "caid": SNEAKERS}
-    ],
-    536870912: [
-        {"name": "Boots", "caid": BOOTS},
-        {"name": "Heels/Pumps", "caid": HEELS_PUMPS},
-        {"name": "Loafers", "caid": LOAFERS},
-        {"name": "Sandals", "caid": SANDALS},
-        {"name": "Sneakers", "caid": SNEAKERS}
-    ],
-    1610612736: [
-        {"name": "Boots", "caid": BOOTS},
-        {"name": "Sandals", "caid": SANDALS},
-        {"name": "Sneakers", "caid": SNEAKERS},
-        {"name": "Sports", "caid": SPORTS_SHOES}
-    ]
-};
-
-var BAGS = {
-    "caids": [SHOULDER_CROSSBAGS, BRIEFCASES, TOTEBAGS, CLUTCHBAGS, POUCHBAGS, BACKPACKS,
-    SUITCASES, BUMBAGS, SPORTS_BAGS],
-    1073741824: [
-        {"name": "Shoulder/Cross bags", "caid": SHOULDER_CROSSBAGS},
-        {"name": "Briefcases", "caid": BRIEFCASES}
-    ],
-    536870912: [
-        {"name": "Tote bags", "caid": TOTEBAGS},
-        {"name": "Shoulder/Cross bags", "caid": SHOULDER_CROSSBAGS},
-        {"name": "Clutch bags", "caid": CLUTCHBAGS},
-        {"name": "Pouch bags", "caid": POUCHBAGS},
-        {"name": "Backpacks", "caid": BACKPACKS}
-    ],
-    1610612736: [
-        {"name": "Tote bags", "caid": TOTEBAGS},
-        {"name": "Shoulder/Cross bags", "caid": SHOULDER_CROSSBAGS},
-        {"name": "Clutch bags", "caid": CLUTCHBAGS},
-        {"name": "Backpacks", "caid": BACKPACKS},
-        {"name": "Suitcases", "caid": SUITCASES},
-        {"name": "Bum bags", "caid": BUMBAGS},
-        {"name": "Sports bags", "caid": SPORTS_BAGS}
-    ]
-};
-
-var CATEGORY_ID_TO_NAME = {
+var CATEGORY_NAME = {
     1: "dresses",
     2: "pants",
     4: "shorts",
@@ -196,7 +124,7 @@ var CATEGORY_ID_TO_NAME = {
     1024: "swimsuits bottoms",
     2048: "swimsuits onepiece",
     4096: "tote bags",
-    8192: "shoulder/closs bags",
+    8192: "shoulder/cross bags",
     16384: "backpacks",
     32768: "bum bags",
     65536: "clutch bags",
@@ -210,6 +138,107 @@ var CATEGORY_ID_TO_NAME = {
     16777216: "sandals",
     33554432: "sneakers",
     67108864: "sports shoes"
+};
+
+var CATEGORY = {
+    "caids": [TOPS, PANTS, SHORTS, OUTERS, SKIRTS, DRESSES],
+    1073741824: [
+        TOPS,
+        PANTS,
+        SHORTS,
+        OUTERS
+    ],
+    536870912: [
+        TOPS,
+        PANTS,
+        SHORTS,
+        SKIRTS,
+        DRESSES,
+        OUTERS
+    ],
+    1610612736: [
+        TOPS,
+        PANTS,
+        SHORTS,
+        OUTERS
+    ]
+};
+
+var SUB_CATEGORY = {
+    1: [],
+    2: [249, 250],
+    4: [],
+    8: [252, 253, 254],
+    16: [237, 238, 239, 240, 241, 242, 243],
+    32: [232, 233, 234, 235, 236],
+    64: [244, 245, 246],
+    128: [255, 256, 257],
+    256: [264],
+    512: [247, 248],
+    1024: [258, 259, 260],
+    2048: [265, 266, 267],
+    4096: [],
+    8192: [],
+    16384: [],
+    32768: [],
+    65536: [],
+    131072: [],
+    262144: [],
+    524288: [],
+    1048576: [],
+    2097152: [268, 269, 270, 271, 272, 273, 274],
+    4194304: [275, 276, 277, 278, 279, 280],
+    8388608: [281, 282, 283, 284, 296, 297],
+    16777216: [285, 286, 287, 288, 289, 290, 291, 292, 298],
+    33554432: [293, 294, 295, 299]
+};
+
+var SHOES = {
+    "caids": [BOOTS, LOAFERS, SANDALS, SNEAKERS, HEELS_PUMPS, SPORTS_SHOES],
+    1073741824: [
+        BOOTS,
+        LOAFERS,
+        SANDALS,
+        SNEAKERS
+    ],
+    536870912: [
+        BOOTS,
+        HEELS_PUMPS,
+        LOAFERS,
+        SANDALS,
+        SNEAKERS
+    ],
+    1610612736: [
+        BOOTS,
+        SANDALS,
+        SNEAKERS,
+        SPORTS_SHOES
+    ]
+};
+
+var BAGS = {
+    "caids": [SHOULDER_CROSSBAGS, BRIEFCASES, TOTEBAGS, CLUTCHBAGS, POUCHBAGS, BACKPACKS,
+    SUITCASES, BUMBAGS, SPORTS_BAGS],
+    1073741824: [
+        SHOULDER_CROSSBAGS,
+        BRIEFCASES
+    ],
+    536870912: [
+        TOTEBAGS,
+        SHOULDER_CROSSBAGS,
+        CLUTCHBAGS,
+        POUCHBAGS,
+        BACKPACKS
+    ],
+    1610612736: [
+        TOTEBAGS,
+        SHOULDER_CROSSBAGS,
+        CLUTCHBAGS,
+        BACKPACKS,
+        SUITCASES,
+        BUMBAGS,
+        SPORTS_BAGS
+    ]
 };
 
 //var DL_PROXY = 'https://dl-img.oddconcepts.kr/';
@@ -395,7 +424,7 @@ function get_category(category_code) {
 }
 
 function unmask_category(category_code) {
-    var cates = Object.keys(CATEGORY_ID_TO_NAME);
+    var cates = Object.keys(CATEGORY_NAME);
     var cate_list = [];
 
     for (cc in cates) {
@@ -445,7 +474,7 @@ function show_detection_results(results) {
         var r_json = JSON.stringify(region);
         contents += "<div class='item' id='" + elem_id + "'>" +
             "<a href='javascript:change_cropper(" + r_json + ")'>" +
-            CATEGORY_ID_TO_NAME[category_id] + " #" + v + "</a>" + "<div id='" + progress_id + "'></div>" +
+            CATEGORY_NAME[category_id] + " #" + v + "</a>" + "<div id='" + progress_id + "'></div>" +
             "</div>";
 
     }
@@ -481,7 +510,7 @@ function show_classification_results(details) {
     for (var i=0; i<details.sub_category.length; i++) {
         var label = details.sub_category[i].code;
         if (typeof (label) === "number")
-            sub_cate_labels.push(SUB_CATEGORY[details.sub_category[i].code].toLowerCase());
+            sub_cate_labels.push(SUB_CATEGORY_NAME[details.sub_category[i].code].toLowerCase());
         else
             sub_cate_labels.push(details.sub_category[i].code);
         sub_cate_data.push(details.sub_category[i].score);
@@ -634,7 +663,7 @@ function select_detection_results(region) {
     $("#" + elem_id).addClass("select");
 
     if (re_search)
-        search(region, current_category_code, true, false);
+        search(region, current_category_code, 0, true, false);
 }
 
 function init_search_category(region, additional_category, init) {
@@ -686,17 +715,21 @@ function init_search_category(region, additional_category, init) {
     }
 
     var r_json = JSON.stringify(region);
+    var category_id = 0;
+    var category_name = 0;
 
     if (CATEGORY["caids"].indexOf(region.category.code) >= 0) {
         // Category
         contents += "<div class='category-list'>";
         for (var i = 0; i < CATEGORY[current_gender].length; i++) {
-            if (current_category_ids.indexOf(CATEGORY[current_gender][i].caid) < 0) {
+            category_id = CATEGORY[current_gender][i];
+            category_name = CATEGORY_NAME[category_id];
+            if (current_category_ids.indexOf(CATEGORY[current_gender][i]) < 0) {
                 contents += "<a class=\"category\" href=\'javascript:search(" + r_json +
-                    ", " + CATEGORY[current_gender][i].caid + ", false, true)\'>" + CATEGORY[current_gender][i].name + "</a>";
+                    ", " + category_id + ", 0, false, true)\'>" + category_name + "</a>";
             } else {
                 contents += "<a class=\"category select\" href=\'javascript:search(" + r_json +
-                    ", " + CATEGORY[current_gender][i].caid + ", false, true)\'>" + CATEGORY[current_gender][i].name + "</a>";
+                    ", " + category_id + ", 0, false, true)\'>" + category_name + "</a>";
             }
         }
         contents += "</div>";
@@ -705,12 +738,14 @@ function init_search_category(region, additional_category, init) {
         // Shoes
         contents += "<div class='category-list'>";
         for (var i = 0; i < SHOES[current_gender].length; i++) {
-            if (current_category_ids.indexOf(SHOES[current_gender][i].caid) < 0) {
+            category_id = SHOES[current_gender][i];
+            category_name = CATEGORY_NAME[category_id];
+            if (current_category_ids.indexOf(SHOES[current_gender][i]) < 0) {
                 contents += "<a class=\"category\" href=\'javascript:search(" + r_json +
-                    ", " + SHOES[current_gender][i].caid + ", false, true)\'>" + SHOES[current_gender][i].name + "</a>";
+                    ", " + category_id + ", 0, false, true)\'>" + category_name + "</a>";
             } else {
                 contents += "<a class=\"category select\" href=\'javascript:search(" + r_json +
-                    ", " + SHOES[current_gender][i].caid + ", false, true)\'>" + SHOES[current_gender][i].name + "</a>";
+                    ", " + category_id + ", 0, false, true)\'>" + category_name + "</a>";
             }
         }
         contents += "</div>";
@@ -719,13 +754,26 @@ function init_search_category(region, additional_category, init) {
         // Bags
         contents += "<div class='category-list'>";
         for (var i = 0; i < BAGS[current_gender].length; i++) {
-            if (current_category_ids.indexOf(BAGS[current_gender][i].caid) < 0) {
+            category_id = BAGS[current_gender][i];
+            category_name = CATEGORY_NAME[category_id];
+            if (current_category_ids.indexOf(BAGS[current_gender][i]) < 0) {
                 contents += "<a class=\"category\" href=\'javascript:search(" + r_json +
-                    ", " + BAGS[current_gender][i].caid + ", false, true)\'>" + BAGS[current_gender][i].name + "</a>";
+                    ", " + category_id + ", 0, false, true)\'>" + category_name + "</a>";
             } else {
                 contents += "<a class=\"category select\" href=\'javascript:search(" + r_json +
-                    ", " + BAGS[current_gender][i].caid + ", false, true)\'>" + BAGS[current_gender][i].name + "</a>";
+                    ", " + category_id + ", 0, false, true)\'>" + category_name + "</a>";
             }
+        }
+        contents += "</div>";
+    }
+
+    if (current_category_ids.length === 1 && current_category_ids[0] === region.category.code && SUB_CATEGORY[region.category.code].length > 0) {
+        contents += "<div class='category-list'>";
+        for (var i = 0; i < SUB_CATEGORY[region.category.code].length; i++) {
+            category_id = SUB_CATEGORY[region.category.code][i];
+            category_name = SUB_CATEGORY_NAME[category_id];
+            contents += "<a class=\"category\" href=\'javascript:search(" + r_json +
+                ", " + region.category.code + ", " + category_id + ", false, true)\'>" + category_name.toLowerCase() + "</a>";
         }
         contents += "</div>";
     }
@@ -742,10 +790,10 @@ function select_gender(region) {
     }
 
     if (re_search)
-        search(region, (current_category_code & DATA_MASK), false, false);
+        search(region, (current_category_code & DATA_MASK), 0, false, false);
 }
 
-function search(region, additional_category, init, use_scroll) {
+function search(region, additional_category, sub_category, init, use_scroll) {
     document.getElementById("results_search").style.display = "block";
 
     init_search_category(region, additional_category, init);
@@ -803,7 +851,7 @@ function search(region, additional_category, init, use_scroll) {
 
     show_loader_modal();
 
-    api_search(search_cb, region, current_category_code, 34);
+    api_search(search_cb, region, current_category_code, sub_category, 34);
 }
 
 function show_loader_modal() {

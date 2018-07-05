@@ -84,7 +84,7 @@ function api_detection_file(cb, base64, extension) {
     }
 }
 
-function api_search(cb, region, search_category, count) {
+function api_search(cb, region, search_category, sub_category, count) {
     var use_v1 = window.localStorage.getItem("use_v1");
 
     if (use_v1 === "true") {
@@ -92,10 +92,12 @@ function api_search(cb, region, search_category, count) {
             apiKey: window.localStorage.getItem("apikey").toString(),
             searchResultCount: 34});
 
-	if (region.sub_category.code == 0)
-	    flex_query = undefined;
-	else
-            flex_query = { "sub_category": region.sub_category.code }
+        if (sub_category === 0) {
+            var flex_query = undefined;
+        }
+        else {
+            flex_query = {"sub_category": sub_category};
+        }
 
         ss.search(region, search_category, flex_query)
             .then(function (data) {
