@@ -810,7 +810,7 @@ function search(region, additional_category, sub_category, init, use_scroll) {
     function addItemElem(name, price, link, image_url, background_pos, cc) {
         var elem = document.createElement("div");
         elem.className = "grid-item";
-        elem.innerHTML = '<img class="thumbnail" src="images/spacer.gif" style="background-image: url(\'' + image_url +
+        elem.innerHTML = '<img class="thumbnail" src="images/spacer.gif" style="background-image: url(\'https://img.pxl.ai/image?url=' + image_url +
             '\'); background-position: ' + background_pos + '">' +
             '<a href="./view.html?type=url&url=' + encodeURIComponent(image_url) +
             '&cc=' + cc + '"><div class="view-button"><img src="images/icon_search.svg"></div></a>' +
