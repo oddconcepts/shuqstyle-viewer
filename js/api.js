@@ -1,4 +1,4 @@
-var API_HOST        = "https://dl-api.oddconcepts.kr";
+var API_HOST        = "http://127.0.0.1:5000";
 
 
 function api_detection_url(cb, image_url) {
@@ -9,6 +9,7 @@ function api_detection_url(cb, image_url) {
             apiKey: window.localStorage.getItem("apikey").toString(),
                 optimizeRegions: false});
 
+        ss.config({'apiBase': API_HOST, 'local': true});
         ss.detect(image_url)
             .then(function (rs) {
                 return cb(rs);
@@ -26,7 +27,7 @@ function api_detection_url(cb, image_url) {
             dataType: "json",
             async: true,
             beforeSend: function (xhr) {
-                xhr.setRequestHeader("ApiKey", window.localStorage.getItem("apikey"));
+                xhr.setRequestHeader("bucketname", window.localStorage.getItem("apikey"));
             },
             success: function (data) {
                 return cb(data);
@@ -47,6 +48,7 @@ function api_detection_file(cb, base64, extension) {
             apiKey: window.localStorage.getItem("apikey").toString(),
             optimizeRegions: false});
 
+        ss.config({'apiBase': API_HOST, 'local': true});
         ss.detect(convertToByteArray(base64), extension)
             .then(function (rs) {
                 return cb(rs);
@@ -72,7 +74,7 @@ function api_detection_file(cb, base64, extension) {
             dataType: "json",
             async: true,
             beforeSend : function(xhr){
-                xhr.setRequestHeader("ApiKey", window.localStorage.getItem("apikey"));
+                xhr.setRequestHeader("bucketname", window.localStorage.getItem("apikey"));
             },
             success: function (data) {
                 return cb(data);
@@ -99,6 +101,7 @@ function api_search(cb, region, search_category, sub_category, count) {
             flex_query = {"sub_category": sub_category};
         }
 
+        ss.config({'apiBase': API_HOST, 'local': true});
         ss.search(region, search_category, flex_query)
             .then(function (data) {
                 return cb(data);
@@ -118,7 +121,7 @@ function api_search(cb, region, search_category, sub_category, count) {
             dataType: "json",
             async: true,
             beforeSend: function (xhr) {
-                xhr.setRequestHeader("ApiKey", window.localStorage.getItem("apikey"));
+                xhr.setRequestHeader("bucketname", window.localStorage.getItem("apikey"));
             },
             success: function (data) {
                 return cb(data);
