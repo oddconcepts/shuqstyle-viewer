@@ -88,7 +88,22 @@ var SUB_CATEGORY_NAME = {
     296: 'DRESS SHOES',
     297: 'BOAT SHOES',
     298: 'SANDALS',
-    299: 'TRACKING SHOES'
+    299: 'TRACKING SHOES',
+    258: 'BIKINI BOTTOMS',
+    259: 'SWIM BRIEFS',
+    260: 'SWIM TRUNKS',
+    265: 'ONEPIECE SWIMSUITS',
+    266: 'MONOKINIS',
+    267: 'WETSUITS',
+    247: 'BIKINI TOPS',
+    248: 'RASH GUARDS',
+    244: 'BRAS',
+    245: 'CAMISOLES/SLIPS',
+    246: 'RUNNING SHIRTS',
+    255: 'PANTIES',
+    256: 'DRAWERS',
+    257: 'UNDERSKIRTS',
+    264: 'BODYSUITS'
 };
 
 var BLACK = 1;
@@ -838,8 +853,7 @@ function search(region, additional_category, sub_category, init, use_scroll) {
 
         for (var i=0; i<result_count; i++) {
             var r = results[i].region;
-            var backgroundPos = Math.floor((r[0] + (r[2] - r[0]) / 2) /
-                results[i].size_info[0] * 100) + '% ';
+            var backgroundPos = Math.floor((r[0] + (r[2] - r[0]) / 2) / 500 * 100) + '% ';
             addItemElem(results[i].name, results[i].price, results[i].product_url, results[i].image_url, backgroundPos,
                 results[i].category_code);
         }
