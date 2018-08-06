@@ -180,7 +180,7 @@
     margin-top: 0px;
 }
 
-.main > .results-search .searchable-category-list > .sex-list > .sex {
+.main > .results-search .searchable-category-list > .gender-list > .gender {
     margin: 40px 10px 0px 0;
     display: inline-block;
     font-size: 14px;
@@ -189,7 +189,7 @@
     color: gray;
 }
 
-.main > .results-search .searchable-category-list > .sex-list > .sex.select {
+.main > .results-search .searchable-category-list > .gender-list > .gender.select {
     color: #754bbf;
     font-weight: 600;
 }

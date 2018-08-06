@@ -92,7 +92,7 @@ function api_search(cb, region, search_category, sub_category, count) {
             apiKey: window.localStorage.getItem("apikey").toString(),
             searchResultCount: 34});
 
-        if (sub_category === 0) {
+        if (sub_category.length === 0) {
             var flex_query = undefined;
         }
         else {
