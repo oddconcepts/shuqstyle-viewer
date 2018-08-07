@@ -321,14 +321,11 @@ var CATEGORY = {
 //var DL_PROXY = 'https://dl-img.oddconcepts.kr/';
 var DL_PROXY = '';
 
-var current_image_url;
 var current_category_ids = null;
 var current_gender = null;
 var current_subcategory_ids = null;
 var current_region = null;
 var cropper;
-var re_search = false;
-
 
 $(document).ready(function() {
     var uri = new URI(location.href);
@@ -359,43 +356,45 @@ $(document).ready(function() {
     if (image_url === undefined)
         error_and_go_home("Image url does not exist.");
 
-    current_image_url = image_url;
-
     var convert_region_format = function (regions) {
         var rs = JSON.parse(JSON.stringify(regions));
-        sortable = [];
+        var sortable = [];
 
-        for (cate_code in rs) {
-            for (r_idx in rs[cate_code]) {
-                var region = rs[cate_code][r_idx];
+        for (var cate_code in rs) {
+            if (rs.hasOwnProperty(cate_code)) {
+                for (var r_idx in rs[cate_code]) {
+                    if (rs[cate_code].hasOwnProperty(r_idx)) {
+                        var region = rs[cate_code][r_idx];
 
-                var d = (region.details !== undefined);
-                var f = (parseInt(cate_code)&SKIRTS !== 0 || parseInt(cate_code)&DRESSES !== 0);
+                        var d = (region.details !== undefined);
+                        var f = (parseInt(cate_code) & SKIRTS !== 0 || parseInt(cate_code) & DRESSES !== 0);
 
-                region.colors = [];
-                region.gender = {
-                    'code': d? get_gender(region.details.sex.label): f? F_BIT: GENDER_MASK,
-                    'score': d? region.details.sex.probability: f? 1: 0.5
-                };
-                region.sub_category = [];
-                if (d) {
-                    for (var i = 0; i < region.details.cate_b.length; i++) {
-                        region.sub_category.push(
-                            {
-                                'code': region.details.cate_b[i].label,
-                                'score': region.details.cate_b[i].probability
-                            })
+                        region.colors = [];
+                        region.gender = {
+                            'code': d ? get_gender(region.details.sex.label) : f ? F_BIT : GENDER_MASK,
+                            'score': d ? region.details.sex.probability : f ? 1 : 0.5
+                        };
+                        region.sub_category = [];
+                        if (d) {
+                            for (var i = 0; i < region.details.cate_b.length; i++) {
+                                region.sub_category.push(
+                                    {
+                                        'code': region.details.cate_b[i].label,
+                                        'score': region.details.cate_b[i].probability
+                                    })
+                            }
+                        }
+                        region.category = {'code': parseInt(cate_code), 'score': region.score};
+
+                        if (d) delete region['details'];
+                        delete region['x1'];
+                        delete region['x2'];
+                        delete region['y1'];
+                        delete region['y2'];
+
+                        sortable.push(region);
                     }
                 }
-                region.category = {'code': parseInt(cate_code), 'score': region.score};
-
-                if (d)   delete region['details'];
-                delete region['x1'];
-                delete region['x2'];
-                delete region['y1'];
-                delete region['y2'];
-
-                sortable.push(region);
             }
         }
         sortable.sort(function (a, b) {
@@ -413,8 +412,6 @@ $(document).ready(function() {
 
         if (window.localStorage.getItem('use_v1') === "false")
             results = convert_region_format(results.list);
-
-        re_search = false;
 
         if (results.length > 0) {
             // init region
