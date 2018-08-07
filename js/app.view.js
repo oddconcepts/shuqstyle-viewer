@@ -1,34 +1,8 @@
 var GENDER_MASK = 1610612736;
-var DATA_MASK = 536870911;
 var M_BIT = 1073741824;
 var F_BIT = 536870912;
 var DRESSES = 1;
-var PANTS = 2;
-var SHORTS = 4;
 var SKIRTS = 8;
-var TOPS = 16;
-var OUTERS = 32;
-var UNDERWEAR_TOP = 64;
-var UNDERWEAR_BOTTOM = 128;
-var UNDERWEAR_ONEPIECE = 256;
-var SWIMSUITS_TOP = 512;
-var SWIMSUITS_BOTTOM = 1024;
-var SWIMSUITS_ONEPIECE = 2048;
-var TOTEBAGS = 4096;
-var SHOULDER_CROSSBAGS = 8192;
-var BACKPACKS = 16384;
-var BUMBAGS = 32768;
-var CLUTCHBAGS = 65536;
-var POUCHBAGS = 131072;
-var BRIEFCASES = 262144;
-var SPORTS_BAGS = 524288;
-var SUITCASES = 1048576;
-var BOOTS = 2097152;
-var HEELS_PUMPS = 4194304;
-var LOAFERS = 8388608;
-var SANDALS = 16777216;
-var SNEAKERS = 33554432;
-var SPORTS_SHOES = 67108864;
 
 var SUB_CATEGORY_NAME = {
     0: 'unknown',
@@ -125,36 +99,6 @@ var DARKMAGENTA = 15;
 var PURPLE = 16;
 var PINK = 17;
 var RED = 18;
-
-var CATEGORY_NAME = {
-    1: "dresses",
-    2: "pants",
-    4: "shorts",
-    8: "skirts",
-    16: "tops",
-    32: "outers",
-    64: "underwear tops",
-    128: "underwear bottoms",
-    256: "underwear onepiece",
-    512: "swimsuits tops",
-    1024: "swimsuits bottoms",
-    2048: "swimsuits onepiece",
-    4096: "tote bags",
-    8192: "shoulder/cross bags",
-    16384: "backpacks",
-    32768: "bum bags",
-    65536: "clutch bags",
-    131072: "pouch bags",
-    262144: "briefcases",
-    524288: "sports bags",
-    1048576: "suitcases",
-    2097152: "boots",
-    4194304: "heels/pumps",
-    8388608: "loafers",
-    16777216: "sandals",
-    33554432: "sneakers",
-    67108864: "sports shoes"
-};
 
 var CATEGORY = {
     1: {
@@ -378,15 +322,11 @@ var CATEGORY = {
 var DL_PROXY = '';
 
 var current_image_url;
-var current_image_size = {"width": 0, "height": 0};
-var current_category_code = 0;
 var current_category_ids = null;
 var current_gender = null;
 var current_subcategory_ids = null;
 var current_region = null;
-var detection_results_elems = [];
 var cropper;
-var classification_map = {};
 var re_search = false;
 
 
@@ -408,8 +348,6 @@ $(document).ready(function() {
         image_url = params["url"];
         if (image_url.substr(0, 7) === 'http://')
             image_url = DL_PROXY + image_url;
-        if ("cc" in params)
-            current_category_code = parseInt(params["cc"]);
     } else if (type === "file") {
         image_url = localStorage.getItem("base64");
         var image_extension = localStorage.getItem("extension");
@@ -476,50 +414,24 @@ $(document).ready(function() {
         if (window.localStorage.getItem('use_v1') === "false")
             results = convert_region_format(results.list);
 
-        var activated_region = undefined;
         re_search = false;
 
         if (results.length > 0) {
-            for (var r in results) {
-                var cc = parseInt(results[r].category.code);
+            // init region
+            init_current_values(results[0]);
 
-                if (activated_region === undefined) {
-                    activated_region = (current_category_code === 0) ?
-                        results[0] : (cc === (current_category_code & DATA_MASK)) ? results[r] : undefined;
-                }
-            }
-            if (activated_region === undefined) activated_region = results[0];
+            show_region_names_and_scores(results);
 
-            var category_code = activated_region.category.code;
-            var region_id = activated_region.id;
-            var details = {
-                'gender': activated_region.gender,
-                'colors': activated_region.colors,
-                'sub_category': (Array.isArray(activated_region.sub_category)) ?
-                    activated_region.sub_category : [activated_region.sub_category]
-            };
+            show_current_region_name_and_score(undefined, results[0]);
 
-            classification_map[category_code + '_' + region_id] = details;
-            show_detection_results(results);
+            window.setTimeout(function () {show_classification_results(results[0]);}, 50);
 
-            if (category_code !== 0 && (region_id !== null || region_id !== undefined)) {
-                if (current_category_code > 0)
-                    activated_region.gender.code = current_category_code & GENDER_MASK;
-                else
-                    current_category_code = activated_region.gender.code | get_category(category_code);
+            init_cropper(image_url, results[0]);
 
-                select_detection_results(activated_region);
+            show_details(current_region.category.code, current_gender, current_category_ids, current_subcategory_ids);
 
-                re_search = true;
-            }
-
-            if (classification_map[category_code + '_' + region_id] !== null) {
-                window.setTimeout(function () {
-                    show_classification_results(details);
-                }, 50);
-            }
+            search(current_region, current_gender, current_category_ids, current_subcategory_ids);
         }
-        init_cropper(image_url, activated_region);
     };
 
     show_loader_modal();
@@ -554,54 +466,45 @@ function get_gender(gender_code) {
     }
 }
 
-function get_category(category_code) {
-    return category_code & DATA_MASK;
+function get_element_id(region) {
+    var elem_id = "detection_" + region.category.code + "_" + region.id;
+    elem_id = elem_id.replace(/,/gi, "_");
+    return elem_id;
 }
 
-function show_detection_results(results) {
+function show_region_names_and_scores(results) {
     document.getElementById("results_detection").style.display = "block";
 
     var contents = "";
     var progress_list = [];
     var idx_list = {};
 
-    for (idx in results) {
-        var region = JSON.parse(JSON.stringify(results[idx]));
-        var category_id = region.category.code;
-        var region_id = region.id;
+    for (var idx in results) {
+        if (results.hasOwnProperty(idx)) {
+            var region = JSON.parse(JSON.stringify(results[idx]));
+            var category_id = region.category.code;
+            var region_id = region.id;
 
-        var v = 1;
-        if (idx_list[region.category.code] === undefined) {
-            idx_list[region.category.code] = 1;
+            var v = 1;
+            if (idx_list[region.category.code] === undefined) {
+                idx_list[region.category.code] = 1;
+            }
+            else {
+                idx_list[region.category.code] += 1;
+                v = idx_list[region.category.code];
+            }
+
+            var elem_id = get_element_id(region);
+            var progress_id = "detectioin_progress_" + category_id + "_" + region_id;
+            progress_id = progress_id.replace(/,/gi, "_");
+            progress_list.push({"id": progress_id, "score": region.score});
+
+            var r_json = JSON.stringify(region);
+            contents += "<div class='item' id='" + elem_id + "'>" +
+                "<a href='javascript:change_region(" + r_json + ")'>" +
+                CATEGORY[category_id.toString()].str + " #" + v + "</a>" + "<div id='" + progress_id + "'></div>" +
+                "</div>";
         }
-        else {
-            idx_list[region.category.code] += 1;
-            v = idx_list[region.category.code];
-        }
-
-        var classification_map_id = category_id + "_" + region_id;
-        classification_map[classification_map_id] = {
-            'gender': region.gender,
-            'colors': region.colors,
-            'sub_category': (Array.isArray(region.sub_category))?
-                region.sub_category : [region.sub_category]
-        };
-
-        var elem_id = "detection_" + category_id + "_" + region_id;
-        elem_id = elem_id.replace(/,/gi, "_");
-
-        detection_results_elems.push(elem_id);
-
-        var progress_id = "detectioin_progress_" + category_id + "_" + region_id;
-        progress_id = progress_id.replace(/,/gi, "_");
-        progress_list.push({"id": progress_id, "score": region.score});
-
-        var r_json = JSON.stringify(region);
-        contents += "<div class='item' id='" + elem_id + "'>" +
-            "<a href='javascript:change_cropper(" + r_json + ")'>" +
-            CATEGORY_NAME[category_id] + " #" + v + "</a>" + "<div id='" + progress_id + "'></div>" +
-            "</div>";
-
     }
 
     document.getElementById("detection_list").innerHTML = contents;
@@ -617,28 +520,25 @@ function show_detection_results(results) {
     }
 }
 
-function show_classification_results(details) {
-    if (details.length < 0)
-        return;
-
+function show_classification_results(region) {
     document.getElementById("results_classification").style.display = "block";
 
     //print gender chart
-    var gender_labels = (details.gender.code === F_BIT)? ['female', 'male']:['male', 'female'];
-    var gender_data = [details.gender.score, 1-details.gender.score];
+    var gender_labels = (region.gender.code === F_BIT)? ['female', 'male']:['male', 'female'];
+    var gender_data = [region.gender.score, 1-region.gender.score];
     show_chart(document.getElementById("classification_chart_gender"),
                gender_labels, gender_data);
 
     // print cloth chart
     var sub_cate_labels = [];
     var sub_cate_data = [];
-    for (var i=0; i<details.sub_category.length; i++) {
-        var label = details.sub_category[i].code;
-        if (typeof (label) === "number")
-            sub_cate_labels.push(SUB_CATEGORY_NAME[details.sub_category[i].code]);
-        else
-            sub_cate_labels.push(details.sub_category[i].code);
-        sub_cate_data.push(details.sub_category[i].score);
+    var sub_categories = CATEGORY[region.category.code.toString()]["sub_categories"];
+    for (var i in sub_categories) {
+        if (sub_categories.hasOwnProperty(i) && sub_categories[i].id === region.sub_category.code) {
+            sub_cate_labels.push(sub_categories[i].str);
+            sub_cate_data.push(region.sub_category.score);
+            break;
+        }
     }
     show_chart(document.getElementById("classification_chart_cloth"),
                sub_cate_labels, sub_cate_data);
@@ -697,10 +597,7 @@ function init_cropper(url, region) {
         crop: function (e) {},
         built: function() {
             var image_size_cb = function (width, height) {
-                current_image_size.width = width;
-                current_image_size.height = height;
-
-                change_cropper(region);
+                change_region(region)
             };
 
             get_image_size_from_url(image_size_cb, url);
@@ -710,6 +607,21 @@ function init_cropper(url, region) {
     cropper.cropper("disable");
 }
 
+function change_region(region) {
+    var old_region = current_region;
+    change_cropper(region);
+
+    init_current_values(region);
+
+    show_current_region_name_and_score(old_region, region);
+
+    show_classification_results(region);
+
+    show_details(current_region.category.code, current_gender, current_category_ids, current_subcategory_ids);
+
+    search(current_region, current_gender, current_category_ids, current_subcategory_ids);
+}
+
 function change_cropper(region) {
     region = JSON.parse(JSON.stringify(region));
 
@@ -717,38 +629,10 @@ function change_cropper(region) {
     var display_width = image_view.clientWidth;
     var display_height = image_view.clientHeight;
 
-/*
-    var resize_size = 500;
-    var resize_width = current_image_size.width;
-    var resize_height = current_image_size.height;
-
-    if (current_image_size.width > current_image_size.height) {
-        if (current_image_size.width > resize_size) {
-            resize_width = resize_size;
-            resize_height = (resize_size*current_image_size.height)/current_image_size.width;
-        }
-    } else {
-        if (current_image_size.height > resize_size) {
-            resize_height = resize_size;
-            resize_width = (resize_size*current_image_size.width)/current_image_size.height;
-        }
-    }
-
-    var ox1 = region.x1*(current_image_size.width/resize_width);
-    var oy1 = region.y1*(current_image_size.height/resize_height);
-    var ox2 = region.x2*(current_image_size.width/resize_width);
-    var oy2 = region.y2*(current_image_size.height/resize_height);
-
-    var display_left = ox1*(display_width/current_image_size.width);
-    var display_top = oy1*(display_height/current_image_size.height);
-    var display_width = ox2*(display_width/current_image_size.width) - display_left;
-    var display_height = oy2*(display_height/current_image_size.height) - display_top;
-*/
-
     var display_left = display_width*region.rx1;
     var display_top = display_height*region.ry1;
-    var display_width = display_width*region.rx2 - display_left;
-    var display_height = display_height*region.ry2 - display_top;
+    display_width = display_width*region.rx2 - display_left;
+    display_height = display_height*region.ry2 - display_top;
 
     // enable cropper
     $("#thumbnail_view").cropper('enable');
@@ -762,35 +646,20 @@ function change_cropper(region) {
 
     // disable cropper
     $("#thumbnail_view").cropper('disable');
-
-    current_category_code = region.category.code | current_category_code & GENDER_MASK;
-    // select detection results
-    select_detection_results(region);
-
-    // show classification results
-    var classification_map_id = region.category.code + '_' + region.id;
-    show_classification_results(classification_map[classification_map_id]);
 }
 
-function select_detection_results(region) {
-    if (region.id === null || region.id === undefined) return;
+function show_current_region_name_and_score(old_region, new_region) {
+    if (new_region.id === null || new_region.id === undefined) return;
 
     // remove class
-    for (var i=0; i<detection_results_elems.length; i++) {
-        $("#" + detection_results_elems[i]).removeClass("select");
+    if (old_region !== undefined) {
+        $("#" + get_element_id(old_region)).removeClass("select");
     }
 
-    var elem_id = "detection_" + (current_category_code & DATA_MASK).toString() + "_" + region.id;
-    elem_id = elem_id.replace(/,/gi, "_");
-    // var progress_id = ("detection_progress_" + current_category_code & DATA_MASK + "_" + region.id).replace(/,/gi, "_");
+    var elem_id = get_element_id(new_region);
 
     // add class
     $("#" + elem_id).addClass("select");
-
-    init_current_values(region);
-
-    if (re_search)
-        search(current_region, current_gender, current_category_ids, current_subcategory_ids);
 }
 
 function init_current_values(region) {
@@ -800,15 +669,23 @@ function init_current_values(region) {
     current_subcategory_ids = [];
 }
 
+function show_details(region_category, selected_gender, selected_category, selected_sub_category) {
+    document.getElementById("details").style.display = "block";
+    show_gender(selected_gender);
+    show_category(region_category, selected_gender, selected_category);
+    show_sub_category(region_category, selected_category, selected_sub_category);
+}
+
 function click_gender(gender) {
     current_gender = gender;
 
-    if (re_search)
-        search(current_region, current_gender, current_category_ids, current_subcategory_ids);
+    show_details(current_region.category.code, current_gender, current_category_ids, current_subcategory_ids);
+
+    search(current_region, current_gender, current_category_ids, current_subcategory_ids);
 }
 
 function show_gender(gender) {
-    var contents = "";
+    var contents = "<div class='gender-list'>";
     var genders = [M_BIT, F_BIT, GENDER_MASK];
 
     for (var i=0; i<genders.length; i++) {
@@ -820,7 +697,7 @@ function show_gender(gender) {
         }
     }
     contents += "</div>";
-    return contents;
+    document.getElementById("searchable_gender_list").innerHTML = contents;
 }
 
 function click_category(category) {
@@ -833,8 +710,9 @@ function click_category(category) {
     }
 
     current_subcategory_ids = [];
-    if (re_search)
-        search(current_region, current_gender, current_category_ids, current_subcategory_ids);
+
+    show_details(current_region.category.code, current_gender, current_category_ids, current_subcategory_ids);
+    search(current_region, current_gender, current_category_ids, current_subcategory_ids);
 }
 
 function show_category(region_category, selected_gender, selected_category) {
@@ -855,7 +733,7 @@ function show_category(region_category, selected_gender, selected_category) {
 
     contents += "</div>";
 
-    return contents;
+    document.getElementById("searchable_category_list").innerHTML = contents;
 }
 
 function click_sub_category(sub_category) {
@@ -867,8 +745,8 @@ function click_sub_category(sub_category) {
         current_subcategory_ids.push(sub_category);
     }
 
-    if (re_search)
-        search(current_region, current_gender, current_category_ids, current_subcategory_ids);
+    show_details(current_region.category.code, current_gender, current_category_ids, current_subcategory_ids);
+    search(current_region, current_gender, current_category_ids, current_subcategory_ids);
 }
 
 function show_sub_category(region_category, selected_category, selected_sub_category) {
@@ -890,17 +768,11 @@ function show_sub_category(region_category, selected_category, selected_sub_cate
     }
     contents += "</div>";
 
-    return contents;
+    document.getElementById("searchable_sub_category_list").innerHTML = contents;
 }
 
 function search(region, gender, category_ids, sub_category_ids) {
     document.getElementById("results_search").style.display = "block";
-
-    document.getElementById("searchable_category_list").innerHTML = show_gender(gender);
-
-    document.getElementById("searchable_category_list").innerHTML += show_category(region.category.code, gender, category_ids);
-
-    document.getElementById("searchable_category_list").innerHTML += show_sub_category(region.category.code, category_ids, sub_category_ids);
 
     // clear results
     document.getElementById("search_list").innerHTML = "<div class='blank-space'>&nbsp;</div>";
