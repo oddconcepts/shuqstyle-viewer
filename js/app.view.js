@@ -520,25 +520,52 @@ function show_region_names_and_scores(results) {
 function show_classification_results(region) {
     document.getElementById("results_classification").style.display = "block";
 
-    //print gender chart
-    var gender_labels = (region.gender.code === F_BIT)? ['female', 'male']:['male', 'female'];
-    var gender_data = [region.gender.score, 1-region.gender.score];
-    show_chart(document.getElementById("classification_chart_gender"),
-               gender_labels, gender_data);
+    //print gender info
+    var gender_labels = (region.gender.code === F_BIT)? ['female']:['male'];
+    show_info(document.getElementById("classification_gender"), gender_labels);
 
-    // print cloth chart
-    var sub_cate_labels = [];
-    var sub_cate_data = [];
+    //print cloth info
+    var categories = CATEGORY[region.category.code.toString()];
+    var cate_labels = categories.str;
     var sub_categories = CATEGORY[region.category.code.toString()]["sub_categories"];
+    var sub_cate_labels = [];
     for (var i in sub_categories) {
         if (sub_categories.hasOwnProperty(i) && sub_categories[i].id === region.sub_category.code) {
             sub_cate_labels.push(sub_categories[i].str);
-            sub_cate_data.push(region.sub_category.score);
             break;
         }
     }
-    show_chart(document.getElementById("classification_chart_cloth"),
-               sub_cate_labels, sub_cate_data);
+    show_info(document.getElementById("classification_cate"), cate_labels);
+    show_info(document.getElementById("classification_sub_cate"), sub_cate_labels);
+
+    //print attributes info
+    if (region.attributes === undefined || Object.keys(region.attributes).length <= 0) {
+        $('#info-attr').empty();
+    }
+    else if (Object.keys(region.attributes).length > 0) {
+        var attribute_labels = [];
+        var attributes = region.attributes;
+        for (var attr_a in attributes) {
+            attribute_labels[attr_a] = [];
+            for (var attr_b in attributes[attr_a]) {
+                attribute_labels[attr_a].push(attributes[attr_a][attr_b].label);
+            }
+        }
+        show_info(document.getElementById("classification_attribute"), attribute_labels);
+    }
+}
+
+function show_info(ctx, labels) {
+    if (ctx == document.getElementById("classification_attribute")) {
+        var contents = "";
+        for (var attr_a in labels) {
+            contents += "<div class='attr-list'><div class='attr-a-list'>" + attr_a
+                + "</div><div class='attr-b-list'>" + labels[attr_a] + "</div></div>";
+        }
+        ctx.innerHTML = contents;
+    }
+    else
+        ctx.innerHTML = '<div>' + labels + '</div>';
 }
 
 function show_chart(ctx, labels, data) {

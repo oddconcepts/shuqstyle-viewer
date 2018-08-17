@@ -132,22 +132,30 @@
 
 .main > .results-classification .sub-title {
     margin-top: 20px;
+    margin-bottom: 10px;
     font-size: 14px;
     font-weight: 600;
     color: #754bbf;
 }
 
-.main > .results-classification .chart-container {
-    width: 100%;
-    max-width: 400px;
-    padding: 20px 0 10px 20px;
-    margin-top: 20px;
-    background: #ffffff;
+.main > .results-classification .info-block {
+    display: inline-grid;
+    margin-right: 2em;
+    font-size: 14px;
+    font-weight: 200;
+    text-decoration: none;
+    color: black;
 }
 
-.main > .results-classification .chart-block {
-    display: inline-block;
-    margin-right: 2em;
+.main > .results-classification .info-block > .classification-attribute .attr-list {
+    display: inline-grid;
+}
+
+.main > .results-classification .info-block > .classification-attribute .attr-list > .attr-a-list {
+    display: block;
+    margin-right: 3em;
+    font-weight: 400;
+    color: #754bbf;
 }
 
 
