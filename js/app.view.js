@@ -540,9 +540,11 @@ function show_classification_results(region) {
 
     //print attributes info
     if (region.attributes === undefined || Object.keys(region.attributes).length <= 0) {
-        $('#info-attr').empty();
+        document.getElementById("info-attr").style.visibility = "hidden";
     }
     else if (Object.keys(region.attributes).length > 0) {
+        document.getElementById("info-attr").style.visibility = "visible";
+
         var attribute_labels = [];
         var attributes = region.attributes;
         for (var attr_a in attributes) {
