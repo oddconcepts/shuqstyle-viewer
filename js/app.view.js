@@ -763,13 +763,8 @@ function show_category(region_category, selected_gender, selected_category) {
 }
 
 function click_sub_category(sub_category) {
-    var pos = current_subcategory_ids.indexOf(sub_category);
-    if (pos >= 0) {
-        current_subcategory_ids.splice(pos, 1);
-    }
-    else {
-        current_subcategory_ids.push(sub_category);
-    }
+    current_subcategory_ids = [sub_category];
+    current_subcategory_ids.push(sub_category);
 
     show_details(current_region.category.code, current_gender, current_category_ids, current_subcategory_ids);
     search(current_region, current_gender, current_category_ids, current_subcategory_ids);
