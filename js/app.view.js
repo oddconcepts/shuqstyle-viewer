@@ -991,10 +991,10 @@ function show_classification_results(region) {
 
     //print attributes info
     if (region.attributes === undefined || region.attributes.length <= 0) {
-        document.getElementById("info-attr").style.visibility = "hidden";
+        document.getElementById("attribute_divider").style.visibility = "hidden";
     }
     else if (region.attributes.length > 0) {
-        document.getElementById("info-attr").style.visibility = "visible";
+        document.getElementById("attribute_divider").style.visibility = "visible";
 
         var attribute_labels = [];
         for (var i in region.attributes) {
@@ -1011,16 +1011,18 @@ function show_classification_results(region) {
                 attribute_labels[i].push('unknown')
             }
         }
-        show_info(document.getElementById("classification_attribute"), attribute_labels);
+        show_info(document.getElementById("attribute_list"), attribute_labels);
     }
 }
 
 function show_info(ctx, labels) {
-    if (ctx === document.getElementById("classification_attribute")) {
+    if (ctx === document.getElementById("attribute_list")) {
         var contents = "";
         for (var attr_a in labels) {
-            contents += "<div class='attr-list'><div class='attr-a-list'>" + attr_a
-                + "</div><div class='attr-b-list'>" + labels[attr_a] + "</div></div>";
+            if (labels.hasOwnProperty(attr_a)) {
+                contents += "<div class='info-block'><div class='sub-title'>" + attr_a
+                    + "</div><div class='classification-attribute'>" + labels[attr_a] + "</div></div>";
+            }
         }
         ctx.innerHTML = contents;
     }
