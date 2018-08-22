@@ -1337,13 +1337,15 @@ function search(region, gender, categories, sub_category, attributes) {
 
         if (window.localStorage.getItem("use_v1") === "false")
             results = convert_search_v0_format(results);
-        var result_count = results.length;
+        if (results.constructor === Array) {
+            var result_count = results.length;
 
-        for (var i=0; i<result_count; i++) {
-            var r = results[i].region;
-            var backgroundPos = Math.floor((r[0] + (r[2] - r[0]) / 2) / 500 * 100) + '% ';
-            addItemElem(results[i].name, results[i].price, results[i].product_url, results[i].image_url, backgroundPos,
-                results[i].category_code);
+            for (var i=0; i<result_count; i++) {
+                var r = results[i].region;
+                var backgroundPos = Math.floor((r[0] + (r[2] - r[0]) / 2) / 500 * 100) + '% ';
+                addItemElem(results[i].name, results[i].price, results[i].product_url, results[i].image_url, backgroundPos,
+                    results[i].category_code);
+            }
         }
 
         $grid.imagesLoaded(function() {
