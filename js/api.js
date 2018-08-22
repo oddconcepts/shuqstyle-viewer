@@ -84,20 +84,14 @@ function api_detection_file(cb, base64, extension) {
     }
 }
 
-function api_search(cb, region, search_category, sub_category, count) {
+function api_search(cb, region, search_category, flex_query, count) {
     var use_v1 = window.localStorage.getItem("use_v1");
 
     if (use_v1 === "true") {
         var ss = shuqstyle({
             apiKey: window.localStorage.getItem("apikey").toString(),
-            searchResultCount: 34});
-
-        if (sub_category.length === 0) {
-            var flex_query = undefined;
-        }
-        else {
-            flex_query = {"sub_category": sub_category};
-        }
+            searchResultCount: count
+        });
 
         ss.search(region, search_category, flex_query)
             .then(function (data) {
