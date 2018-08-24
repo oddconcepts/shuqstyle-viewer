@@ -25,12 +25,6 @@ $(document).ready(function() {
         }
     });
 
-
-    var scroller = new FTScroller(document.querySelector('body'), {
-        bouncing: false,
-        scrollbars: false
-    });
-
     //init apikey
     var apiKey = window.localStorage.getItem("apikey");
 

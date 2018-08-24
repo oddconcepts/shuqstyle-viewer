@@ -4,8 +4,8 @@
 
 html, body {
     height: 100%;
-    background-color: #ffffff;
-    font-family: 'Open Sans', sans-serif;
+    background: #fff;
+    font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif';
 }
 
 /* ==============
@@ -17,7 +17,7 @@ html, body {
     margin: 0 auto;
     height: 60px;
     padding: 0 40px 0 40px;
-    background-color: #ffffff;
+    background: #fff;
 }
 
 .navbar > .title {
@@ -32,6 +32,10 @@ html, body {
 
 .navbar > a.title {
     text-decoration: none;
+}
+
+.title > img {
+    height: 20px;
 }
 
 .navbar > .logo {

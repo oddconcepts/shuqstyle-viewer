@@ -868,6 +868,8 @@ $(document).ready(function() {
             // init region
             init_current_values(results[0]);
 
+            show_results();
+
             show_region_names_and_scores(results);
 
             show_current_region_name_and_score(undefined, results[0]);
@@ -950,8 +952,10 @@ function show_region_names_and_scores(results) {
             var r_json = JSON.stringify(region);
             contents += "<div class='item' id='" + elem_id + "'>" +
                 "<a href='javascript:change_region(" + r_json + ")'>" +
-                CATEGORY[category_id.toString()].str + " #" + v + "</a>" + "<div id='" + progress_id + "'></div>" +
-                "</div>";
+                CATEGORY[category_id.toString()].str.toUpperCase() + " <b>" + parseInt(100*region.score) + "%</b></a></div>";
+
+                // CATEGORY[category_id.toString()].str + " #" + v + "</a>" + "<div id='" + progress_id + "'></div>" +
+                // "</div>";
         }
     }
 
@@ -989,13 +993,9 @@ function show_classification_results(region) {
     show_info(document.getElementById("classification_cate"), cate_labels);
     show_info(document.getElementById("classification_sub_cate"), sub_cate_labels);
 
-    //print attributes info
     if (region.attributes === undefined || region.attributes.length <= 0) {
-        document.getElementById("attribute_divider").style.visibility = "hidden";
-    }
-    else if (region.attributes.length > 0) {
-        document.getElementById("attribute_divider").style.visibility = "visible";
-
+    } else if (region.attributes.length > 0) {
+        document.getElementById("attribute_list").style.display = "block";
         var attribute_labels = [];
         for (var i in region.attributes) {
             if (region.attributes.hasOwnProperty(i)) {
@@ -1008,7 +1008,7 @@ function show_classification_results(region) {
         }
         for (var i in attribute_labels) {
             if (attribute_labels.hasOwnProperty(i) && attribute_labels[i].length === 0) {
-                attribute_labels[i].push('unknown')
+                attribute_labels[i].push('UNKNOWN')
             }
         }
         show_info(document.getElementById("attribute_list"), attribute_labels);
@@ -1020,14 +1020,26 @@ function show_info(ctx, labels) {
         var contents = "";
         for (var attr_a in labels) {
             if (labels.hasOwnProperty(attr_a)) {
-                contents += "<div class='info-block'><div class='sub-title'>" + attr_a
-                    + "</div><div class='classification-attribute'>" + labels[attr_a] + "</div></div>";
+                for (var i=0; i<labels[attr_a].length; i++) {
+                    labels[attr_a][i] = labels[attr_a][i].toUpperCase();
+                }
+                contents += "<div class='item'><div class='value'>#" + labels[attr_a]
+                    + "</div><div class='type'>" + attr_a.toUpperCase() + "</div></div>";
             }
         }
         ctx.innerHTML = contents;
     }
-    else
-        ctx.innerHTML = '<div>' + labels + '</div>';
+    else {
+        if (typeof(labels) === 'string') {
+            labels = labels.toUpperCase();
+        } else {
+            if (typeof(labels[0]) == 'string')
+                labels = labels[0].toUpperCase();
+            else
+                labels = 'UNKNOWN';
+        }
+        ctx.innerHTML = '#' + labels + '';
+    }
 }
 
 function show_chart(ctx, labels, data) {
@@ -1157,7 +1169,7 @@ function init_current_values(region) {
 }
 
 function show_details(selected_region, selected_gender, selected_category, selected_sub_category, selected_attributes) {
-    document.getElementById("details").style.display = "block";
+    document.getElementById("details").style.display = "inline-block";
     show_gender(selected_gender);
     show_category(selected_region.category.code, selected_gender, selected_category);
     show_sub_category(selected_region.category.code, selected_category, selected_sub_category);
@@ -1281,7 +1293,7 @@ function show_attributes(region_category, selected_category, region_attributes, 
 
             for (var type in ATTRIBUTE) {
                 if (ATTRIBUTE.hasOwnProperty(type) && attribute_types.indexOf(type) >= 0) {
-                    contents += "<br/>" + type + "<br/>";
+                    contents += "<div class='label'>" + type.toUpperCase() + "</div>";
                     for (var attr_value in ATTRIBUTE[type]) {
                         if (ATTRIBUTE[type].hasOwnProperty(attr_value)) {
                             var n_value = parseInt(attr_value);
@@ -1378,8 +1390,12 @@ function search(region, gender, categories, sub_category, attributes) {
     api_search(search_cb, region, gendered_category, flex_query, 34);
 }
 
+function show_results() {
+    document.getElementById('results').style.display = 'inline-block';
+}
+
 function show_loader_modal() {
-    document.getElementById("loader_modal").style.display = "table";
+    // document.getElementById("loader_modal").style.display = "table";
 }
 
 function hide_loader_modal() {
