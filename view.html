@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="images/favicon.ico">
     <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/cropper/2.3.3/cropper.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">
     <link rel="stylesheet" href="css/3rdparty/normalize.css">
     <link rel="stylesheet" href="css/3rdparty/goalProgress.css">
     <link rel="stylesheet" href="css/app.css">
@@ -74,7 +75,23 @@
         </div>
     </div>
     <div class="block transparent" id="results_search">
-        <div class="label">SEARCH RESULTS</div>
+        <div class="label">
+            SEARCH RESULTS
+            <div class="mode" id="search_mode">
+                <div class="pretty p-default p-round">
+                    <input type="radio" name="search_mode" value="filter" checked="checked">
+                    <div class="state p-primary-o">
+                        <label>FILTER</label>
+                    </div>
+                </div>
+                <div class="pretty p-default p-round">
+                    <input type="radio" name="search_mode" value="navie">
+                    <div class="state p-primary-o">
+                        <label>NAVIE</label>
+                    </div>
+                </div>
+            </div>
+        </div>        
         <div class="list" id="search_list"></div>
     </div>
     <div class="loader-modal" id="loader_modal"><div class="loader"></div></div>

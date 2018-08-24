@@ -890,6 +890,10 @@ $(document).ready(function() {
         api_detection_url(detection_cb, image_url);
     else if (type === "file")
         api_detection_file(detection_cb, image_url, image_extension);
+
+    $('input[name="search_mode"]').on('click', function (e) {
+        var search_mode = document.querySelector('input[name="search_mode"]:checked').value;
+    });
 });
 
 function error_and_go_home(msg) {
@@ -1389,6 +1393,8 @@ function search(region, gender, categories, sub_category, attributes) {
     if (Object.keys(flex_query).length === 0) {
         flex_query = undefined;
     }
+
+    var search_mode = document.querySelector('input[name="search_mode"]:checked').value;
 
     api_search(search_cb, region, gendered_category, flex_query, 34);
 }

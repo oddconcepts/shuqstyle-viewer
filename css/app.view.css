@@ -278,6 +278,28 @@ html, body {
    Search Results
    ============== */
 
+.mode {
+    display: inline-block;
+    margin-left: 30px;
+}
+
+.mode > label {
+    /*margin-left: 5px;*/
+    /*margin-right: 5px;*/
+}
+
+.pretty.p-default:not(.p-fill) input:checked~.state.p-primary-o label:after {
+    background-color: #9F6DFA !important;
+}
+
+.pretty input:checked~.state.p-primary-o label:before, .pretty.p-toggle .state.p-primary-o label:before {
+    border-color: #9F6DFA;
+    border-top-color: #9F6DFA;
+    border-right-color: #9F6DFA;
+    border-bottom-color: #9F6DFA;
+    border-left-color: #9F6DFA;
+}
+
 .blank-space {
     /*display: block;*/
     /*min-height: 960px;*/
@@ -332,7 +354,6 @@ html, body {
     right: 5px;
     top: 5px;
     background: #9F6DFA;
-    border-radius: 3px;
 }
 
 .grid-item .view-button > img {
