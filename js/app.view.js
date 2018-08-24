@@ -1278,10 +1278,12 @@ function click_attribute(attribute) {
     search(current_region, current_gender, current_categories, current_subcategory, current_attributes);
 }
 
-function show_attributes(region_category, selected_category, region_attributes, selected_attributes) {
-    var contents = "<div class='category-list'>";
+function show_attributes(region_category, selected_category, region_attributes, selected_attributes) {    
     if (selected_category.length === 1 && selected_category[0] === region_category) {
         if (region_attributes !== undefined && region_attributes.length > 0) {
+            var contents = '<div class="divider"></div>';
+            contents += '<div class="category-list">';
+
             var attribute_types = [];
             for (var i in region_attributes) {
                 if (region_attributes.hasOwnProperty(i)) {
@@ -1307,23 +1309,24 @@ function show_attributes(region_category, selected_category, region_attributes, 
                     }
                 }
             }
+
+            contents += "</div>";
+            document.getElementById("searchable_attribute_list").innerHTML = contents;
         }
     }
-    contents += "</div>";
-
-    document.getElementById("searchable_attribute_list").innerHTML = contents;
 }
 
 function search(region, gender, categories, sub_category, attributes) {
     document.getElementById("results_search").style.display = "block";
 
     // clear results
-    document.getElementById("search_list").innerHTML = "<div class='blank-space'>&nbsp;</div>";
+    document.getElementById("search_list").innerHTML = "<div class='blank-space'>&nbsp;</div><div class='grid-sizer'></div><div class='gutter-sizer'></div>";
 
     var $grid = $("#search_list").masonry({
-        columnWidth: 1,
         itemSelector: ".grid-item",
-        gutter: 5
+        columnWidth: '.grid-sizer',
+        percentPosition: true,
+        gutter: '.gutter-sizer'
     });
 
     function addItemElem(name, price, link, image_url, background_pos, cc) {
