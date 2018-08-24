@@ -1006,10 +1006,8 @@ function show_classification_results(region) {
     show_info(document.getElementById("classification_cate"), cate_labels);
     show_info(document.getElementById("classification_sub_cate"), sub_cate_labels);
 
-    if (region.attributes === undefined || region.attributes.length <= 0) {
-        document.getElementById("attribute_label").style.visibility = "hidden";
+    if (region.attributes === undefined || region.attributes.length <= 0) {        
     } else if (region.attributes.length > 0) {
-        document.getElementById("attribute_label").style.visibility = "visible";
         document.getElementById("attribute_list").style.display = "block";
         var attribute_labels = [];
         for (var i in region.attributes) {
@@ -1032,7 +1030,7 @@ function show_classification_results(region) {
 
 function show_info(ctx, labels) {
     if (ctx === document.getElementById("attribute_list")) {
-        var contents = "";
+        var contents = '<div class="divider"></div><div class="label">ATTRIBUTES</div>';
         for (var attr_a in labels) {
             if (labels.hasOwnProperty(attr_a)) {
                 for (var i=0; i<labels[attr_a].length; i++) {
@@ -1359,7 +1357,7 @@ function search(region, gender, categories, sub_category, attributes, flex_mode)
         var elem = document.createElement("div");
         elem.className = "grid-item";
         elem.innerHTML = '<img class="thumbnail" src="images/spacer.gif" style="background-image: url(\'https://img.pxl.ai/' + image_url +
-            '\'); background-position: ' + background_pos + '">' +
+            '\'); background-position: ' + background_pos + '" decode="async">' +
             '<a href="./view.html?type=url&url=' + encodeURIComponent(image_url) +
             '&cc=' + cc + '"><div class="view-button"><img src="images/icon_search.svg"></div></a>' +
             '<div class="name"><a href="' + link + '">' + name + '</a></div>' +
