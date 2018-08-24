@@ -11,7 +11,7 @@ function api_detection_url(cb, image_url) {
 
         ss.detect(image_url)
             .then(function (rs) {
-                return cb(rs);
+                return cb(rs, ss.regionArgMax(rs));
             })
             .then(undefined, function (e) {
                 return cb(null);
@@ -49,7 +49,7 @@ function api_detection_file(cb, base64, extension) {
 
         ss.detect(convertToByteArray(base64), extension)
             .then(function (rs) {
-                return cb(rs);
+                return cb(rs, ss.regionArgMax(rs));
             })
             .then(undefined, function (e) {
                 return cb(null);

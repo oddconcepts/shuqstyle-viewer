@@ -860,7 +860,7 @@ $(document).ready(function() {
         return sortable;
     };
 
-    var detection_cb = function (results) {
+    var detection_cb = function (results, topResult) {
         if (results == null) {
             alert("API request failed. This is most likely due to an invalid API key.");
             location.href = "/";
@@ -872,17 +872,17 @@ $(document).ready(function() {
 
         if (results.length > 0) {
             // init region
-            init_current_values(results[0]);
+            init_current_values(topResult);
 
             show_results();
 
             show_region_names_and_scores(results);
 
-            show_current_region_name_and_score(undefined, results[0]);
+            show_current_region_name_and_score(undefined, topResult);
 
-            window.setTimeout(function () {show_classification_results(results[0]);}, 50);
+            window.setTimeout(function () {show_classification_results(topResult);}, 50);
 
-            init_cropper(image_url, results[0]);
+            init_cropper(image_url, topResult);
 
             show_details(current_region, current_gender, current_categories, current_subcategory, current_attributes);
 
