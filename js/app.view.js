@@ -1007,7 +1007,9 @@ function show_classification_results(region) {
     show_info(document.getElementById("classification_sub_cate"), sub_cate_labels);
 
     if (region.attributes === undefined || region.attributes.length <= 0) {
+        document.getElementById("attribute_label").style.visibility = "hidden";
     } else if (region.attributes.length > 0) {
+        document.getElementById("attribute_label").style.visibility = "visible";
         document.getElementById("attribute_list").style.display = "block";
         var attribute_labels = [];
         for (var i in region.attributes) {
@@ -1254,7 +1256,12 @@ function show_category(region_category, selected_gender, selected_category) {
 }
 
 function click_sub_category(sub_category) {
-    current_subcategory = sub_category;
+    if (current_subcategory === sub_category) {
+        current_subcategory = undefined;
+    }
+    else {
+        current_subcategory = sub_category;
+    }
 
     show_details(current_region, current_gender, current_categories, current_subcategory);
     search(current_region, current_gender, current_categories, current_subcategory, current_attributes,
