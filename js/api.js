@@ -84,7 +84,7 @@ function api_detection_file(cb, base64, extension) {
     }
 }
 
-function api_search(cb, region, search_category, flex_query, count) {
+function api_search(cb, region, search_category, flex_query, flex_mode, count) {
     var use_v1 = window.localStorage.getItem("use_v1");
 
     if (use_v1 === "true") {
@@ -93,7 +93,7 @@ function api_search(cb, region, search_category, flex_query, count) {
             searchResultCount: count
         });
 
-        ss.search(region, search_category, flex_query)
+        ss.search(region, search_category, flex_query, flex_mode)
             .then(function (data) {
                 return cb(data);
             })

@@ -769,6 +769,11 @@ var ATTRIBUTE = {
     }
 };
 
+var FLEX_MODE = {
+    "filter": 1,
+    "naive": 4
+};
+
 var DL_PROXY = '';
 
 var current_categories = undefined;
@@ -776,6 +781,7 @@ var current_gender = undefined;
 var current_subcategory = undefined;
 var current_region = undefined;
 var current_attributes = undefined;
+var current_flexmode = undefined;
 var cropper;
 
 $(document).ready(function() {
@@ -880,7 +886,8 @@ $(document).ready(function() {
 
             show_details(current_region, current_gender, current_categories, current_subcategory, current_attributes);
 
-            search(current_region, current_gender, current_categories, current_subcategory, current_attributes);
+            search(current_region, current_gender, current_categories, current_subcategory, current_attributes,
+                current_flexmode);
         }
     };
 
@@ -892,7 +899,9 @@ $(document).ready(function() {
         api_detection_file(detection_cb, image_url, image_extension);
 
     $('input[name="search_mode"]').on('click', function (e) {
-        var search_mode = document.querySelector('input[name="search_mode"]:checked').value;
+        current_flexmode = FLEX_MODE[document.querySelector('input[name="search_mode"]:checked').value];
+        search(current_region, current_gender, current_categories, current_subcategory, current_attributes,
+            current_flexmode);
     });
 });
 
@@ -1037,7 +1046,7 @@ function show_info(ctx, labels) {
         if (typeof(labels) === 'string') {
             labels = labels.toUpperCase();
         } else {
-            if (typeof(labels[0]) == 'string')
+            if (typeof(labels[0]) === 'string')
                 labels = labels[0].toUpperCase();
             else
                 labels = 'UNKNOWN';
@@ -1121,7 +1130,8 @@ function change_region(region) {
 
     show_details(current_region, current_gender, current_categories, current_subcategory);
 
-    search(current_region, current_gender, current_categories, current_subcategory, current_attributes);
+    search(current_region, current_gender, current_categories, current_subcategory, current_attributes,
+        current_flexmode);
 }
 
 function change_cropper(region) {
@@ -1170,6 +1180,7 @@ function init_current_values(region) {
     current_categories = [region.category.code];
     current_subcategory = undefined;
     current_attributes = [];
+    current_flexmode = FLEX_MODE['filter'];
 }
 
 function show_details(selected_region, selected_gender, selected_category, selected_sub_category, selected_attributes) {
@@ -1185,7 +1196,8 @@ function click_gender(gender) {
 
     show_details(current_region, current_gender, current_categories, current_subcategory);
 
-    search(current_region, current_gender, current_categories, current_subcategory, current_attributes);
+    search(current_region, current_gender, current_categories, current_subcategory, current_attributes,
+        current_flexmode);
 }
 
 function show_gender(gender) {
@@ -1216,7 +1228,8 @@ function click_category(category) {
     current_subcategory = undefined;
 
     show_details(current_region, current_gender, current_categories, current_subcategory);
-    search(current_region, current_gender, current_categories, current_subcategory, current_attributes);
+    search(current_region, current_gender, current_categories, current_subcategory, current_attributes,
+        current_flexmode);
 }
 
 function show_category(region_category, selected_gender, selected_category) {
@@ -1244,7 +1257,8 @@ function click_sub_category(sub_category) {
     current_subcategory = sub_category;
 
     show_details(current_region, current_gender, current_categories, current_subcategory);
-    search(current_region, current_gender, current_categories, current_subcategory, current_attributes);
+    search(current_region, current_gender, current_categories, current_subcategory, current_attributes,
+        current_flexmode);
 }
 
 function show_sub_category(region_category, selected_category, selected_sub_category) {
@@ -1279,7 +1293,8 @@ function click_attribute(attribute) {
     }
 
     show_details(current_region, current_gender, current_categories, current_subcategory, current_attributes);
-    search(current_region, current_gender, current_categories, current_subcategory, current_attributes);
+    search(current_region, current_gender, current_categories, current_subcategory, current_attributes,
+        current_flexmode);
 }
 
 function show_attributes(region_category, selected_category, region_attributes, selected_attributes) {    
@@ -1320,7 +1335,7 @@ function show_attributes(region_category, selected_category, region_attributes, 
     }
 }
 
-function search(region, gender, categories, sub_category, attributes) {
+function search(region, gender, categories, sub_category, attributes, flex_mode) {
     document.getElementById("results_search").style.display = "block";
 
     // clear results
@@ -1394,9 +1409,7 @@ function search(region, gender, categories, sub_category, attributes) {
         flex_query = undefined;
     }
 
-    var search_mode = document.querySelector('input[name="search_mode"]:checked').value;
-
-    api_search(search_cb, region, gendered_category, flex_query, 34);
+    api_search(search_cb, region, gendered_category, flex_query, flex_mode, 34);
 }
 
 function show_results() {
