@@ -1,109 +1,149 @@
-/* ==============
-   Html, Body
-   ============== */
-
 html, body {
     height: 100%;
-    background: #fff;
     font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif';
-}
+    font-size: 14px;
+    color: #555;
+    background: linear-gradient(to bottom right, #8E2DE2, #4A00E0);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}   
 
-/* ==============
-   Navigation Bar
-   ============== */
+/*
+    navbar
+*/
 
 .navbar {
     max-width: 960px;
-    margin: 0 auto;
-    height: 60px;
-    padding: 0 40px 0 40px;
-    background: #fff;
+    padding: 40px;
+    overflow: auto;
+}
+
+.navbar.full {
+    max-width: 100%;
 }
 
 .navbar > .title {
-    margin: 10px 0;
     float: left;
-    font-weight: 600;
-    font-size: 20px;
-    letter-spacing: -2px;
-    color: #000000;
-    line-height: 40px;
+    display: inline-block;
 }
 
-.navbar > a.title {
-    text-decoration: none;
-}
-
-.title > img {
-    height: 20px;
-}
-
-.navbar > .logo {
-    margin: 15px 0;
-    float: right;
-}
-
-.navbar > .logo img {
-    width: 30px;
+.navbar > .title > img {
     height: 30px;
+    margin: 5px 0 5px 0;
+    vertical-align: middle;
 }
 
 .navbar > .menu {
-    margin: 10px 0;
     float: right;
-    color: #ffffff;
-    font-size: 14px;
-    line-height: 40px;
+    vertical-align: middle;
 }
 
-.navbar > .menu > a {
+.navbar > ul { margin: 0; padding: 0; }
+
+.navbar > ul > li {    
     margin-left: 20px;
-    color: #9b9b9b;
-    -o-transition: 1s;
-    -ms-transition: 1s;
-    -moz-transition: 1s;
-    -webkit-transition: 1s;
-    transition: 1s;
-}
-
-.navbar > .menu > a.btn.primary {
-    margin-left: 20px;
-    padding: 8px 16px 8px 16px;
-    background-color: #0088cc;
-    color: #ffffff;
-}
-
-.navbar > .menu > a:hover {
-    color: #ffffff;
-}
-
-.navbar > .menu > .input-url {
-    width: 400px;
-    padding: 0 10px 0 10px;
+    padding: 0;
+    margin: 0;
     border: none;
-    font-weight: 200;
+    display: inline-block;
+    list-style: none;
 }
+
+.navbar > ul > li > .button {
+    line-height: 40px;
+    padding: 0 0 0 20px;
+    display: inline-block;
+    color: #FFF;
+    text-decoration: none;
+    border-radius: 100px;
+}
+
+.navbar > ul > li > .button > i {
+    font-size: 20px;
+}
+
+/*
+    setting
+*/
 
 #setting-div {
-    margin-top: -50px;
+    margin-top: -240px;
     -webkit-transition: margin 0.4s;
     transition: margin 0.4s;
+    padding: 20px;
+    text-align: left;
 }
 
 #input_apikey {
-    width: 90%;
-    height: 50px;
+    width: 100%;
+    height: 40px;
     padding: 10px;
-    display: inline-block;
+    margin-bottom: 20px;    
     box-sizing: border-box;
-    font-size: 15px;
-    font-weight: 200;
+    font-size: 14px;
     border: 1px solid #dcdcdc;
     border-radius: 0;
     -webkit-appearance: none;
+    color: #555;
 }
 
-#input_version {
-    display: inline-block;
-    padding: 5px;
+/*
+    shadow
+*/
+
+.shadow {
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.shadow-sm {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+/*
+    focus
+*/
+
+*:focus {
+    outline: none;
+}
+
+/*
+    block
+*/
+
+.block {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    background: #fff;    
+}
+
+.block.primary {
+    background: #9F6DFA;
+}
+
+.block.transparent {
+    background: transparent;
+}
+
+.block.gradient {
+    background: #fc00ff;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #fff, #9F6DFA);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #fff, #9F6DFA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.block > .label {
+    margin-bottom: 20px;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/*
+    align   
+*/
+
+.text-align-left {
+    text-align: left;
 }

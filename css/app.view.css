@@ -1,10 +1,9 @@
 html, body {
     color: #555;
-    background: #EEE;
-}
-
-.navbar {
-    background: #EEE;
+    background: #FFF;
+    /*background: linear-gradient(to bottom right, #8E2DE2, #4A00E0);*/
+    /*background-repeat: no-repeat;*/
+    /*background-attachment: fixed;    */
 }
 
 /* ===============
@@ -37,46 +36,6 @@ html, body {
     z-index: 2;
 }
 
-/* ===============
-   Shadow
-   =============== */
-
-.shadow {
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-}
-
-/* ===============
-   Block
-   =============== */
-
-.block {
-    width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-    text-align: center;
-    background: #fff;    
-}
-
-.block.primary {
-    background: #9F6DFA;
-}
-
-.block.transparent {
-    background: transparent;
-}
-
-.block.gradient {
-    background: #fc00ff;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom, #fff, #9F6DFA);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom, #fff, #9F6DFA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
-.block > .label {
-    margin-bottom: 20px;
-    text-align: left;
-    font-size: 14px;
-    font-weight: 600;
-}
 
 /* ============
    Cropper
@@ -232,6 +191,7 @@ html, body {
     text-align: left;
     font-size: 14px;
     background: #fff;        
+    border: 2px solid #eee;
 }
 
 #details > .label {
@@ -337,6 +297,7 @@ html, body {
     box-sizing: border-box;
     background: #FFF;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    border: 2px solid #ececec;
 }
 
 .grid-item .thumbnail {
