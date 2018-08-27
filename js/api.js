@@ -1,4 +1,4 @@
-var API_HOST        = "https://dl-api.oddconcepts.kr";
+var API_HOST        = "https://api.pxl.ai";
 
 
 function api_detection_url(cb, image_url) {
@@ -6,6 +6,7 @@ function api_detection_url(cb, image_url) {
 
     if (use_v1 === "true") {
         var ss = shuqstyle({
+            apiBase: API_HOST,
             apiKey: window.localStorage.getItem("apikey").toString(),
                 optimizeRegions: false});
 
@@ -44,6 +45,7 @@ function api_detection_file(cb, base64, extension) {
 
     if (use_v1 === "true") {
         var ss = shuqstyle({
+            apiBase: API_HOST,
             apiKey: window.localStorage.getItem("apikey").toString(),
             optimizeRegions: false});
 
@@ -89,6 +91,7 @@ function api_search(cb, region, search_category, flex_query, flex_mode, count) {
 
     if (use_v1 === "true") {
         var ss = shuqstyle({
+            apiBase: API_HOST,
             apiKey: window.localStorage.getItem("apikey").toString(),
             searchResultCount: count
         });
