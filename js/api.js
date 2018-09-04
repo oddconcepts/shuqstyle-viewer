@@ -1,15 +1,7 @@
-var API_HOST        = "https://api.pxl.ai";
-
-
 function api_detection_url(cb, image_url) {
     var use_v1 = window.localStorage.getItem("use_v1");
 
     if (use_v1 === "true") {
-        var ss = shuqstyle({
-            apiBase: API_HOST,
-            apiKey: window.localStorage.getItem("apikey").toString(),
-                optimizeRegions: false});
-
         ss.detect(image_url)
             .then(function (rs) {
                 return cb(rs, ss.regionArgMax(rs));
@@ -44,11 +36,6 @@ function api_detection_file(cb, base64, extension) {
     base64 = base64.replace("data:" + extension + ";base64,", "");
 
     if (use_v1 === "true") {
-        var ss = shuqstyle({
-            apiBase: API_HOST,
-            apiKey: window.localStorage.getItem("apikey").toString(),
-            optimizeRegions: false});
-
         ss.detect(convertToByteArray(base64), extension)
             .then(function (rs) {
                 return cb(rs, ss.regionArgMax(rs));
@@ -90,12 +77,7 @@ function api_search(cb, region, search_category, flex_query, flex_mode, count) {
     var use_v1 = window.localStorage.getItem("use_v1");
 
     if (use_v1 === "true") {
-        var ss = shuqstyle({
-            apiBase: API_HOST,
-            apiKey: window.localStorage.getItem("apikey").toString(),
-            searchResultCount: count
-        });
-
+        ss.config({'searchResultCount': count});
         ss.search(region, search_category, flex_query, flex_mode)
             .then(function (data) {
                 return cb(data);
