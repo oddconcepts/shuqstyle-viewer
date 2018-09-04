@@ -7,7 +7,7 @@ var ss = shuqstyle({
 
 
 $(document).ready(function() {
-    if (window.localStorage.getItem("local")  === "true") {
+    if (window.localStorage.getItem("local")  === "True") {
         API_HOST = "http://0.0.0.0:5000";
         ss.config({'apiBase': API_HOST, 'local': true})
     }
