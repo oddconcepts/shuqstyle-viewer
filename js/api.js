@@ -7,7 +7,7 @@ function api_detection_url(cb, image_url) {
                 return cb(rs, ss.regionArgMax(rs));
             })
             .then(undefined, function (e) {
-                return cb(null);
+                return cb(e.toString());
             })
     }
     else {

@@ -861,8 +861,8 @@ $(document).ready(function() {
     };
 
     var detection_cb = function (results, topResult) {
-        if (results == null) {
-            alert("API request failed. This is most likely due to an invalid API key.");
+        if ((typeof results) === "string") {
+            alert(results);
             location.href = "/";
         }
         hide_loader_modal();
