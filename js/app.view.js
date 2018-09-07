@@ -916,7 +916,7 @@ function get_gender(gender_code) {
             return F_BIT;
         if (gender_code === "male" || gender_code === "Male")
             return M_BIT;
-        if (gender_code === "unisex" || gender_code === "Both")
+        if (gender_code === "unisex" || gender_code === "Unisex")
             return F_BIT | M_BIT;
         return 0;
     }
@@ -925,7 +925,7 @@ function get_gender(gender_code) {
             return "Female";
         if ((gender_code&GENDER_MASK) === M_BIT)
             return "Male";
-        return "Both";
+        return "Unisex";
     }
 }
 
@@ -989,7 +989,7 @@ function show_classification_results(region) {
     document.getElementById("results_classification").style.display = "block";
 
     //print gender info
-    var gender_labels = (region.gender.code === F_BIT)? ['female']:['male'];
+    var gender_labels = [get_gender(region.gender.code)];
     show_info(document.getElementById("classification_gender"), gender_labels);
 
     //print cloth info
