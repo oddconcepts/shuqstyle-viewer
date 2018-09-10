@@ -871,18 +871,20 @@ $(document).ready(function() {
             results = convert_region_format(results.list);
 
         if (results.length > 0) {
+            var result = topResult === undefined? results[0] : topResult;
+
             // init region
-            init_current_values(topResult);
+            init_current_values(result);
 
             show_results();
 
             show_region_names_and_scores(results);
 
-            show_current_region_name_and_score(undefined, topResult);
+            show_current_region_name_and_score(undefined, result);
 
-            window.setTimeout(function () {show_classification_results(topResult);}, 50);
+            window.setTimeout(function () {show_classification_results(result);}, 50);
 
-            init_cropper(image_url, topResult);
+            init_cropper(image_url, result);
 
             show_details(current_region, current_gender, current_categories, current_subcategory, current_attributes);
 
