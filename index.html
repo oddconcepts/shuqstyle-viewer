@@ -74,8 +74,32 @@
             gutter: '.gutter-sizer'
         });
 
-        for (var i=0; i<16; i++) {
-            var image_url = 'http://viewer.shuq.com/demos/demo_' + zero_pad(i+1, 2) + '.jpg';
+        var demoNum = 16;
+        var demoImgNum = 50;
+
+        var demoImgArr = [];
+
+        for (var i=1; i<=demoImgNum; i++) {
+            var demoImg = 'demo_' + zero_pad(i, 2) + '.jpg';
+            demoImgArr.push(demoImg);
+        }
+
+        /* get array of random demo-images */
+        function shuffle(arr) {
+            var ranNum, temp, i;
+            for (i=arr.length - 1; i>0; i--) {
+                ranNum = Math.floor(Math.random() * (i + 1));
+                temp = arr[i];
+                arr[i] = arr[ranNum];
+                arr[ranNum] = temp;
+            }
+            return arr;
+        }
+
+        var imgArr = shuffle(demoImgArr);
+
+        for (var i=0; i<demoNum; i++) {
+            var image_url = 'http://viewer.shuq.com/demos_new/' + imgArr[i];
             var elem = document.createElement('div');
             elem.className = 'grid-item';
             elem.innerHTML = '<a href="javascript:view_demo(\'' + image_url + '\')"><img class="thumbnail" src="images/spacer.gif" style="background-image: url(\'https://img.pxl.ai/' + 
