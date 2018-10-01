@@ -1008,7 +1008,8 @@ function show_classification_results(region) {
     show_info(document.getElementById("classification_cate"), cate_labels);
     show_info(document.getElementById("classification_sub_cate"), sub_cate_labels);
 
-    if (region.attributes === undefined || region.attributes.length <= 0) {        
+    if (region.attributes === undefined || region.attributes.length <= 0) {
+        document.getElementById("attribute_list").style.display = "none";
     } else if (region.attributes.length > 0) {
         document.getElementById("attribute_list").style.display = "block";
         var attribute_labels = [];
