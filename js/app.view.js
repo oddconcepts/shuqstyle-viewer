@@ -885,11 +885,6 @@ $(document).ready(function() {
             window.setTimeout(function () {show_classification_results(result);}, 50);
 
             init_cropper(image_url, result);
-
-            show_details(current_region, current_gender, current_categories, current_subcategory, current_attributes);
-
-            search(current_region, current_gender, current_categories, current_subcategory, current_attributes,
-                current_flexmode);
         }
     };
 
