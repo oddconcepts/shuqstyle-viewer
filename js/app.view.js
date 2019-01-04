@@ -523,7 +523,7 @@ var ATTRIBUTE = {
         },
         "122": {
             "type": "length_of_sleeve",
-            "en": "tree quarter sleeve",
+            "en": "three quarter sleeve",
             "ko": "7부 소매"
         },
         "123": {
