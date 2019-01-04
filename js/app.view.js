@@ -7,7 +7,10 @@ var SKIRTS = 8;
 var CATEGORY = {
     1: {
         "type": "normal",
-        "sub_categories": [],
+        "sub_categories": [
+            {"id": 261, "str": "dresses"},
+            {"id": 262, "str": "jumpsuits"}
+        ],
         "str": "dresses"
     },
     2: {
