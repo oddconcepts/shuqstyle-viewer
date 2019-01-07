@@ -1,7 +1,7 @@
 var GENDER_MASK = 1610612736;
 var M_BIT = 1073741824;
 var F_BIT = 536870912;
-var DRESSES = 1;
+var ONEPIECE = 1;
 var SKIRTS = 8;
 
 var CATEGORY = {
@@ -11,7 +11,7 @@ var CATEGORY = {
             {"id": 261, "str": "dresses"},
             {"id": 262, "str": "jumpsuits"}
         ],
-        "str": "dresses"
+        "str": "onepiece"
     },
     2: {
         "type": "normal",
@@ -827,7 +827,7 @@ $(document).ready(function() {
                         var region = rs[cate_code][r_idx];
 
                         var d = (region.details !== undefined);
-                        var f = (parseInt(cate_code) & SKIRTS !== 0 || parseInt(cate_code) & DRESSES !== 0);
+                        var f = (parseInt(cate_code) & SKIRTS !== 0 || parseInt(cate_code) & ONEPIECE !== 0);
 
                         region.colors = [];
                         region.gender = {
