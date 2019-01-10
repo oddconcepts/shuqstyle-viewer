@@ -108,3 +108,27 @@ function api_search(cb, region, search_category, flex_query, flex_mode, count) {
         });
     }
 }
+
+function api_analyze(cb, image_url, detection_results) {
+    var use_v1 = window.localStorage.getItem("use_v1");
+
+    if (use_v1 === "true") {
+        var url = API_HOST + "/v1/analyze?url=" + encodeURIComponent(image_url);
+
+        $.ajax({
+            url: url,
+            type: "get",
+            dataType: "json",
+            async: false,
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("ApiKey", window.localStorage.getItem("apikey"));
+            },
+            success: function (data) {
+                return cb(data, detection_results);
+            },
+            error: function (data) {
+                return cb(null);
+            }
+        });
+    }
+}

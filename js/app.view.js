@@ -871,6 +871,7 @@ $(document).ready(function() {
             results = convert_region_format(results.list);
 
         if (results.length > 0) {
+            api_analyze(analyze_cb, image_url, results);
             var result = topResult === undefined? results[0] : topResult;
 
             // init region
@@ -885,6 +886,24 @@ $(document).ready(function() {
             window.setTimeout(function () {show_classification_results(result);}, 50);
 
             init_cropper(image_url, result);
+        }
+    };
+
+    var analyze_cb = function (results, detection_results) {
+        if (results === null || results.status === false) {
+            return
+        }
+        for (var idx in results.results) {
+            if (results.results.hasOwnProperty(idx)) {
+                for (var _idx in detection_results) {
+                    if (detection_results.hasOwnProperty(_idx)) {
+                        if (results.results[idx].id === detection_results[_idx].id) {
+                            detection_results[_idx].attributes = results.results[idx].attributes;
+                            break
+                        }
+                    }
+                }
+            }
         }
     };
 
