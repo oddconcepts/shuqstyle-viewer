@@ -67,7 +67,7 @@ html, body {
 */
 
 #setting-div {
-    margin-top: -240px;
+    margin-top: -200px;
     -webkit-transition: margin 0.4s;
     transition: margin 0.4s;
     padding: 20px;

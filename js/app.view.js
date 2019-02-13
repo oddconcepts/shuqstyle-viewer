@@ -870,10 +870,7 @@ $(document).ready(function() {
         }
         hide_loader_modal();
 
-        if (window.localStorage.getItem('use_v1') === "false")
-            results = convert_region_format(results.list);
-
-        if (results.length > 0) {
+        if (window.localStorage.getItem('api_version') === "v1" && results.length > 0) {
             api_analyze(analyze_cb, image_url, results);
             var result = topResult === undefined? results[0] : topResult;
 
@@ -1394,9 +1391,7 @@ function search(region, gender, categories, sub_category, attributes, flex_mode)
         document.querySelector('.blank-space').style.display = 'none';
         hide_loader_modal();
 
-        if (window.localStorage.getItem("use_v1") === "false")
-            results = convert_search_v0_format(results);
-        if (results.constructor === Array) {
+        if (window.localStorage.getItem('api_version') === "v1" && results.constructor === Array) {
             var result_count = results.length;
 
             for (var i=0; i<result_count; i++) {
