@@ -5,6 +5,9 @@ This is a demo viewer application for the ShuqStyle API.
 
 A demo instance is running at: [https://viewer.shuq.com](https://viewer.shuq.com)
 
+ * Deprecated Versions:
+   * We removed support for API v0 on Feb 13, 2019.
+
 Warning
 -------
 
