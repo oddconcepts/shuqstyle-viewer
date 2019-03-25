@@ -876,21 +876,21 @@ $(document).ready(function() {
     };
 
     var analyze_cb = function (results, detection_results) {
-        if (results === null) {
-            return
-        }
-        for (var idx in results) {
-            if (results.hasOwnProperty(idx)) {
-                for (var _idx in detection_results) {
-                    if (detection_results.hasOwnProperty(_idx)) {
-                        if (results[idx].id === detection_results[_idx].id) {
-                            detection_results[_idx].attributes = results[idx].attributes;
-                            break
+        if (results !== null) {
+            for (var idx in results) {
+                if (results.hasOwnProperty(idx)) {
+                    for (var _idx in detection_results) {
+                        if (detection_results.hasOwnProperty(_idx)) {
+                            if (results[idx].id === detection_results[_idx].id) {
+                                detection_results[_idx].attributes = results[idx].attributes;
+                                break
+                            }
                         }
                     }
                 }
             }
         }
+
         var result = detection_results[0];
 
         // init region

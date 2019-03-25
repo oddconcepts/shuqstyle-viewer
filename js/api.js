@@ -44,7 +44,7 @@ function api_analyze(cb, image_url, detection_results) {
                 cb(data, detection_results);
             })
             .then(undefined, function (e) {
-                return cb(null);
+                return cb(null, detection_results);
             });
     }
 }
