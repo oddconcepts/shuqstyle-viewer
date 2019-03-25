@@ -871,7 +871,8 @@ $(document).ready(function() {
         hide_loader_modal();
 
         if (window.localStorage.getItem('api_version') === "v1" && results.length > 0) {
-            api_analyze(analyze_cb, image_url, results);
+            var image_hash = results[0].id.split('_')[0];
+            api_analyze(analyze_cb, "https://img.pxl.ai/"+image_hash, results);
         }
     };
 
