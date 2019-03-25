@@ -1205,7 +1205,7 @@ function show_details(selected_region, selected_gender, selected_category, selec
     show_gender(selected_gender);
     show_category(selected_region.category.code, selected_gender, selected_category);
     show_sub_category(selected_region.category.code, selected_category, selected_sub_category);
-    show_attributes(selected_region.category.code, selected_category, selected_region.attributes, selected_attributes)
+    // show_attributes(selected_region.category.code, selected_category, selected_region.attributes, selected_attributes)
 }
 
 function click_gender(gender) {
