@@ -872,20 +872,6 @@ $(document).ready(function() {
 
         if (window.localStorage.getItem('api_version') === "v1" && results.length > 0) {
             api_analyze(analyze_cb, image_url, results);
-            var result = topResult === undefined? results[0] : topResult;
-
-            // init region
-            init_current_values(result);
-
-            show_results();
-
-            show_region_names_and_scores(results);
-
-            show_current_region_name_and_score(undefined, result);
-
-            window.setTimeout(function () {show_classification_results(result);}, 50);
-
-            init_cropper(image_url, result);
         }
     };
 
@@ -905,6 +891,20 @@ $(document).ready(function() {
                 }
             }
         }
+        var result = detection_results[0];
+
+        // init region
+        init_current_values(result);
+
+        show_results();
+
+        show_region_names_and_scores(detection_results);
+
+        show_current_region_name_and_score(undefined, result);
+
+        window.setTimeout(function () {show_classification_results(result);}, 50);
+
+        init_cropper(image_url, result);
     };
 
     show_loader_modal();
