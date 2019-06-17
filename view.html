@@ -20,10 +20,6 @@
             <img src="/images/logo_pxl_b.png">
         </a>
     </div>
-    <div class="wave-border">
-        <svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" class="wave"><defs></defs><path id="wave-one" d=""/></svg>
-        <svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" class="wave"><defs></defs><path id="wave-two" d=""/></svg>    
-    </div>
     <div class="block primary">
         <div class="cropper-view">
             <div class="image-view" id="image_view" style="">
@@ -56,10 +52,6 @@
             </div>
         </div>        
     </div>
-    <div class="wave-border-inverse">
-        <svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" class="wave"><defs></defs><path id="wave-one-inverse" d=""/></svg>
-        <svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" class="wave"><defs></defs><path id="wave-two-inverse" d=""/></svg>    
-    </div>    
     <div class="block transparent">        
         <div class="label">SEARCH OPTIONS</div>        
         <div class="shadow-sm" id="details">
@@ -103,43 +95,11 @@
     <script src="js/3rdparty/imagesloaded.pkgd.js"></script>
     <script src="js/3rdparty/URI.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
-    <script src="js/3rdparty/wavify.js"></script>
-    <script src="js/3rdparty/jquery.wavify.js"></script>
     <script src="js/utils.js"></script>
     <script src="js/ui.js"></script>
     <script src="js/pxl-compat.js"></script>
     <script src="js/api_config.js"></script>
     <script src="js/api.js"></script>
     <script src="js/app.view.js"></script>
-    <script>
-        $('#wave-one').wavify({
-            height: 10,
-            bones: 4,
-            amplitude: 20,
-            color: '#B289EF',
-            speed: .15
-        });
-        $('#wave-two').wavify({
-            height: 20,
-            bones: 3,
-            amplitude: 20,
-            color: 'rgba(150, 97, 255, 0.7)',
-            speed: .25
-        });
-        $('#wave-one-inverse').wavify({
-            height: 10,
-            bones: 4,
-            amplitude: 20,
-            color: '#B289EF',
-            speed: .15
-        });
-        $('#wave-two-inverse').wavify({
-            height: 20,
-            bones: 3,
-            amplitude: 20,
-            color: 'rgba(150, 97, 255, 0.7)',
-            speed: .25
-        });
-    </script>
 </body>
 </html>

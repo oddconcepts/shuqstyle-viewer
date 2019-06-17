@@ -6,37 +6,6 @@ html, body {
     /*background-attachment: fixed;    */
 }
 
-/* ===============
-   Wave Border
-   =============== */
-
-.wave-border {
-    width: 100%;
-    height: 50px;
-    position: relative;
-}
-
-.wave-border-inverse {
-    width: 100%;
-    height: 50px;
-    position: relative;
-    -ms-transform: rotate(180deg);
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg);
-}
-
-.wave {
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 1;
-}
-
-.wave + .wave {
-    z-index: 2;
-}
-
-
 /* ============
    Cropper
    ============ */
