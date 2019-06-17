@@ -897,8 +897,6 @@ $(document).ready(function() {
         // init region
         init_current_values(result);
 
-        show_results();
-
         show_region_names_and_scores(detection_results);
 
         show_current_region_name_and_score(undefined, result);
@@ -1431,10 +1429,6 @@ function search(region, gender, categories, sub_category, attributes, flex_mode)
     }
 
     api_search(search_cb, region, gendered_category, flex_query, flex_mode, 34);
-}
-
-function show_results() {
-    document.getElementById('results').style.display = 'inline-block';
 }
 
 function show_loader_modal() {
