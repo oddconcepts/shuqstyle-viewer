@@ -1357,29 +1357,15 @@ function show_attributes(region_category, selected_category, region_attributes, 
 }
 
 function search(region, gender, categories, sub_category, attributes, flex_mode) {
-    document.getElementById("results_search").style.display = "block";
-
-    // clear results
-    document.getElementById("search_list").innerHTML = "<div class='blank-space'>&nbsp;</div><div class='grid-sizer'></div><div class='gutter-sizer'></div>";
-
-    var $grid = $("#search_list").masonry({
-        itemSelector: ".grid-item",
-        columnWidth: '.grid-sizer',
-        percentPosition: true,
-        gutter: '.gutter-sizer'
-    });
-
-    function addItemElem(name, price, link, image_url, background_pos, cc) {
-        var elem = document.createElement("div");
-        elem.className = "grid-item";
-        elem.innerHTML = '<img class="thumbnail" src="images/spacer.gif" style="background-image: url(\'https://img.pxl.ai/' + image_url +
-            '\'); background-position: ' + background_pos + '" decode="async">' +
-            '<a href="./view.html?type=url&url=' + encodeURIComponent(image_url) +
-            '&cc=' + cc + '"><div class="view-button"><img src="images/icon_search.svg"></div></a>' +
-            '<div class="name"><a href="' + link + '">' + name + '</a></div>' +
-            '<div class="price"><a href="' + link + '">' + commify(price) + ' KRW</a></div>';
-        var $elem = $(elem);
-        $grid.append($elem).masonry("appended", $elem);
+    function getItemHTML(name, price, link, image_url, background_pos, cc) {
+        return `<div class="grid-item">
+          <img class="thumbnail" src="images/spacer.gif" style="background-image: url('https://img.pxl.ai/${image_url}'); background-position: ${background_pos}" decode="async">
+          <a href="./view.html?type=url&url=${encodeURIComponent(image_url)}&cc=${cc}">
+            <div class="view-button"><img src="images/icon_search.svg"></div>
+          </a>
+          <div class="name"><a href="${link}">${name}</a></div>
+          <div class="price"><a href="${link}">${commify(price)} KRW</a></div>
+        </div>`;
     }
 
     var convert_search_v0_format = function (results) {
@@ -1387,23 +1373,18 @@ function search(region, gender, categories, sub_category, attributes, flex_mode)
     };
 
     var search_cb = function (results) {
-        document.querySelector('.blank-space').style.display = 'none';
-        hide_loader_modal();
-
         if (window.localStorage.getItem('api_version') === "v1" && results.constructor === Array) {
             var result_count = results.length;
+            var html = [];
 
             for (var i=0; i<result_count; i++) {
                 var r = results[i].region;
                 var backgroundPos = Math.floor((r[0] + (r[2] - r[0]) / 2) / 500 * 100) + '% ';
-                addItemElem(results[i].name, results[i].price, results[i].product_url, results[i].image_url, backgroundPos,
-                    results[i].category_code);
+                html.push(getItemHTML(results[i].name, results[i].price, results[i].product_url, results[i].image_url, backgroundPos,
+                    results[i].category_code));
             }
         }
-
-        $grid.imagesLoaded(function() {
-            $grid.masonry();
-        });
+        $("#search_list").html(html.join(''));
     };
 
     show_loader_modal();

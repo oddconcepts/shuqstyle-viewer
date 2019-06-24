@@ -231,34 +231,27 @@ html, body {
 }
 
 #results_search {
-    display: none;
-    margin: 50px 50px 0 380px;
+    margin: 50px 50px 50px 380px;
 }
 
 #search_list {
-    /*background: blue;*/
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-column-gap: 8px;
+    grid-row-gap: 8px;
 }
 
 #results_search > .label {
-    text-align: left;
-    font-weight: 600;
+    margin-bottom: 16px;
 }
 
 /* ======
    Grid Item
    ====== */
 
-.grid-sizer {
-    width: 49%;
-}
-
-.gutter-sizer { 
-    width: 2%; 
-}
-
 .grid-item {
-    width: 49%;
-    margin-bottom: 2%;
+    position: relative;
+    width: 100%;
     box-sizing: border-box;
     background: #FFF;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
@@ -316,9 +309,6 @@ html, body {
 }
 
 @media screen and (min-width: 768px) {
-    .grid-sizer { width: 13.4%; }
-    .grid-item { width: 13.4%; margin-bottom: 1%; }
-    .gutter-sizer { width: 1%; }
     .view-button { display: none; }
     .grid-item:hover .view-button { display: inline-block; }
 }
