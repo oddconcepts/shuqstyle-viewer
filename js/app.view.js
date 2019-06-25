@@ -863,7 +863,7 @@ $(document).ready(function() {
         return sortable;
     };
 
-    var detection_cb = function (results, topResult) {
+    var detection_cb = function (results) {
         if ((typeof results) === "string") {
             alert(results);
             location.href = "/";
