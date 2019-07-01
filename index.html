@@ -47,7 +47,6 @@
     </div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="//cdn.jsdelivr.net/mobile-detect.js/1.3.3/mobile-detect.min.js"></script>
-    <script src="js/3rdparty/masonry.pkgd.js"></script>
     <script src="js/3rdparty/imagesloaded.pkgd.js"></script>    
     <script src="js/utils.js"></script>
     <script src="js/ui.js"></script>
@@ -59,13 +58,6 @@
             n = n + '';
             return n.length >= width ? n : new Array(width - n.length + 1).join('0') + n;
         }
-
-        var $grid = $('#demo').masonry({
-            itemSelector: ".grid-item",
-            columnWidth: '.grid-sizer',
-            percentPosition: true,
-            gutter: '.gutter-sizer'
-        });
 
         var demoNum = 16;
         var demoImgNum = 50;
@@ -90,20 +82,17 @@
         }
 
         var imgArr = shuffle(demoImgArr);
+        var html = [];
 
         for (var i=0; i<demoNum; i++) {
-            var image_url = 'http://viewer.shuq.com/demos_new/' + imgArr[i];
-            var elem = document.createElement('div');
-            elem.className = 'grid-item';
-            elem.innerHTML = '<a href="javascript:view_demo(\'' + image_url + '\')"><img class="thumbnail" src="images/spacer.gif" style="background-image: url(\'https://img.pxl.ai/' + 
-                              image_url + '\');" decode="async"></a>';
-            var $elem = $(elem);
-            $grid.append($elem).masonry('appended', $elem);
+            html.push(`<div class="grid-item">
+                <a href="javascript:view_demo('http://viewer.shuq.com/demos_new/${imgArr[i]}')">
+                    <img class="thumbnail" src="images/spacer.gif" style="background-image: url('https://img.pxl.ai/http://viewer.shuq.com/demos_new/${imgArr[i]}');" decode="async">
+                </a>
+            </div>`);
         }
 
-        $grid.imagesLoaded(function() {
-            $grid.masonry();
-        });
+        $("#demo").html(html.join(''));
     </script>
 </body>
 </html>
