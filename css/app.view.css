@@ -32,12 +32,13 @@ html, body {
 
 #crop-area {
     position: absolute;
-    top: 30%;
-    right: 30%;
-    bottom: 30%;
-    left: 30%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
     width: auto;
     height: auto;
+    transition: top 0.12s, left 0.12s, right 0.12s, bottom 0.12s;
 }
 #crop-area:after {
     position: absolute;
@@ -148,7 +149,6 @@ html, body {
    ====================== */
 
 #results_classification {
-    display: none;
     text-align: left;
 }
 

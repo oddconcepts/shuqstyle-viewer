@@ -815,6 +815,8 @@ $(document).ready(function() {
     if (image_url === undefined)
         error_and_go_home("Image url does not exist.");
 
+    document.getElementById("thumbnail_view").src = image_url;
+
     var convert_region_format = function (regions) {
         var rs = JSON.parse(JSON.stringify(regions));
         var sortable = [];
@@ -902,7 +904,7 @@ $(document).ready(function() {
 
         window.setTimeout(function () {show_classification_results(result);}, 50);
 
-        init_cropper(image_url, result);
+        change_region(result);
     };
 
     show_loader_modal();
@@ -1000,8 +1002,6 @@ function show_region_names_and_scores(results) {
 }
 
 function show_classification_results(region) {
-    document.getElementById("results_classification").style.display = "block";
-
     //print gender info
     var gender_labels = [get_gender(region.gender.code)];
     show_info(document.getElementById("classification_gender"), gender_labels);
@@ -1068,52 +1068,6 @@ function show_info(ctx, labels) {
         }
         ctx.innerHTML = '#' + labels + '';
     }
-}
-
-function show_chart(ctx, labels, data) {
-    var myChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: labels,
-            datasets: [{
-                data: data,
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255,99,132,1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            legend: {
-                display: false
-            },
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero:true
-                    }
-                }]
-            }
-        }
-    });
-}
-
-function init_cropper(url, region) {
-    document.getElementById("thumbnail_view").src = url;
-                change_region(region)
 }
 
 function change_region(region) {
