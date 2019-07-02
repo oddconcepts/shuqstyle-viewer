@@ -785,7 +785,6 @@ var current_subcategory = undefined;
 var current_region = undefined;
 var current_attributes = undefined;
 var current_flexmode = undefined;
-var cropper;
 
 $(document).ready(function() {
     var uri = new URI(location.href);
@@ -1114,24 +1113,7 @@ function show_chart(ctx, labels, data) {
 
 function init_cropper(url, region) {
     document.getElementById("thumbnail_view").src = url;
-
-    cropper = $("#thumbnail_view").cropper({
-        guides: false,
-        highlight: false,
-        zoomable: false,
-        checkCrossOrigin: false,
-        viewMode: 2,
-        crop: function (e) {},
-        built: function() {
-            var image_size_cb = function (width, height) {
                 change_region(region)
-            };
-
-            get_image_size_from_url(image_size_cb, url);
-        }
-    });
-
-    cropper.cropper("disable");
 }
 
 function change_region(region) {
@@ -1151,29 +1133,11 @@ function change_region(region) {
 }
 
 function change_cropper(region) {
-    region = JSON.parse(JSON.stringify(region));
-
-    var image_view = document.getElementById("image_view");
-    var display_width = image_view.clientWidth;
-    var display_height = image_view.clientHeight;
-
-    var display_left = display_width*region.rx1;
-    var display_top = display_height*region.ry1;
-    display_width = display_width*region.rx2 - display_left;
-    display_height = display_height*region.ry2 - display_top;
-
-    // enable cropper
-    $("#thumbnail_view").cropper('enable');
-
-    cropper.cropper("setCropBoxData", {
-        left: display_left,
-        top: display_top,
-        width: display_width,
-        height: display_height
-    });
-
-    // disable cropper
-    $("#thumbnail_view").cropper('disable');
+    const element = document.getElementById('crop-area');
+    element.style.top = `${region.ry1 * 100}%`;
+    element.style.left = `${region.rx1 * 100}%`;
+    element.style.right = `${(1 - region.rx2) * 100}%`;
+    element.style.bottom = `${(1 - region.ry2) * 100}%`;
 }
 
 function show_current_region_name_and_score(old_region, new_region) {
