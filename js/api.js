@@ -39,6 +39,7 @@ function api_search(cb, region, search_category, flex_query, flex_mode, count) {
 
 function api_analyze(cb, image_url, detection_results) {
     if (window.localStorage.getItem("api_version") === "v1") {
+        ss.config({'languages': ['en']});
         ss.analyze(image_url)
             .then(function (data) {
                 cb(data, detection_results);

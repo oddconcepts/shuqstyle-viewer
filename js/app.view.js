@@ -1034,7 +1034,7 @@ function show_classification_results(region) {
                 if (!attribute_labels.hasOwnProperty(attribute.type)) {
                     attribute_labels[attribute.type] = [];
                 }
-                attribute_labels[attribute.type].push(attribute.label);
+                attribute_labels[attribute.type].push(attribute.en);
             }
         }
         for (var i in attribute_labels) {
