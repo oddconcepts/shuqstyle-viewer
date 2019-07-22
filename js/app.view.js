@@ -817,53 +817,6 @@ $(document).ready(function() {
 
     document.getElementById("thumbnail_view").src = image_url;
 
-    var convert_region_format = function (regions) {
-        var rs = JSON.parse(JSON.stringify(regions));
-        var sortable = [];
-
-        for (var cate_code in rs) {
-            if (rs.hasOwnProperty(cate_code)) {
-                for (var r_idx in rs[cate_code]) {
-                    if (rs[cate_code].hasOwnProperty(r_idx)) {
-                        var region = rs[cate_code][r_idx];
-
-                        var d = (region.details !== undefined);
-                        var f = (parseInt(cate_code) & SKIRTS !== 0 || parseInt(cate_code) & ONEPIECE !== 0);
-
-                        region.colors = [];
-                        region.gender = {
-                            'code': d ? get_gender(region.details.sex.label) : f ? F_BIT : GENDER_MASK,
-                            'score': d ? region.details.sex.probability : f ? 1 : 0.5
-                        };
-                        region.sub_category = [];
-                        if (d) {
-                            for (var i = 0; i < region.details.cate_b.length; i++) {
-                                region.sub_category.push(
-                                    {
-                                        'code': region.details.cate_b[i].label,
-                                        'score': region.details.cate_b[i].probability
-                                    })
-                            }
-                        }
-                        region.category = {'code': parseInt(cate_code), 'score': region.score};
-
-                        if (d) delete region['details'];
-                        delete region['x1'];
-                        delete region['x2'];
-                        delete region['y1'];
-                        delete region['y2'];
-
-                        sortable.push(region);
-                    }
-                }
-            }
-        }
-        sortable.sort(function (a, b) {
-            return b.score - a.score;
-        });
-        return sortable;
-    };
-
     var detection_cb = function (results) {
         if ((typeof results) === "string") {
             alert(results);
