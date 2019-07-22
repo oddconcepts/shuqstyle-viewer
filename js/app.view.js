@@ -1225,36 +1225,6 @@ function show_attributes(region_category, selected_category, region_attributes, 
 }
 
 function search(region, gender, categories, sub_category, attributes, flex_mode) {
-    function getItemHTML(name, price, link, image_url, background_pos, cc) {
-        return `<div class="grid-item">
-          <img class="thumbnail" src="images/spacer.gif" style="background-image: url('https://img.pxl.ai/${image_url}'); background-position: ${background_pos}" decode="async">
-          <a href="./view.html?type=url&url=${encodeURIComponent(image_url)}&cc=${cc}">
-            <div class="view-button"><img src="images/icon_search.svg"></div>
-          </a>
-          <div class="name"><a href="${link}">${name}</a></div>
-          <div class="price"><a href="${link}">${commify(price)} KRW</a></div>
-        </div>`;
-    }
-
-    var convert_search_v0_format = function (results) {
-        return results[Object.keys(results)[0]];
-    };
-
-    var search_cb = function (results) {
-        if (window.localStorage.getItem('api_version') === "v1" && results.constructor === Array) {
-            var result_count = results.length;
-            var html = [];
-
-            for (var i=0; i<result_count; i++) {
-                var r = results[i].region;
-                var backgroundPos = Math.floor((r[0] + (r[2] - r[0]) / 2) / 500 * 100) + '% ';
-                html.push(getItemHTML(results[i].name, results[i].price, results[i].product_url, results[i].image_url, backgroundPos,
-                    results[i].category_code));
-            }
-        }
-        $("#search_list").html(html.join(''));
-    };
-
     var gendered_category = gender;
 
     for (var i=0; i<categories.length; i++) {
@@ -1274,6 +1244,24 @@ function search(region, gender, categories, sub_category, attributes, flex_mode)
     if (Object.keys(flex_query).length === 0) {
         flex_query = undefined;
     }
+    api_search(render_result_list, region, gendered_category, flex_query, flex_mode, 34);
+}
 
-    api_search(search_cb, region, gendered_category, flex_query, flex_mode, 34);
+function render_result_list(results) {
+    if (results === null) {
+        return;
+    }
+    const html = results.map(result => {
+        const r = result.region;
+        const backgroundPos = Math.floor((r[0] + (r[2] - r[0]) / 2) / 500 * 100) + '% ';
+        return `<div class="grid-item">
+          <img class="thumbnail" src="images/spacer.gif" style="background-image: url('https://img.pxl.ai/${result.image_url}'); background-position: ${backgroundPos}" decode="async">
+          <a href="./view.html?type=url&url=${encodeURIComponent(result.image_url)}&cc=${result.category_code}">
+            <div class="view-button"><img src="images/icon_search.svg"></div>
+          </a>
+          <div class="name"><a href="${result.product_url}">${result.name}</a></div>
+          <div class="price"><a href="${result.product_url}">${commify(result.price)} KRW</a></div>
+        </div>`;
+    });
+    document.getElementById('result-list').innerHTML = html.join('');
 }

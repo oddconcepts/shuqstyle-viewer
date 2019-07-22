@@ -285,7 +285,7 @@ html, body {
     margin: 50px 50px 50px 380px;
 }
 
-#search_list {
+#result-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     grid-column-gap: 8px;
