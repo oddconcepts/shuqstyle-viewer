@@ -49,3 +49,30 @@ function api_analyze(cb, image_url, detection_results) {
             });
     }
 }
+
+function api_recommend(cb, region, search_category, count) {
+    if (window.localStorage.getItem("api_version") === "v1") {
+        var url = API_HOST + "/v1/recommend/stylist/" + region.id +
+            "?category=" + search_category +
+            '&count=' + count;
+        var apikey = window.localStorage.getItem("apikey")
+        var re_apikey = /^[A-Za-z0-9]{4}[a-f0-9]{56}$/g;
+        var is_apikey = apikey.match(re_apikey) ? 1 : 0;
+
+        $.ajax({
+            url: url,
+            type: "get",
+            dataType: "json",
+            async: true,
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader(is_apikey ? "ApiKey" : "bucketname", window.localStorage.getItem("apikey"));
+            },
+            success: function (data) {
+                return cb(data.list);
+            },
+            error: function (data) {
+                return cb(null);
+            }
+        });
+    }
+}

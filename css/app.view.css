@@ -197,8 +197,12 @@ html, body {
    Details
    ============== */
 
-#search-options {
+#api-type {
     margin: 0 50px 0 380px;
+}
+
+#search-options {
+    margin: 50px 50px 0 380px;
 }
 
 #details {
@@ -247,6 +251,44 @@ html, body {
 #details .gender.select, .category.select {
     background: #9F6DFA;
     color: #fff;
+}
+
+/* ========
+   Tab menu
+   ======== */
+
+.tab {
+  overflow: hidden;
+}
+
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ccc;
+}
+
+.tab button:hover {
+  background-color: #ddd;
+}
+
+.tab button.active {
+  text-decoration: underline;
+  color: #555;
+}
+
+.tabcontent {
+  display: none;
+}
+
+.tabcontent.active {
+  display: block;
 }
 
 /* ==============

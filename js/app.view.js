@@ -779,6 +779,9 @@ var FLEX_MODE = {
 
 var DL_PROXY = '';
 
+var CATEGORIES_FOR_RECOMMEND = [2, 4, 8, 16];
+
+var current_result_type = localStorage.getItem('current_result_type') || 'search' || 'recommend';
 var current_categories = undefined;
 var current_gender = undefined;
 var current_subcategory = undefined;
@@ -864,10 +867,11 @@ $(document).ready(function() {
     else if (type === "file")
         api_detection_file(detection_cb, image_url, image_extension);
 
+    init_tab();
+
     $('input[name="search_mode"]').on('click', function (e) {
         current_flexmode = FLEX_MODE[document.querySelector('input[name="search_mode"]:checked').value];
-        search(current_region, current_gender, current_categories, current_subcategory, current_attributes,
-            current_flexmode);
+        search(current_region, current_gender, current_categories, current_subcategory, current_attributes, current_flexmode);
     });
 });
 
@@ -1030,10 +1034,7 @@ function change_region(region) {
 
     show_classification_results(region);
 
-    show_details(current_region, current_gender, current_categories, current_subcategory);
-
-    search(current_region, current_gender, current_categories, current_subcategory, current_attributes,
-        current_flexmode);
+    update_result();
 }
 
 function change_cropper(region) {
@@ -1058,6 +1059,33 @@ function show_current_region_name_and_score(old_region, new_region) {
     $("#" + elem_id).addClass("select");
 }
 
+function init_tab() {
+    [...document.querySelectorAll('#api-type button')].forEach(button => {
+        button.addEventListener('click', click_tab);
+    });
+    update_tab();
+}
+
+function click_tab(event) {
+    const element = event.target;
+    const type = element.getAttribute('data-type');
+    current_result_type = type;
+    localStorage.setItem('current_result_type', type);
+    update_tab();
+    update_result();
+}
+
+function update_tab() {
+    [...document.querySelectorAll('#api-type button')].forEach(button => {
+        const type = button.getAttribute('data-type');
+        if (type === current_result_type) {
+            button.classList.add('active');
+        } else {
+            button.classList.remove('active');
+        }
+    });
+}
+
 function init_current_values(region) {
     current_region = region;
     current_gender = region.gender.code;
@@ -1069,109 +1097,104 @@ function init_current_values(region) {
 
 function show_details(selected_region, selected_gender, selected_category, selected_sub_category, selected_attributes) {
     document.getElementById("details").style.display = "inline-block";
-    show_gender(selected_gender);
-    show_category(selected_region.category.code, selected_gender, selected_category);
-    show_sub_category(selected_region.category.code, selected_category, selected_sub_category);
+    render_gender(selected_gender);
+    render_category(selected_region.category.code, selected_gender, selected_category);
+    render_sub_category(selected_region.category.code, selected_category, selected_sub_category);
     // show_attributes(selected_region.category.code, selected_category, selected_region.attributes, selected_attributes)
 }
 
-function click_gender(gender) {
+function click_gender(event) {
+    event.preventDefault();
+    const gender = parseInt(event.target.getAttribute('data-gender'));
     current_gender = gender;
-
-    show_details(current_region, current_gender, current_categories, current_subcategory);
-
-    search(current_region, current_gender, current_categories, current_subcategory, current_attributes,
-        current_flexmode);
+    update_result();
 }
 
-function show_gender(gender) {
-    var contents = "<div class='gender-list'>";
-    var genders = [M_BIT, F_BIT, GENDER_MASK];
+function render_gender(gender) {
+    const element = document.getElementById("searchable_gender_list");
+    element.innerHTML = `<div class='gender-list'>
+        ${[M_BIT, F_BIT, GENDER_MASK].map(item => {
+            const selected = gender === item ? ' select' : '';
+            return `<a href="#" class="gender${selected}" data-gender="${item}">
+                ${get_gender(item)}
+            </a>`;
+        }).join('')}
+    </div>`;
+    [...element.querySelectorAll('a')].forEach(el => el.addEventListener('click', click_gender));
+}
 
-    for (var i=0; i<genders.length; i++) {
-        if (gender === genders[i]) {
-            contents += "<a class=\"gender select\" >"+get_gender(genders[i])+"</a>";
+function click_category(event) {
+    event.preventDefault();
+    const category = parseInt(event.target.getAttribute('data-category'));
+    if (current_result_type === 'search') {
+        var pos = current_categories.indexOf(category);
+        if (pos >= 0 && current_categories.length > 1) {
+            current_categories.splice(pos, 1);
+        } else if (pos < 0) {
+            current_categories.push(category);
         }
-        else {
-            contents += "<a class=\"gender\" href=\'javascript:click_gender(" + genders[i] + ")\'>"+get_gender(genders[i])+"</a>";
-        }
+        current_subcategory = undefined;
+    } else if (current_result_type === 'recommend') {
+        current_categories = [category];
     }
-    contents += "</div>";
-    document.getElementById("searchable_gender_list").innerHTML = contents;
+    update_result();
 }
 
-function click_category(category) {
-    var pos = current_categories.indexOf(category);
-    if (pos >= 0 && current_categories.length > 1) {
-        current_categories.splice(pos, 1);
-    }
-    else if (pos < 0) {
-        current_categories.push(category);
-    }
-
-    current_subcategory = undefined;
-
-    show_details(current_region, current_gender, current_categories, current_subcategory);
-    search(current_region, current_gender, current_categories, current_subcategory, current_attributes,
-        current_flexmode);
-}
-
-function show_category(region_category, selected_gender, selected_category) {
-    var contents = "<div class='category-list'>";
-
-    for (var id in CATEGORY) {
-        if (CATEGORY[id].type === CATEGORY[region_category.toString()].type) {
-            var n_id = parseInt(id);
-            var name = CATEGORY[id].str;
-            if (selected_category !== undefined && selected_category.indexOf(n_id) < 0) {
-                contents += "<a class=\"category\" href=\'javascript:click_category(" + n_id + ")\'>" + name + "</a>";
+function render_category(region_category, selected_gender, selected_category) {
+    const element = document.getElementById("searchable_category_list");
+    element.innerHTML = `<div class='category-list'>
+        ${Object.keys(CATEGORY).filter(id => {
+            if (current_result_type === 'search') {
+                return CATEGORY[id].type === CATEGORY[region_category.toString()].type;
+            } else if (current_result_type === 'recommend') {
+                return CATEGORIES_FOR_RECOMMEND.includes(region_category) && CATEGORIES_FOR_RECOMMEND.includes(parseInt(id));
             }
-            else {
-                contents += "<a class=\"category select\" href=\'javascript:click_category(" + n_id + ")\'>" + name + "</a>";
-            }
-        }
-    }
-
-    contents += "</div>";
-
-    document.getElementById("searchable_category_list").innerHTML = contents;
+            return false;
+        }).map(id => {
+            const selected = selected_category !== undefined && selected_category.indexOf(parseInt(id)) < 0 ? '' : ' select';
+            return `<a href="#" class="category${selected}" data-category="${parseInt(id)}">
+                ${CATEGORY[id].str}
+            </a>`;
+        }).join('')}
+    </div>`;
+    [...element.querySelectorAll('a')].forEach(el => el.addEventListener('click', click_category));
 }
 
-function click_sub_category(sub_category) {
+function click_sub_category(event) {
+    event.preventDefault();
+    const sub_category = parseInt(event.target.getAttribute('data-sub-category'));
     if (current_subcategory === sub_category) {
         current_subcategory = undefined;
     }
     else {
         current_subcategory = sub_category;
     }
-
-    show_details(current_region, current_gender, current_categories, current_subcategory);
-    search(current_region, current_gender, current_categories, current_subcategory, current_attributes,
-        current_flexmode);
+    update_result();
 }
 
-function show_sub_category(region_category, selected_category, selected_sub_category) {
-    var contents = "<div class='category-list'>";
-    if (selected_category.length === 1 && selected_category[0] === region_category) {
-        var sub_categories = CATEGORY[region_category.toString()]["sub_categories"];
-        for (var i in sub_categories) {
-            if (sub_categories.hasOwnProperty(i)) {
-                var n_id = sub_categories[i].id;
-                var name = sub_categories[i].str;
-                if (selected_sub_category === n_id) {
-                    contents += "<a class=\"category select\" href=\'javascript:click_sub_category(" + n_id + ")\'>" + name + "</a>";
-                }
-                else {
-                    contents += "<a class=\"category\" href=\'javascript:click_sub_category(" + n_id + ")\'>" + name + "</a>";
-                }
-            }
-        }
+function render_sub_category(region_category, selected_category, selected_sub_category) {
+    const element = document.getElementById("searchable_sub_category_list");
+    if (current_result_type === 'recommend') {
+        element.innerHTML = '';
+        return;
     }
-    contents += "</div>";
-
-    document.getElementById("searchable_sub_category_list").innerHTML = contents;
+    if (selected_category.length !== 1 || selected_category[0] !== region_category) {
+        element.innerHTML = '';
+        return;
+    }
+    const sub_categories = CATEGORY[region_category.toString()]["sub_categories"];
+    element.innerHTML = `<div class='category-list'>
+        ${sub_categories.map(sub_category => {
+            const selected = selected_sub_category === sub_category.id ? ' select' : '';
+            return `<a href="#" class="category${selected}" data-sub-category="${sub_category.id}">
+                ${sub_category.str}
+            </a>`;
+        }).join('')}
+    </div>`;
+    [...element.querySelectorAll('a')].forEach(el => el.addEventListener('click', click_sub_category));
 }
 
+/*
 function click_attribute(attribute) {
     var pos = current_attributes.indexOf(attribute);
     if (pos < 0) {
@@ -1181,9 +1204,7 @@ function click_attribute(attribute) {
         current_attributes.splice(pos, 1);
     }
 
-    show_details(current_region, current_gender, current_categories, current_subcategory, current_attributes);
-    search(current_region, current_gender, current_categories, current_subcategory, current_attributes,
-        current_flexmode);
+    update_result();
 }
 
 function show_attributes(region_category, selected_category, region_attributes, selected_attributes) {    
@@ -1223,6 +1244,16 @@ function show_attributes(region_category, selected_category, region_attributes, 
         }
     }
 }
+*/
+
+function update_result() {
+    show_details(current_region, current_gender, current_categories, current_subcategory);
+    if (current_result_type === 'search') {
+        search(current_region, current_gender, current_categories, current_subcategory, current_attributes, current_flexmode);
+    } else if (current_result_type === 'recommend') {
+        recommend(current_region, current_gender, current_categories[0]);
+    }
+}
 
 function search(region, gender, categories, sub_category, attributes, flex_mode) {
     var gendered_category = gender;
@@ -1245,6 +1276,11 @@ function search(region, gender, categories, sub_category, attributes, flex_mode)
         flex_query = undefined;
     }
     api_search(render_result_list, region, gendered_category, flex_query, flex_mode, 34);
+}
+
+function recommend(region, gender, category) {
+    var gendered_category = gender | category;
+    api_recommend(render_result_list, region, gendered_category, 34);
 }
 
 function render_result_list(results) {
