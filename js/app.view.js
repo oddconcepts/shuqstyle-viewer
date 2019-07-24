@@ -1284,7 +1284,9 @@ function recommend(region, gender, category) {
 }
 
 function render_result_list(results) {
-    if (results === null) {
+    const element = document.getElementById('result-list');
+    if (results === null || results === undefined) {
+        element.innerHTML = '';
         return;
     }
     const html = results.map(result => {
@@ -1299,5 +1301,5 @@ function render_result_list(results) {
           <div class="price"><a href="${result.product_url}">${commify(result.price)} KRW</a></div>
         </div>`;
     });
-    document.getElementById('result-list').innerHTML = html.join('');
+    element.innerHTML = html.join('');
 }
