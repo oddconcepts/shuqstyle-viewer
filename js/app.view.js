@@ -1096,11 +1096,11 @@ function init_current_values(region) {
 }
 
 function show_details(selected_region, selected_gender, selected_category, selected_sub_category, selected_attributes) {
-    document.getElementById("details").style.display = "inline-block";
     render_gender(selected_gender);
     render_category(selected_region.category.code, selected_gender, selected_category);
     render_sub_category(selected_region.category.code, selected_category, selected_sub_category);
     // show_attributes(selected_region.category.code, selected_category, selected_region.attributes, selected_attributes)
+    document.getElementById('search_mode').style.display = current_result_type === 'search' ? 'block' : 'none';
 }
 
 function click_gender(event) {

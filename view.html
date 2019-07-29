@@ -72,25 +72,28 @@
             <div class="label small">SUB CATEGORY</div>        
             <div id="searchable_sub_category_list"></div>            
             <div id="searchable_attribute_list"></div>        
+            <div id="search_mode">
+                <div class="label small">MODE</div>
+                    <div class="mode">
+                        <div class="pretty p-default p-round">
+                            <input type="radio" name="search_mode" value="filter" checked="checked">
+                            <div class="state p-primary-o">
+                                <label>FILTER</label>
+                            </div>
+                        </div>
+                        <div class="pretty p-default p-round">
+                            <input type="radio" name="search_mode" value="naive">
+                            <div class="state p-primary-o">
+                                <label>NAIVE</label>
+                            </div>
+                        </div>
+                    </div>
+            </div>
         </div>
     </div>
     <div id="results_search">
         <div class="label">
-            SEARCH RESULTS
-            <div class="mode" id="search_mode">
-                <div class="pretty p-default p-round">
-                    <input type="radio" name="search_mode" value="filter" checked="checked">
-                    <div class="state p-primary-o">
-                        <label>FILTER</label>
-                    </div>
-                </div>
-                <div class="pretty p-default p-round">
-                    <input type="radio" name="search_mode" value="naive">
-                    <div class="state p-primary-o">
-                        <label>NAIVE</label>
-                    </div>
-                </div>
-            </div>
+            RESULTS
         </div>        
         <div id="result-list"></div>
     </div>

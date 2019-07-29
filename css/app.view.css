@@ -208,7 +208,6 @@ html, body {
 #details {
     width: 100%;
     padding: 20px 0 10px;
-    display: none;
     text-align: left;
     font-size: 14px;
 }
@@ -218,7 +217,7 @@ html, body {
     font-weight: 600;
 }
 
-#details > .label.small {
+#details .label.small {
     margin-bottom: 5px;
     font-size: 12px;
     font-weight: 500;
@@ -297,12 +296,6 @@ html, body {
 
 .mode {
     display: inline-block;
-    margin-left: 30px;
-}
-
-.mode > label {
-    /*margin-left: 5px;*/
-    /*margin-right: 5px;*/
 }
 
 .pretty.p-default:not(.p-fill) input:checked~.state.p-primary-o label:after {
@@ -315,12 +308,6 @@ html, body {
     border-right-color: #9F6DFA;
     border-bottom-color: #9F6DFA;
     border-left-color: #9F6DFA;
-}
-
-.blank-space {
-    /*display: block;*/
-    /*min-height: 960px;*/
-    /*height: 960px;*/
 }
 
 #results_search {
