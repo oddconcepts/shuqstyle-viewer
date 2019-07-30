@@ -978,17 +978,17 @@ function show_classification_results(region) {
 }
 
 function show_info(ctx, labels) {
-        var contents = '<div class="label">ATTRIBUTES</div>';
-        for (var attr_a in labels) {
-            if (labels.hasOwnProperty(attr_a)) {
-                for (var i=0; i<labels[attr_a].length; i++) {
-                    labels[attr_a][i] = labels[attr_a][i].toUpperCase();
-                }
-                contents += "<div class='item'><div class='value'>#" + labels[attr_a]
-                    + "</div><div class='type'>" + attr_a.toUpperCase() + "</div></div>";
+    var contents = '<div class="label">ATTRIBUTES</div>';
+    for (var attr_a in labels) {
+        if (labels.hasOwnProperty(attr_a)) {
+            for (var i=0; i<labels[attr_a].length; i++) {
+                labels[attr_a][i] = labels[attr_a][i].toUpperCase();
             }
+            contents += "<div class='item'><div class='value'>#" + labels[attr_a]
+                + "</div><div class='type'>" + attr_a.toUpperCase() + "</div></div>";
         }
-        ctx.innerHTML = contents;
+    }
+    ctx.innerHTML = contents;
 }
 
 function change_region(region) {
