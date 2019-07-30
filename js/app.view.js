@@ -953,7 +953,7 @@ function show_region_names_and_scores(results) {
     }
 }
 
-function show_classification_results(region) {
+function show_attributes_list(region) {
     if (region.attributes === undefined || region.attributes.length <= 0) {
         document.getElementById("attribute_list").style.display = "none";
     } else if (region.attributes.length > 0) {
@@ -973,11 +973,11 @@ function show_classification_results(region) {
                 attribute_labels[i].push('UNKNOWN')
             }
         }
-        show_info(document.getElementById("attribute_list"), attribute_labels);
+        render_attributes_list(document.getElementById("attribute_list"), attribute_labels);
     }
 }
 
-function show_info(ctx, labels) {
+function render_attributes_list(ctx, labels) {
     var contents = '<div class="label">ATTRIBUTES</div>';
     for (var attr_a in labels) {
         if (labels.hasOwnProperty(attr_a)) {
@@ -999,7 +999,7 @@ function change_region(region) {
 
     show_current_region_name_and_score(old_region, region);
 
-    show_classification_results(region);
+    show_attributes_list(region);
 
     update_result();
 }
