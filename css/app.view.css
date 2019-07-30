@@ -145,37 +145,14 @@ html, body {
 }
 
 /* ======================
-   Classification Results
+   Attributes list
    ====================== */
-
-#results_classification {
-    text-align: left;
-}
-
-#results_classification > .details-list {
-    margin-top: 5px;
-}
-
-#results_classification .item {    
-    margin: 10px 10px 0 0;
-    padding: 0;
-    font-size: 14px;
-    display: inline-block;    
-}
-
-#results_classification .item > .type {    
-    font-size: 12px;    
-}
-
-#results_classification .item > .value {        
-    color: #9F6DFA;
-    font-weight: 600;
-}
 
 #attribute_list {
     display: none;
     text-align: left;
     margin-top: 5px;
+    text-align: left;
 }
 
 #attribute_list > .item {
@@ -191,6 +168,10 @@ html, body {
 #attribute_list .item .value {
     color: #9F6DFA;
     font-weight: 600;
+}
+
+#attribute_list .item .type {
+    font-size: 12px;
 }
 
 /* ==============

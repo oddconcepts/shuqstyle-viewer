@@ -857,8 +857,6 @@ $(document).ready(function() {
 
         show_current_region_name_and_score(undefined, result);
 
-        window.setTimeout(function () {show_classification_results(result);}, 50);
-
         change_region(result);
     };
 
@@ -956,24 +954,6 @@ function show_region_names_and_scores(results) {
 }
 
 function show_classification_results(region) {
-    //print gender info
-    var gender_labels = [get_gender(region.gender.code)];
-    show_info(document.getElementById("classification_gender"), gender_labels);
-
-    //print cloth info
-    var categories = CATEGORY[region.category.code.toString()];
-    var cate_labels = categories.str;
-    var sub_categories = CATEGORY[region.category.code.toString()]["sub_categories"];
-    var sub_cate_labels = [];
-    for (var i in sub_categories) {
-        if (sub_categories.hasOwnProperty(i) && sub_categories[i].id === region.sub_category.code) {
-            sub_cate_labels.push(sub_categories[i].str);
-            break;
-        }
-    }
-    show_info(document.getElementById("classification_cate"), cate_labels);
-    show_info(document.getElementById("classification_sub_cate"), sub_cate_labels);
-
     if (region.attributes === undefined || region.attributes.length <= 0) {
         document.getElementById("attribute_list").style.display = "none";
     } else if (region.attributes.length > 0) {
@@ -998,8 +978,7 @@ function show_classification_results(region) {
 }
 
 function show_info(ctx, labels) {
-    if (ctx === document.getElementById("attribute_list")) {
-        var contents = '<div class="divider"></div><div class="label">ATTRIBUTES</div>';
+        var contents = '<div class="label">ATTRIBUTES</div>';
         for (var attr_a in labels) {
             if (labels.hasOwnProperty(attr_a)) {
                 for (var i=0; i<labels[attr_a].length; i++) {
@@ -1010,18 +989,6 @@ function show_info(ctx, labels) {
             }
         }
         ctx.innerHTML = contents;
-    }
-    else {
-        if (typeof(labels) === 'string') {
-            labels = labels.toUpperCase();
-        } else {
-            if (typeof(labels[0]) === 'string')
-                labels = labels[0].toUpperCase();
-            else
-                labels = 'UNKNOWN';
-        }
-        ctx.innerHTML = '#' + labels + '';
-    }
 }
 
 function change_region(region) {
