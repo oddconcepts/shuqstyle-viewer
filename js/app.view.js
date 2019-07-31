@@ -1078,8 +1078,9 @@ function click_gender(event) {
 }
 
 function render_gender(gender) {
-    const element = document.getElementById("searchable_gender_list");
-    element.innerHTML = `<div class='gender-list'>
+    const element = document.getElementById("search-option-gender");
+    element.innerHTML = `<div class="label small">GENDER</div>
+    <div class='gender-list'>
         ${[M_BIT, F_BIT, GENDER_MASK].map(item => {
             const selected = gender === item ? ' select' : '';
             return `<a href="#" class="gender${selected}" data-gender="${item}">
@@ -1108,8 +1109,9 @@ function click_category(event) {
 }
 
 function render_category(region_category, selected_gender, selected_category) {
-    const element = document.getElementById("searchable_category_list");
-    element.innerHTML = `<div class='category-list'>
+    const element = document.getElementById("search-option-category");
+    element.innerHTML = `<div class="label small">CATEGORY</div>
+    <div class='category-list'>
         ${Object.keys(CATEGORY).filter(id => {
             if (current_result_type === 'search') {
                 return CATEGORY[id].type === CATEGORY[region_category.toString()].type;
