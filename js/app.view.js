@@ -1062,7 +1062,7 @@ function init_current_values(region) {
     current_flexmode = FLEX_MODE['filter'];
 }
 
-function show_details(selected_region, selected_gender, selected_category, selected_sub_category, selected_attributes) {
+function show_search_options(selected_region, selected_gender, selected_category, selected_sub_category, selected_attributes) {
     render_gender(selected_gender);
     render_category(selected_region.category.code, selected_gender, selected_category);
     render_sub_category(selected_region.category.code, selected_category, selected_sub_category);
@@ -1218,7 +1218,7 @@ function show_attributes(region_category, selected_category, region_attributes, 
 */
 
 function update_result() {
-    show_details(current_region, current_gender, current_categories, current_subcategory);
+    show_search_options(current_region, current_gender, current_categories, current_subcategory);
     if (current_result_type === 'search') {
         search(current_region, current_gender, current_categories, current_subcategory, current_attributes, current_flexmode);
     } else if (current_result_type === 'recommend') {
