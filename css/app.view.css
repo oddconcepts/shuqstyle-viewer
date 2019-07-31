@@ -233,6 +233,13 @@ html, body {
     color: #fff;
 }
 
+#search-option-subcategory {
+    display: none;
+}
+#search-option-subcategory.on {
+    display: block;
+}
+
 /* ========
    Tab menu
    ======== */

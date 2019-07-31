@@ -1140,17 +1140,18 @@ function click_sub_category(event) {
 }
 
 function render_sub_category(region_category, selected_category, selected_sub_category) {
-    const element = document.getElementById("searchable_sub_category_list");
+    const element = document.getElementById("search-option-subcategory");
     if (current_result_type === 'recommend') {
-        element.innerHTML = '';
+        element.classList.remove('on');
         return;
     }
     if (selected_category.length !== 1 || selected_category[0] !== region_category) {
-        element.innerHTML = '';
+        element.classList.remove('on');
         return;
     }
     const sub_categories = CATEGORY[region_category.toString()]["sub_categories"];
-    element.innerHTML = `<div class='category-list'>
+    element.innerHTML = `<div class="label small">SUB CATEGORY</div>
+    <div class='category-list'>
         ${sub_categories.map(sub_category => {
             const selected = selected_sub_category === sub_category.id ? ' select' : '';
             return `<a href="#" class="category${selected}" data-sub-category="${sub_category.id}">
@@ -1159,6 +1160,7 @@ function render_sub_category(region_category, selected_category, selected_sub_ca
         }).join('')}
     </div>`;
     [...element.querySelectorAll('a')].forEach(el => el.addEventListener('click', click_sub_category));
+    element.classList.add('on');
 }
 
 /*
