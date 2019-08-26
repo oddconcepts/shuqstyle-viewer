@@ -1,16 +1,26 @@
 html, body {
     color: #555;
     background: #FFF;
-    /*background: linear-gradient(to bottom right, #8E2DE2, #4A00E0);*/
-    /*background-repeat: no-repeat;*/
-    /*background-attachment: fixed;    */
 }
 
 #detect-result {
-    position: absolute;
-    top: 120px;
-    left: 40px;
-    width: 300px;
+    margin: 0 20px 40px;
+    overflow: hidden;
+}
+@media (min-width: 768px) {
+    #detect-result {
+        position: absolute;
+        top: 120px;
+        left: 40px;
+        width: 200px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+@media (min-width: 1024px) {
+    #detect-result {
+        width: 300px;
+    }
 }
 
 /* ============
@@ -20,8 +30,22 @@ html, body {
 .cropper-view {
     position: relative;
     width: 100%;
-    max-width: 300px;
     overflow: hidden;
+    margin: 0 0 20px;
+}
+@media (min-width: 480px) {
+    .cropper-view {
+        width: 200px;
+        float: left;
+        margin-right: 20px;
+    }
+}
+@media (min-width: 1024px) {
+    .cropper-view {
+        width: 100%;
+        float: none;
+        margin-right: 0;
+    }
 }
 
 .cropper-view .image-view > .thumbnail-view {
@@ -90,26 +114,35 @@ html, body {
    Results
    ================= */
 
-.results {
-    margin: 10px 0 0;
+#results {
+
+}
+@media (min-width: 480px) {
+    #results {
+        margin-left: 220px;
+    }
+}
+@media (min-width: 768px) {
+    #results {
+        margin-left: 0;
+    }
 }
 
-.results .label {    
-    margin-top: 20px;
+#results .label {
     text-align: left;
     font-size: 14px;
     font-weight: 600;
 }
 
-.results a {
+#results a {
     color: #555;
     text-decoration: none;
 }
 
-.results .divider {
+#results .divider {
     width: 100%;
     height: 1px;
-    margin: 20px auto 0 auto;
+    margin: 20px auto;
     background: #eee;
 }
 
@@ -118,7 +151,6 @@ html, body {
    ================= */
 
 #results_detection {
-    display: none;
 }
 
 #detection_list {
@@ -128,7 +160,7 @@ html, body {
 
 #detection_list .item {    
     display: inline-block;
-    font-size: 12px; 
+    font-size: 12px;
 }
 
 #detection_list a {
@@ -148,28 +180,28 @@ html, body {
    ====================== */
 
 #attribute_list {
-    display: none;
-    text-align: left;
-    margin-top: 5px;
-    text-align: left;
 }
-
-#attribute_list > .item {
+#attribute_list ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+#attribute_list li {
     margin: 10px 20px 0 0;
     font-size: 14px;
     display: inline-block;    
 }
 
-#attribute_list .item .label {
+#attribute_list li .label {
     font-size: 12px;
 }
 
-#attribute_list .item .value {
+#attribute_list li .value {
     color: #9F6DFA;
     font-weight: 600;
 }
 
-#attribute_list .item .type {
+#attribute_list li .type {
     font-size: 12px;
 }
 
@@ -178,14 +210,34 @@ html, body {
    ============== */
 
 #api-type {
-    margin: 0 50px 0 380px;
+    margin: 0 20px;
+}
+@media (min-width: 768px) {
+    #api-type {
+        margin: 0 50px 0 280px;
+    }
+}
+@media (min-width: 1024px) {
+    #api-type {
+        margin-left: 380px;
+    }
 }
 
 #search-options {
-    margin: 25px 50px 0 380px;
+    margin: 25px 20px 0;
     font-size: 14px;
     display: flex;
     flex-wrap: wrap;
+}
+@media (min-width: 768px) {
+    #search-options {
+        margin: 25px 50px 0 280px;
+    }
+}
+@media (min-width: 1024px) {
+    #search-options {
+        margin-left: 380px;
+    }
 }
 #search-options > div {
     padding-right: 30px;
@@ -281,14 +333,29 @@ html, body {
 }
 
 #results_search {
-    margin: 50px 50px 50px 380px;
+    margin: 30px 20px 30px;
+}
+@media (min-width: 768px) {
+    #results_search {
+        margin: 50px 50px 50px 280px;
+    }
+}
+@media (min-width: 1024px) {
+    #results_search {
+        margin-left: 380px;
+    }
 }
 
 #result-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     grid-column-gap: 8px;
     grid-row-gap: 8px;
+}
+@media (min-width: 480px) {
+    #result-list {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
 }
 
 #results_search > .label {

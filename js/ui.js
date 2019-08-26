@@ -35,7 +35,7 @@ function show_api_key_scrollin() {
     var setting = $('#setting-div');
     if (setting.css('margin-top') === "0px") {
         window.localStorage.setItem("apikey", $('#input_apikey').val());
-        setting.css('margin-top', '-200px');
+        setting.css('margin-top', '-182px');
     }
     else
         setting.css('margin-top', '0px');

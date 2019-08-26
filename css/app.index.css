@@ -4,15 +4,19 @@
 
 .description {
     width: 100%;
-    padding: 60px 40px 80px 40px;
+    padding: 10px 20px 20px 20px;
     box-sizing: border-box;
     font-size: 20px;
     font-weight: 200;
     text-align: center;
     color: #FFF;
 }
-
-@media screen and (min-width: 768px) {
+@media (min-width: 480px) {
+    .description {
+        padding: 60px 40px 80px 40px;
+    }
+}
+@media (min-width: 768px) {
     .description {
         font-size: 32px;
     }
@@ -24,7 +28,12 @@
 
 .user-inputs {
     text-align: center;
-    padding: 40px;
+    padding: 10px 20px;
+}
+@media (min-width: 480px) {
+    .user-inputs {
+        padding: 40px;
+    }
 }
 
 #input_url {
@@ -55,8 +64,13 @@
 */
 
 .demo {
-    margin: 40px 0 0 0;
-    padding: 40px;
+    padding: 20px;
+}
+@media (min-width: 480px) {
+    .demo {
+        margin: 40px 0 0 0;
+        padding: 40px;
+    }
 }
 
 .demo > .label {
@@ -68,7 +82,7 @@
     color: #FFF;
 }
 
-@media screen and (min-width: 768px) {
+@media (min-width: 768px) {
     .demo > .label {
         font-size: 24px;
     }
@@ -80,8 +94,14 @@
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    grid-column-gap: 30px;
-    grid-row-gap: 30px;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+@media (min-width: 480px) {
+    .demo > .list {
+        grid-column-gap: 30px;
+        grid-row-gap: 30px;
+    }
 }
 
 .demo > .list > .grid-item {
@@ -99,6 +119,6 @@
     background-position: center;
 }
 
-@media screen and (min-width: 768px) {
+@media (min-width: 768px) {
     .demo > .list > .grid-sizer { width: 100%; }
 }

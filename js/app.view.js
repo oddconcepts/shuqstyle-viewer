@@ -904,8 +904,6 @@ function get_element_id(region) {
 }
 
 function show_region_names_and_scores(results) {
-    document.getElementById("results_detection").style.display = "block";
-
     var contents = "";
     var progress_list = [];
     var idx_list = {};
@@ -954,10 +952,7 @@ function show_region_names_and_scores(results) {
 }
 
 function show_attributes_list(region) {
-    if (region.attributes === undefined || region.attributes.length <= 0) {
-        document.getElementById("attribute_list").style.display = "none";
-    } else if (region.attributes.length > 0) {
-        document.getElementById("attribute_list").style.display = "block";
+    if (region.attributes.length > 0) {
         var attribute_labels = [];
         for (var i in region.attributes) {
             if (region.attributes.hasOwnProperty(i)) {
@@ -973,22 +968,24 @@ function show_attributes_list(region) {
                 attribute_labels[i].push('UNKNOWN')
             }
         }
-        render_attributes_list(document.getElementById("attribute_list"), attribute_labels);
+        render_attributes_list(attribute_labels);
     }
 }
 
-function render_attributes_list(ctx, labels) {
-    var contents = '<div class="label">ATTRIBUTES</div>';
+function render_attributes_list(labels) {
+    var contents = [];
     for (var attr_a in labels) {
         if (labels.hasOwnProperty(attr_a)) {
             for (var i=0; i<labels[attr_a].length; i++) {
                 labels[attr_a][i] = labels[attr_a][i].toUpperCase();
             }
-            contents += "<div class='item'><div class='value'>#" + labels[attr_a]
-                + "</div><div class='type'>" + attr_a.toUpperCase() + "</div></div>";
+            contents.push(`<li>
+                <div class='value'>#${labels[attr_a]}</div>
+                <div class='type'>${attr_a.toUpperCase()}</div>
+            </li>`);
         }
     }
-    ctx.innerHTML = contents;
+    document.querySelector("#attribute_list ul").innerHTML = contents.join('');
 }
 
 function change_region(region) {
