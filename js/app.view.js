@@ -866,6 +866,7 @@ $(document).ready(function() {
         api_detection_file(detection_cb, image_url, image_extension);
 
     init_tab();
+    init_filter();
 
     $('input[name="search_mode"]').on('click', function (e) {
         current_flexmode = FLEX_MODE[document.querySelector('input[name="search_mode"]:checked').value];
@@ -1047,6 +1048,12 @@ function update_tab() {
         } else {
             button.classList.remove('active');
         }
+    });
+}
+
+function init_filter() {
+    document.querySelector('#search-options .toggle').addEventListener('click', event => {
+        document.querySelector('#search-options').classList.toggle('on');
     });
 }
 

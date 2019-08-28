@@ -211,6 +211,7 @@ html, body {
 
 #api-type {
     margin: 0 20px;
+    float: left;
 }
 @media (min-width: 768px) {
     #api-type {
@@ -224,14 +225,13 @@ html, body {
 }
 
 #search-options {
-    margin: 25px 20px 0;
-    font-size: 14px;
-    display: flex;
-    flex-wrap: wrap;
+    text-align: right;
+    margin: 0 20px;
 }
 @media (min-width: 768px) {
     #search-options {
-        margin: 25px 50px 0 280px;
+        margin-right: 50px;
+        margin-left: 280px;
     }
 }
 @media (min-width: 1024px) {
@@ -239,7 +239,29 @@ html, body {
         margin-left: 380px;
     }
 }
-#search-options > div {
+#search-options .toggle {
+    position: relative;
+    top: -4px;
+    padding: 5px 10px;
+    font-size: 12px;
+    background: #ccc;
+    color: #fff;
+    border: 0 none;
+}
+#search-options.on .toggle {
+    background: #9F6DFA;
+}
+#search-options .options {
+    font-size: 14px;
+    flex-wrap: wrap;
+    margin: 25px 0 40px;
+    display: none;
+    text-align: left;
+}
+#search-options.on .options {
+    display: flex;
+}
+#search-options .options > div {
     padding-right: 30px;
 }
 
@@ -337,7 +359,7 @@ html, body {
 }
 @media (min-width: 768px) {
     #results_search {
-        margin: 50px 50px 50px 280px;
+        margin: 20px 50px 50px 280px;
     }
 }
 @media (min-width: 1024px) {
