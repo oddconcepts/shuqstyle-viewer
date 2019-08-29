@@ -1250,18 +1250,27 @@ function search(region, gender, categories, sub_category, attributes, flex_mode)
     if (Object.keys(flex_query).length === 0) {
         flex_query = undefined;
     }
+    empty_result_list();
     api_search(render_result_list, region, gendered_category, flex_query, flex_mode, 34);
 }
 
 function recommend(region, gender, category) {
     var gendered_category = gender | category;
+    empty_result_list();
     api_recommend(render_result_list, region, gendered_category, 34);
+}
+
+function empty_result_list() {
+    const element = document.getElementById('result-list');
+    element.innerHTML = '';
+    element.classList.add('loading');
 }
 
 function render_result_list(results) {
     const element = document.getElementById('result-list');
+    element.classList.remove('loading');
     if (results === null || results === undefined) {
-        element.innerHTML = '';
+        element.innerHTML = 'No results found.';
         return;
     }
     const html = results.map(result => {
