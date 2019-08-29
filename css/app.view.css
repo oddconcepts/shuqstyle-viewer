@@ -230,7 +230,7 @@ html, body {
 }
 @media (min-width: 768px) {
     #search-options {
-        margin-right: 50px;
+        margin-right: 40px;
         margin-left: 280px;
     }
 }
@@ -359,7 +359,7 @@ html, body {
 }
 @media (min-width: 768px) {
     #results_search {
-        margin: 20px 50px 50px 280px;
+        margin: 20px 40px 50px 280px;
     }
 }
 @media (min-width: 1024px) {
