@@ -1270,7 +1270,7 @@ function render_result_list(results) {
     const element = document.getElementById('result-list');
     element.classList.remove('loading');
     if (results === null || results === undefined) {
-        element.innerHTML = 'No results found.';
+        element.innerHTML = 'Unsupported category.';    // FIXME: It's fake error message.
         return;
     }
     const html = results.map(result => {
