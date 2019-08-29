@@ -1281,7 +1281,7 @@ function render_result_list(results) {
           <a href="./view.html?type=url&url=${encodeURIComponent(result.image_url)}&cc=${result.category_code}">
             <div class="view-button"><img src="images/icon_search.svg"></div>
           </a>
-          <div class="name"><a href="${result.product_url}">${result.name}</a></div>
+          <div class="name"><a href="${result.product_url}">${result.name.replace(/<\/?[^>]+(>|$)/g, "")}</a></div>
           <div class="price"><a href="${result.product_url}">${commify(result.price)} KRW</a></div>
         </div>`;
     });
