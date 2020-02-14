@@ -1,9 +1,9 @@
-ShuqStyle Viewer
-================
+PXL fashion Viewer
+==================
 
-This is a demo viewer application for the ShuqStyle API.
+This is a demo viewer application for the PXL fashion API.
 
-A demo instance is running at: [https://viewer.shuq.com](https://viewer.shuq.com)
+A demo instance is running at: [https://viewer.pxl.ai](https://viewer.pxl.ai)
 
  * Deprecated Versions:
    * We removed support for API v0 on Feb 13, 2019.
