@@ -4,94 +4,18 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, viewport-fit=cover">
-    <title>PXL</title>
-    <link rel="shortcut icon" href="images/favicon.ico">
+    <title>PXL fashion viewer</title>
+    <link rel="shortcut icon" href="/images/favicon.ico">
     <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/3rdparty/normalize.css">
-    <link rel="stylesheet" href="css/app.css">
-    <link rel="stylesheet" href="css/app.index.css">
+    <link rel="stylesheet" href="/css/3rdparty/normalize.css">
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/app.index.css">
+    <link rel="stylesheet" href="/css/app.view.css">
+    <link rel="stylesheet" href="/build/bundle.css">
+    <script defer src='/build/bundle.js'></script>
 </head>
 <body>
-    <div id="api-key-scrollin">
-        <div id="setting-div">
-            <div class="block shadow-sm text-align-left">
-                <div class="label">API KEY</div>
-                <input type="text" id="input_apikey" value="" placeholder="API KEY">
-            </div>
-        </div>
-    </div>
-    <div class="navbar" id="navbar">
-        <a class="title" href="/">
-            <img src="/images/logo_pxl_w.png">           
-        </a>
-        <ul class="menu">
-            <li><a class="button" href="javascript:show_api_key_scrollin()" id="settings"><i class="fas fa-cog"></i></a></li>
-        </ul>
-    </div>
-    <div class="description">
-        <div><b>Artificial Intelligence</b></div>
-        <div>Visual <b>Fashion</b> Analysis Platform</div>
-    </div>
-    <div class="user-inputs">        
-        <input class="shadow-sm" type="text" id="input_url" value="" placeholder="IMAGE URL">
-        <a class="button-upload" href="javascript:document.getElementById('file').click()"><i class="fas fa-file-upload"></i></a>
-        <input type="file" name="file" id="file" onchange="upload()" style="display: none;">        
-    </div>
-    <div class="demo">
-        <div class="label">Demo Images</div>
-        <div class="list" id="demo">
-            <div class='grid-sizer'></div><div class='gutter-sizer'></div>
-        </div>
-    </div>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="//cdn.jsdelivr.net/mobile-detect.js/1.3.3/mobile-detect.min.js"></script>
-    <script src="js/utils.js"></script>
-    <script src="js/ui.js"></script>
-    <script type="text/javascript">
-        if (window.localStorage.getItem("local")  === null) {
-            window.localStorage.setItem("local", "{{ local }}")
-        }
-        function zero_pad(n, width) {
-            n = n + '';
-            return n.length >= width ? n : new Array(width - n.length + 1).join('0') + n;
-        }
-
-        var demoNum = 16;
-        var demoImgNum = 50;
-
-        var demoImgArr = [];
-
-        for (var i=1; i<=demoImgNum; i++) {
-            var demoImg = 'demo_' + zero_pad(i, 2) + '.jpg';
-            demoImgArr.push(demoImg);
-        }
-
-        /* get array of random demo-images */
-        function shuffle(arr) {
-            var ranNum, temp, i;
-            for (i=arr.length - 1; i>0; i--) {
-                ranNum = Math.floor(Math.random() * (i + 1));
-                temp = arr[i];
-                arr[i] = arr[ranNum];
-                arr[ranNum] = temp;
-            }
-            return arr;
-        }
-
-        var imgArr = shuffle(demoImgArr);
-        var html = [];
-
-        for (var i=0; i<demoNum; i++) {
-            html.push(`<div class="grid-item">
-                <a href="javascript:view_demo('http://viewer.pxl.ai/demos_new/${imgArr[i]}')">
-                    <img class="thumbnail" src="images/spacer.gif" style="background-image: url('https://img.pxl.ai/https://viewer.pxl.ai/demos_new/${imgArr[i]}');" decode="async">
-                </a>
-            </div>`);
-        }
-
-        $("#demo").html(html.join(''));
-    </script>
 </body>
 </html>

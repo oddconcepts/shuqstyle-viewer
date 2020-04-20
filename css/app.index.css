@@ -9,7 +9,6 @@
     font-size: 20px;
     font-weight: 200;
     text-align: center;
-    color: #FFF;
 }
 @media (min-width: 480px) {
     .description {
@@ -79,7 +78,6 @@
     padding-bottom: 20px;
     font-size: 20px;  
     font-weight: 200;   
-    color: #FFF;
 }
 
 @media (min-width: 768px) {

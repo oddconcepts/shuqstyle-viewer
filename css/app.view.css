@@ -10,7 +10,7 @@ html, body {
 @media (min-width: 768px) {
     #detect-result {
         position: absolute;
-        top: 120px;
+        top: 0;
         left: 40px;
         width: 200px;
         margin-left: 0;
@@ -115,7 +115,7 @@ html, body {
    ================= */
 
 #results {
-
+    padding-bottom: 20px;
 }
 @media (min-width: 480px) {
     #results {
@@ -168,6 +168,7 @@ html, body {
     margin: 10px 10px 0 0;
     padding: 5px 10px 5px 10px;    
     background: rgba(0, 0, 0, 0.05);
+    text-transform: uppercase;
 }
 
 #detection_list .select > a {
@@ -199,10 +200,12 @@ html, body {
 #attribute_list li .value {
     color: #9F6DFA;
     font-weight: 600;
+    text-transform: uppercase;
 }
 
 #attribute_list li .type {
     font-size: 12px;
+    text-transform: uppercase;
 }
 
 /* ==============
@@ -354,31 +357,18 @@ html, body {
     border-left-color: #9F6DFA;
 }
 
-#results_search {
+#result-list {
+    position: relative;
     margin: 30px 20px 30px;
 }
 @media (min-width: 768px) {
-    #results_search {
+    #result-list {
         margin: 20px 40px 50px 280px;
     }
 }
 @media (min-width: 1024px) {
-    #results_search {
-        margin-left: 380px;
-    }
-}
-
-#result-list {
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    grid-column-gap: 8px;
-    grid-row-gap: 8px;
-    min-height: 200px;
-}
-@media (min-width: 480px) {
     #result-list {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        margin-left: 380px;
     }
 }
 #result-list:before {
@@ -390,14 +380,24 @@ html, body {
     height: 50px;
     background: url(../images/loading.gif) no-repeat 50% 50% / 100% 100%;
     opacity: 0;
-    transition-delay: 0.8s;
 }
 #result-list.loading:before {
+    transition-delay: 0.8s;
     opacity: 1;
 }
 
-#results_search > .label {
-    margin-bottom: 16px;
+.grid-list {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    grid-column-gap: 8px;
+    grid-row-gap: 8px;
+    min-height: 200px;
+}
+@media (min-width: 480px) {
+    .grid-list {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
 }
 
 /* ======
@@ -437,7 +437,7 @@ html, body {
 }
 
 .grid-item > .name {
-    padding: 10px;
+    margin: 10px;
     max-height: 2.8em;
     min-height: 2.8em;
     overflow: hidden;
