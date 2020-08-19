@@ -385,6 +385,9 @@ html, body {
     transition-delay: 0.8s;
     opacity: 1;
 }
+#result-list h2:first-letter {
+  text-transform: uppercase;
+}
 
 .grid-list {
     position: relative;
