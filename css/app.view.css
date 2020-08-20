@@ -266,12 +266,18 @@ html, body {
 }
 #search-options .options > div {
     padding-right: 30px;
+    padding-bottom: 30px;
+    width: calc(100% - 30px);
 }
-
+@media (min-width: 768px) {
+    #search-options .options > div {
+        width: calc(50% - 30px);
+    }
+}
 #search-options .label.small {
     margin-bottom: 5px;
     font-size: 12px;
-    font-weight: 500;
+    font-weight: bold;
 }
 
 #search-options .category-list .label {
@@ -301,6 +307,18 @@ html, body {
 }
 #search-option-subcategory.on {
     display: block;
+}
+#search-options label {
+    white-space: nowrap;
+    display: inline-block;
+    margin-right: 1.1em;
+    margin-bottom: 0.4em;
+}
+#search-options label:first-letter {
+    text-transform: uppercase;
+}
+#search-options label input {
+    margin-left: 0.3em;
 }
 
 /* ========
