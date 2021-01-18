@@ -181,6 +181,9 @@ html, body {
    ====================== */
 
 #attribute_list {
+    border-top: 1px solid #eee;
+    margin: 20px 0;
+    padding: 20px 0;
 }
 #attribute_list ul {
     margin: 0;
@@ -254,71 +257,34 @@ html, body {
 #search-options.on .toggle {
     background: #9F6DFA;
 }
-#search-options .options {
-    font-size: 14px;
-    flex-wrap: wrap;
-    margin: 25px 0 40px;
+#search-options table {
+    margin: 20px 0;
     display: none;
     text-align: left;
+    table-layout: fixed;
 }
-#search-options.on .options {
-    display: flex;
+#search-options.on table {
+    display: table;
 }
-#search-options .options > div {
-    padding-right: 30px;
-    padding-bottom: 30px;
-    width: calc(100% - 30px);
-}
-@media (min-width: 768px) {
-    #search-options .options > div {
-        width: calc(50% - 30px);
-    }
-}
-#search-options .label.small {
-    margin-bottom: 5px;
-    font-size: 12px;
-    font-weight: bold;
-}
-
-#search-options .category-list .label {
-    margin-top: 10px;
-    font-size: 12px;
-    font-weight: 500;
-}
-
-#search-options .gender, .category {
-    margin: 0 5px 10px 0;
-    padding: 5px 10px 5px 10px;
-    display: inline-block;
-    font-size: 12px;    
-    text-decoration: none;
-    background: #ccc;
-    color: #fff;
-}
-
-#search-options .gender.select,
-#search-options .category.select {
-    background: #9F6DFA;
-    color: #fff;
-}
-
-#search-option-subcategory {
-    display: none;
-}
-#search-option-subcategory.on {
-    display: block;
+#search-options.on th {
+  width: 11em;
+  font-size: 12px;
+  font-weight: bold;
+  vertical-align: top;
+  line-height: 1.9;
 }
 #search-options label {
     white-space: nowrap;
     display: inline-block;
-    margin-right: 1.1em;
+    margin-right: 1.3em;
     margin-bottom: 0.4em;
 }
-#search-options label:first-letter {
-    text-transform: uppercase;
+#search-options label span {
+    display: inline-block;
+    margin-left: 0.15em;
 }
-#search-options label input {
-    margin-left: 0.3em;
+#search-options label span:first-letter {
+    text-transform: uppercase;
 }
 
 /* ========
