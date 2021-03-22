@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/css/app.css">
     <link rel="stylesheet" href="/css/app.index.css">
     <link rel="stylesheet" href="/css/app.view.css">
-    <link rel="stylesheet" href="/build/bundle.GIT_HASH.css">
+    <link rel="stylesheet" href="/build/bundle.css">
     <script defer src='/build/bundle.GIT_HASH.js'></script>
     <script>
     function setDirection(element) {
