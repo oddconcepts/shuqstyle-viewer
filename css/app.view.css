@@ -299,7 +299,7 @@ html, body {
   overflow: hidden;
 }
 
-.tab button {
+.tab a {
   background-color: inherit;
   float: left;
   border: none;
@@ -312,7 +312,7 @@ html, body {
   margin-right: 30px;
 }
 
-.tab button.active {
+.tab .active {
   text-decoration: underline;
   color: #555;
 }
