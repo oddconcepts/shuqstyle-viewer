@@ -1,0 +1,4748 @@
+{
+  "0": "unknown",
+  "50": "pattern.none",
+  "51": "pattern.check",
+  "52": "pattern.stripe",
+  "53": "pattern.flower",
+  "54": "pattern.dot",
+  "55": "pattern.camouflage",
+  "57": "pattern.ethnic",
+  "58": "pattern.paisley",
+  "59": "pattern.geometry",
+  "60": "pattern.plain",
+  "61": "pattern.print",
+  "70": "fabric.none",
+  "71": "fabric.leather",
+  "72": "fabric.cotton",
+  "73": "fabric.knit_or_angora",
+  "74": "fabric.fur",
+  "75": "fabric.denim",
+  "76": "fabric.suede_or_velvet",
+  "78": "fabric.linen",
+  "79": "fabric.lace_or_mesh",
+  "80": "fabric.tweed",
+  "81": "fabric.sequin_or_spangle",
+  "82": "fabric.polyester",
+  "90": "neckline.none",
+  "91": "neckline.round_neck",
+  "92": "neckline.v_neck",
+  "93": "neckline.square_neck",
+  "94": "neckline.turtle_neck",
+  "95": "neckline.off_shoulder",
+  "96": "neckline.one_shoulder",
+  "97": "neckline.henley_neck",
+  "98": "neckline.boat_neck",
+  "99": "neckline.halter_neck",
+  "100": "neckline.collar_neck",
+  "101": "neckline.cowl_neck",
+  "102": "neckline.hood_collar",
+  "103": "neckline.strapless",
+  "104": "neckline.off_or_one_shoulder",
+  "110": "length_of_tops.none",
+  "111": "length_of_tops.crop",
+  "112": "length_of_tops.medium",
+  "113": "length_of_tops.long",
+  "120": "length_of_sleeve.none",
+  "121": "length_of_sleeve.long_sleeve",
+  "122": "length_of_sleeve.three_quarter_sleeve",
+  "123": "length_of_sleeve.short_sleeve",
+  "124": "length_of_sleeve.sleeveless",
+  "130": "kind_of_sleeve.none",
+  "131": "kind_of_sleeve.setin_sleeve",
+  "132": "kind_of_sleeve.drop_shoulder_sleeve",
+  "133": "kind_of_sleeve.raglan_sleeve",
+  "134": "kind_of_sleeve.puff_sleeve",
+  "135": "kind_of_sleeve.trumpet_sleeve",
+  "136": "kind_of_sleeve.dolman_sleeve",
+  "137": "kind_of_sleeve.flutter_sleeve",
+  "150": "shape_of_pants.none",
+  "151": "shape_of_pants.skinny",
+  "152": "shape_of_pants.straight",
+  "153": "shape_of_pants.bootcut",
+  "154": "shape_of_pants.wide",
+  "155": "shape_of_pants.baggy",
+  "156": "shape_of_pants.leggings",
+  "160": "shape_of_skirts.none",
+  "161": "shape_of_skirts.h_line",
+  "162": "shape_of_skirts.flare",
+  "163": "shape_of_skirts.a_line",
+  "164": "shape_of_skirts.pleats",
+  "165": "shape_of_skirts.mermaid",
+  "166": "shape_of_skirts.wrap",
+  "167": "shape_of_skirts.tiered",
+  "168": "shape_of_skirts.asymmetrical",
+  "169": "shape_of_skirts.flare_or_bubble",
+  "171": "type_of_pants.leggings",
+  "172": "type_of_pants.slacks_or_dresspants",
+  "173": "type_of_pants.jeans",
+  "174": "type_of_pants.sweatpants",
+  "175": "type_of_pants.cargopants",
+  "176": "type_of_pants.none",
+  "177": "type_of_pants.unknown",
+  "181": "color.black",
+  "182": "color.gray",
+  "183": "color.silver",
+  "184": "color.white",
+  "185": "color.brown",
+  "187": "color.navy",
+  "188": "color.orange",
+  "189": "color.yellow",
+  "190": "color.gold",
+  "191": "color.green",
+  "192": "color.skyblue",
+  "193": "color.blue",
+  "194": "color.purple",
+  "195": "color.pink",
+  "196": "color.red",
+  "197": "color.beige",
+  "200": "c1.face",
+  "201": "c1.tops",
+  "202": "c1.bottoms",
+  "203": "c1.onepiece",
+  "204": "c1.bags",
+  "205": "c1.shoes",
+  "206": "c2.outerwears",
+  "207": "c2.tops",
+  "208": "c2.underwear_tops",
+  "210": "c2.pants",
+  "211": "c2.skirts",
+  "212": "c2.underwear_bottoms",
+  "214": "c2.onepiece",
+  "215": "c2.underwear_onepiece",
+  "217": "c2.boots",
+  "218": "c2.heels_pumps",
+  "219": "c2.loafers",
+  "220": "c2.sandals",
+  "221": "c2.sneakers",
+  "222": "c2.sports_shoes",
+  "223": "c2.totebags",
+  "224": "c2.shoulder_cross_bags",
+  "225": "c2.clutch_bags",
+  "226": "c2.pouch_bags",
+  "227": "c2.backpacks",
+  "228": "c2.briefcases",
+  "229": "c2.suitcases",
+  "230": "c2.fanny_pack",
+  "231": "c2.sports_bags",
+  "232": "c3.cardigans",
+  "233": "c3.jumpers",
+  "234": "c3.coats",
+  "235": "c3.jackets",
+  "236": "c3.vests",
+  "237": "c3.tshirts",
+  "238": "c3.sweatshirts",
+  "239": "c3.hoodies",
+  "240": "c3.knitwear",
+  "241": "c3.blouses",
+  "242": "c3.shirts",
+  "243": "c3.bustiers",
+  "244": "c3.bras",
+  "245": "c3.camisoles_slips",
+  "246": "c3.running_shirts",
+  "247": "c3.bikini_tops",
+  "248": "c3.rash_guards",
+  "249": "c3.long_pants",
+  "250": "c3.capri_pants",
+  "251": "c3.short_pants",
+  "252": "c3.long_skirts",
+  "253": "c3.midi_skirts",
+  "254": "c3.mini_skirts",
+  "255": "c3.panties",
+  "256": "c3.drawers",
+  "257": "c3.underskirts",
+  "258": "c3.bikini_bottoms",
+  "259": "c3.swim_briefs",
+  "260": "c3.swim_trunks",
+  "261": "c3.dresses",
+  "262": "c3.jumpsuits",
+  "263": "c3.yukatas_kimonos",
+  "264": "c3.bodysuits",
+  "265": "c3.onepiece_swimsuits",
+  "266": "c3.monokinis",
+  "267": "c3.wetsuits",
+  "268": "c3.booties",
+  "269": "c3.ankle_boots",
+  "270": "c3.walkers",
+  "271": "c3.long_boots",
+  "272": "c3.half_boots",
+  "273": "c3.rain_boots",
+  "274": "c3.boots",
+  "275": "c3.pumps",
+  "276": "c3.stiletto_heels",
+  "277": "c3.wedge_heels",
+  "278": "c3.open_toed_heels",
+  "279": "c3.sling_back_shoes",
+  "280": "c3.maryjane",
+  "281": "c3.flat_shoes",
+  "282": "c3.loafers",
+  "283": "c3.bloafers",
+  "284": "c3.oxford_shoes",
+  "285": "c3.flat_sandals",
+  "286": "c3.platform_sandals",
+  "287": "c3.wedge_sandals",
+  "288": "c3.gladiator_sandals",
+  "289": "c3.strap_sandal_heels",
+  "290": "c3.slippers",
+  "291": "c3.flip_flops",
+  "292": "c3.mules",
+  "293": "c3.hightop_shoes",
+  "294": "c3.sneakers",
+  "295": "c3.slipon_shoes",
+  "296": "c3.dress_shoes",
+  "297": "c3.boat_shoes",
+  "298": "c3.sandals",
+  "299": "c3.hiking_shoes",
+  "300": "c3.long_jumpsuits",
+  "301": "c3.midi_jumpsuits",
+  "302": "c1.unknown",
+  "303": "c2.unknown",
+  "304": "c3.unknown",
+  "305": "c3.mini_jumpsuits",
+  "306": "pattern.unknown",
+  "307": "fabric.unknown",
+  "308": "neckline.unknown",
+  "309": "length_of_tops.unknown",
+  "310": "c3.long_overall_pants",
+  "311": "length_of_sleeve.unknown",
+  "312": "kind_of_sleeve.unknown",
+  "313": "shape_of_pants.unknown",
+  "314": "shape_of_skirts.unknown",
+  "315": "c3.midi_overall_pants",
+  "316": "color.unknown",
+  "317": "gender.unknown",
+  "318": "c3.none",
+  "319": "sense.unsupported",
+  "320": "pattern.unsupported",
+  "321": "fabric.unsupported",
+  "322": "neckline.unsupported",
+  "323": "length_of_tops.unsupported",
+  "324": "c3.mini_overall_pants",
+  "325": "length_of_sleeve.unsupported",
+  "326": "kind_of_sleeve.unsupported",
+  "327": "shape_of_pants.unsupported",
+  "328": "shape_of_skirts.unsupported",
+  "330": "color.unsupported",
+  "331": "c3.unsupported",
+  "332": "c2.unsupported",
+  "333": "c1.unsupported",
+  "334": "gender.unsupported",
+  "338": "age_group.unknown",
+  "339": "age_group.young_adults",
+  "340": "age_group.seniors",
+  "341": "age_group.adults",
+  "342": "age_group.unrelated",
+  "343": "c1.accessories",
+  "344": "c2.belts",
+  "345": "c2.gloves",
+  "346": "c2.hats",
+  "347": "c2.inners",
+  "348": "c2.jewelry",
+  "349": "c2.necktie",
+  "350": "c2.scarf_or_muffler",
+  "351": "c2.socks_or_tights",
+  "352": "c2.sunglasses_or_eye_glasses",
+  "353": "c2.wallets",
+  "354": "c2.watches",
+  "355": "c3.arm_warmer",
+  "356": "c3.beanies",
+  "357": "c3.belts",
+  "358": "c3.berets",
+  "359": "c3.bifold_wallets",
+  "360": "c3.bowtie",
+  "361": "c3.bracelets_or_anklets",
+  "362": "c3.bucket_hats",
+  "363": "c3.business_card_holder",
+  "364": "c3.caps_or_snapbacks",
+  "365": "c3.card_holder",
+  "366": "c3.coin_purse",
+  "367": "c3.cufflinks",
+  "368": "c3.earrings",
+  "369": "c3.eye_glasses",
+  "370": "c3.fedora_or_floppy_hat",
+  "371": "c3.finger_gloves",
+  "372": "c3.fingerless_gloves",
+  "374": "c3.long_wallets",
+  "375": "c3.mittens",
+  "376": "c3.money_clips",
+  "377": "c3.muffler",
+  "378": "c3.necklaces",
+  "379": "c3.necktie",
+  "380": "c3.necktie_pin",
+  "381": "c3.rings",
+  "382": "c3.scarf",
+  "383": "c3.socks",
+  "384": "c3.suncaps",
+  "385": "c3.sunglasses",
+  "386": "c3.tights",
+  "387": "c3.top_vests",
+  "388": "c3.watches",
+  "389": "c3.water_leggings",
+  "391": "color.multi",
+  "392": "decoration.beads_or_jewelry",
+  "393": "decoration.buckle_or_belted",
+  "394": "decoration.button",
+  "395": "decoration.chain",
+  "396": "decoration.embroidery",
+  "397": "decoration.none",
+  "399": "decoration.ribbon",
+  "400": "decoration.stud_or_metal",
+  "402": "decoration.tassel_or_fringe",
+  "403": "decoration.unknown",
+  "404": "decoration.zipper",
+  "513": "detail.destroyed",
+  "514": "detail.drape",
+  "515": "detail.anorak",
+  "516": "detail.none",
+  "517": "detail.shirring_or_ruffle",
+  "518": "detail.slit",
+  "519": "detail.unknown",
+  "520": "direction.back",
+  "521": "direction.front",
+  "522": "direction.side",
+  "523": "direction.unknown",
+  "525": "fabric.corduroy",
+  "526": "fabric.fleece",
+  "531": "fabric.wool",
+  "623": "fit.boxy",
+  "624": "fit.slim",
+  "625": "fit.standard",
+  "626": "fit.unknown",
+  "627": "frame_of_eyewear.half_rim",
+  "628": "frame_of_eyewear.metal",
+  "629": "frame_of_eyewear.plastic",
+  "630": "frame_of_eyewear.rimless",
+  "631": "heel_height.high",
+  "632": "heel_height.low",
+  "633": "heel_height.middle",
+  "634": "heel_height.unknown",
+  "635": "heel_thickness.none",
+  "636": "heel_thickness.thick",
+  "637": "heel_thickness.thin",
+  "638": "heel_thickness.unknown",
+  "639": "kind_of_image.item",
+  "640": "kind_of_image.mannequin",
+  "641": "kind_of_image.person",
+  "642": "kind_of_image.unknown",
+  "643": "kind_of_shoes_toes.open_toe",
+  "644": "kind_of_shoes_toes.pointed_toe",
+  "645": "kind_of_shoes_toes.round_toe",
+  "646": "kind_of_shoes_toes.square_toe",
+  "647": "kind_of_shoes_toes.unknown",
+  "653": "length_of_socks_or_tights.crew_or_ankle",
+  "654": "length_of_socks_or_tights.invisible",
+  "656": "length_of_socks_or_tights.lowcut",
+  "657": "length_of_socks_or_tights.knee_or_overknee",
+  "658": "length_of_socks_or_tights.tights",
+  "660": "occasion.date",
+  "669": "occasion.unknown",
+  "740": "pocket.change_pocket",
+  "741": "pocket.flap_pocket",
+  "742": "pocket.jetted_pocket",
+  "743": "pocket.none",
+  "744": "pocket.out_pocket",
+  "745": "pocket.unknown",
+  "746": "pocket.vertical_pocket",
+  "747": "rise.high_waist",
+  "748": "rise.low_waist",
+  "749": "rise.mid_waist",
+  "750": "rise.unknown",
+  "751": "season.autumn",
+  "752": "season.spring",
+  "753": "season.summer",
+  "754": "season.winter",
+  "756": "season.none",
+  "757": "season.unknown",
+  "763": "shape_of_eyewear.aviator",
+  "764": "shape_of_eyewear.cat_eye",
+  "765": "shape_of_eyewear.heart",
+  "766": "shape_of_eyewear.oval",
+  "767": "shape_of_eyewear.pantos",
+  "768": "shape_of_eyewear.round",
+  "769": "shape_of_eyewear.square",
+  "770": "shape_of_eyewear.unknown",
+  "784": "style.elegant_or_luxury",
+  "785": "style.feminine_or_romantic",
+  "786": "style.mannish_or_tomboy",
+  "788": "style.punk_or_rock",
+  "789": "style.retro_or_vintage",
+  "790": "style.sexy",
+  "792": "style.unknown",
+  "793": "wear_or_not.not_wear",
+  "794": "wear_or_not.wear",
+  "798": "decoration.flower",
+  "799": "decoration.fur",
+  "801": "decoration.keyring_or_strap",
+  "803": "decoration.punch",
+  "804": "decoration.quilt",
+  "806": "fabric.chiffon",
+  "807": "fabric.enamel",
+  "808": "fabric.metal",
+  "809": "fabric.plastic",
+  "810": "fabric.rubber",
+  "811": "fabric.silk",
+  "812": "fabric.straw_or_rattan",
+  "813": "fabric.wood",
+  "814": "fastener.belt_or_buckle",
+  "815": "fastener.button_or_snap",
+  "816": "fastener.none",
+  "818": "fastener.strap",
+  "819": "fastener.tie",
+  "820": "fastener.unknown",
+  "821": "fastener.velcro",
+  "822": "fastener.zipper",
+  "824": "leather.cow_leather",
+  "825": "leather.animal_leather",
+  "826": "leather.suede_leather",
+  "827": "leather.none",
+  "828": "length_of_bottoms.floor",
+  "829": "length_of_bottoms.long",
+  "830": "wash.none",
+  "831": "length_of_bottoms.midi",
+  "832": "length_of_bottoms.mini",
+  "833": "length_of_bottoms.none",
+  "834": "length_of_bottoms.unknown",
+  "835": "length_of_bottoms.unsupported",
+  "837": "pattern.animal",
+  "838": "pattern.brand_logo",
+  "841": "c2.swimsuit_tops",
+  "842": "c2.swimsuit_bottoms",
+  "843": "c2.swimsuit_onepiece",
+  "847": "color.mint",
+  "848": "color.olive",
+  "851": "color.light_pink",
+  "852": "color.hot_pink",
+  "853": "color.lavender",
+  "854": "color.wine",
+  "855": "color.rose_gold",
+  "856": "color.beige_or_lightbrown",
+  "860": "color.clear",
+  "863": "direction.sole",
+  "864": "occasion.business_or_formal",
+  "866": "occasion.gym",
+  "867": "occasion.outdoor",
+  "868": "occasion.club_or_nightout",
+  "869": "occasion.casual_or_social",
+  "870": "occasion.home_or_loungewear",
+  "871": "pattern.weaving",
+  "873": "state_of_fastener.closed",
+  "874": "state_of_fastener.opened",
+  "875": "state_of_fastener.unknown",
+  "876": "state_of_fastener.none",
+  "877": "style.casual_or_girlnextdoor",
+  "878": "style.basic_or_minimal",
+  "879": "style.chic_or_trendy",
+  "880": "style.bohemian_or_ethnic",
+  "881": "style.preppy_or_school",
+  "882": "style.artsy_or_vibrant",
+  "883": "style.sporty_or_athleisure",
+  "884": "wash.light",
+  "885": "wash.medium",
+  "886": "wash.dark",
+  "887": "c3.hijabs",
+  "888": "c1.headwear",
+  "889": "c2.jumpsuits_overallpants",
+  "890": "c2.indoor_shoes",
+  "891": "c2.handbags",
+  "892": "c3.cape_coats",
+  "893": "c3.trench_coats",
+  "894": "c3.rider_or_leatherjacket",
+  "895": "c3.blazer_or_suitjackets",
+  "896": "c3.denim_jackets",
+  "897": "c3.trucker_jackets",
+  "898": "c3.aviator_jackets",
+  "899": "c3.bomber_or_blousonjacket",
+  "900": "c3.down_jackets",
+  "901": "c3.parkas",
+  "902": "c3.field_jackets",
+  "903": "c3.sports_outer",
+  "904": "c3.furjacket_coats",
+  "905": "c3.windbreakers",
+  "906": "c3.long_dresses",
+  "907": "c3.midi_dresses",
+  "908": "c3.mini_dresses",
+  "909": "c3.overall_pants",
+  "910": "c3.ballgown",
+  "911": "c3.ankleboots_or_booties",
+  "912": "c3.mid_calf_boots",
+  "913": "c3.uggs",
+  "914": "c3.padding_boots",
+  "915": "c3.cowboy_boots",
+  "916": "c3.chukka_boots",
+  "917": "c3.chelsea_boots",
+  "918": "c3.platform_heels",
+  "919": "c3.ankle_strap",
+  "920": "c3.mule_heels",
+  "921": "c3.clogs",
+  "922": "c3.espadrille",
+  "923": "c3.mule_flats",
+  "924": "c3.brogue_shoes",
+  "925": "c3.monkstraps",
+  "926": "c3.sandal_heels",
+  "927": "c3.sports_sandals",
+  "928": "c3.slides",
+  "929": "c3.mule_sneakers",
+  "930": "c3.soccer_shoes",
+  "931": "c3.golf_shoes",
+  "932": "c3.toe_shoes",
+  "933": "c3.aqua_shoes",
+  "934": "c3.snowboard_shoes",
+  "935": "c3.duffle_bags",
+  "936": "c3.golf_bags",
+  "937": "c3.boston_bags",
+  "938": "c3.drawstring_bags",
+  "939": "c3.handbags",
+  "940": "c3.bucket_bags",
+  "941": "c3.hobo_bags",
+  "942": "c3.kellybags",
+  "943": "c3.satchel_bags",
+  "944": "c3.canteen_bags",
+  "945": "c3.messenger_bags",
+  "946": "c3.cross_bags",
+  "947": "c3.eco_bags",
+  "948": "c3.sling_bags",
+  "949": "c2.dresses",
+  "950": "c2.dress_shoes",
+  "951": "c3.backpacks",
+  "952": "c3.suitcases",
+  "955": "c3.pouch_bags",
+  "956": "c3.fanny_packs",
+  "957": "c2.flats",
+  "958": "c3.briefcases",
+  "959": "c3.clutch_bags",
+  "960": "c2.shoulder_crossbags",
+  "50000": "c3.maryjane_strap_heels",
+  "50001": "c3.strap_sandals",
+  "50002": "kind_of_sleeve.set-in_sleeve",
+  "50003": "shape_of_pants.boot-cut",
+  "50004": "fabric.knit/angora",
+  "50005": "fabric.suede/velvet",
+  "50006": "fabric.chiffon/silk",
+  "50007": "fabric.lace/mesh",
+  "50008": "fabric.sequin/spangle",
+  "50118": "fabric.chiffon_or_silk",
+  "50216": "length_of_onepiece.long",
+  "50217": "length_of_onepiece.midi",
+  "50218": "length_of_onepiece.mini",
+  "50219": "length_of_onepiece.none",
+  "50220": "length_of_onepiece.unknown",
+  "50221": "length_of_onepiece.unsupported",
+  "50225": "pattern.leopard",
+  "50295": "sense.casual",
+  "50296": "sense.chic",
+  "50297": "sense.feminine",
+  "50298": "sense.formal",
+  "50299": "sense.lovely",
+  "50300": "sense.luxury",
+  "50301": "sense.sexy",
+  "50302": "sense.sportive",
+  "50303": "sense.unknown",
+  "50304": "shape_of_dresses.a_line",
+  "50305": "shape_of_dresses.h_line",
+  "50306": "shape_of_dresses.none",
+  "50307": "shape_of_dresses.unknown",
+  "50308": "shape_of_dresses.unsupported",
+  "50309": "shape_of_dresses.wrap",
+  "50318": "c3.high_top_shoes",
+  "50319": "c2.swimsuits",
+  "50320": "c2.underwear",
+  "50321": "color.khaki",
+  "50322": "c2.swimsuits_tops",
+  "50323": "c2.swimsuits_bottoms",
+  "50324": "c2.swimsuits_onepiece",
+  "50325": "age_group.hidden",
+  "50326": "color.hidden",
+  "50327": "decoration.hidden",
+  "50328": "detail.hidden",
+  "50329": "fabric.hidden",
+  "50330": "fit.hidden",
+  "50331": "heel_height.hidden",
+  "50332": "heel_thickness.hidden",
+  "50333": "kind_of_shoes_toes.hidden",
+  "50334": "kind_of_sleeve.hidden",
+  "50335": "leather.hidden",
+  "50336": "length_of_bottoms.hidden",
+  "50337": "length_of_sleeve.hidden",
+  "50338": "length_of_tops.hidden",
+  "50339": "neckline.hidden",
+  "50340": "occasion.hidden",
+  "50341": "pattern.hidden",
+  "50342": "rise.hidden",
+  "50343": "season.hidden",
+  "50344": "shape_of_pants.hidden",
+  "50345": "shape_of_skirts.hidden",
+  "50346": "style.hidden",
+  "50347": "type_of_pants.hidden",
+  "50348": "wash.hidden",
+  "50349": "kind_of_image.hidden",
+  "50350": "direction.hidden",
+  "50351": "fastener.hidden",
+  "50352": "decoration.unsupported",
+  "50353": "detail.unsupported",
+  "50354": "type_of_pants.unsupported",
+  "50355": "age_group.unsupported",
+  "50356": "kind_of_shoes_toes.unsupported",
+  "50357": "occasion.unsupported",
+  "50358": "style.unsupported",
+  "50359": "fastener.unsupported",
+  "50360": "kind_of_image.unsupported",
+  "536870912": "gender.female",
+  "805306368": "gender.child_female",
+  "1073741824": "gender.male",
+  "1342177280": "gender.child_male",
+  "1610612736": "gender.unisex",
+  "1879048192": "gender.child_unisex",
+  "@version": "0.2.7",
+  "@date": "2022-06-22T13:20:22.159832",
+  "gender.unknown": {
+    "lv-LV": "-1",
+    "en-US": "Unknown",
+    "ko-KR": "알 수 없음",
+    "code": 317,
+    "ja-JP": "不明"
+  },
+  "gender.female": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Female",
+    "ko-KR": "여성",
+    "code": 536870912,
+    "ja-JP": "レディース/女性"
+  },
+  "gender.male": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Male",
+    "ko-KR": "남성",
+    "code": 1073741824,
+    "ja-JP": "メンズ"
+  },
+  "gender.unisex": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Unisex",
+    "ko-KR": "남녀공용",
+    "code": 1610612736,
+    "ja-JP": "ユニセックス"
+  },
+  "gender.child_female": {
+    "lv-LV": "-1",
+    "en-US": "Girl",
+    "ko-KR": "여자아이",
+    "code": 805306368,
+    "ja-JP": "女児/女の子"
+  },
+  "gender.child_male": {
+    "lv-LV": "-1",
+    "en-US": "Boy",
+    "ko-KR": "남자아이",
+    "code": 1342177280,
+    "ja-JP": "男児/男の子"
+  },
+  "gender.child_unisex": {
+    "lv-LV": "-1",
+    "en-US": "Unisex",
+    "ko-KR": "남여공용(어린이)",
+    "code": 1879048192,
+    "ja-JP": "ユニセックス"
+  },
+  "gender.unsupported": {
+    "lv-LV": "-1",
+    "en-US": "Unsupported",
+    "ko-KR": "미지원",
+    "code": 334,
+    "ja-JP": "非対応"
+  },
+  "unknown": {
+    "lv-LV": "-1",
+    "en-US": "Unknown",
+    "ko-KR": "알 수 없음",
+    "code": 0,
+    "ja-JP": "不明"
+  },
+  "c1.unknown": {
+    "lv-LV": "-1",
+    "en-US": "Unknown",
+    "ko-KR": "알 수 없음",
+    "code": 302,
+    "ja-JP": "不明"
+  },
+  "c1.unsupported": {
+    "lv-LV": "-1",
+    "en-US": "Unsupported",
+    "ko-KR": "미지원",
+    "code": 333,
+    "ja-JP": "非対応"
+  },
+  "c1.tops": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Tops",
+    "ko-KR": "상의",
+    "code": 201,
+    "ja-JP": "トップス"
+  },
+  "c1.bottoms": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Bottoms",
+    "ko-KR": "하의",
+    "code": 202,
+    "ja-JP": "ボトムス/ボトム"
+  },
+  "c1.onepiece": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "One piece",
+    "ko-KR": "원피스",
+    "code": 203,
+    "ja-JP": "ワンピース"
+  },
+  "c1.bags": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Bags",
+    "ko-KR": "가방",
+    "code": 204,
+    "ja-JP": "バッグ/かばん/袋/鞄"
+  },
+  "c1.shoes": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Shoes",
+    "ko-KR": "신발",
+    "code": 205,
+    "ja-JP": "靴"
+  },
+  "c1.face": {
+    "lv-LV": "-1",
+    "en-US": "Face",
+    "ko-KR": "얼굴",
+    "code": 200,
+    "ja-JP": "顔"
+  },
+  "c1.headwear": {
+    "lv-LV": "fashion3",
+    "en-US": "Headwear",
+    "ko-KR": "머리장식",
+    "code": 888,
+    "ja-JP": "帽子"
+  },
+  "c1.accessories": {
+    "lv-LV": "-1",
+    "en-US": "Accessories",
+    "ko-KR": "잡화",
+    "code": 343,
+    "ja-JP": "アクセサリー"
+  },
+  "c2.unknown": {
+    "lv-LV": "-1",
+    "en-US": "Unknown",
+    "ko-KR": "알 수 없음",
+    "code": 303,
+    "ja-JP": "不明"
+  },
+  "c2.unsupported": {
+    "lv-LV": "-1",
+    "en-US": "Unsupported",
+    "ko-KR": "미지원",
+    "code": 332,
+    "ja-JP": "非対応"
+  },
+  "c2.outerwears": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Outerwears",
+    "ko-KR": "아우터",
+    "code": 206,
+    "ja-JP": "上着/アウター"
+  },
+  "c2.tops": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Tops",
+    "ko-KR": "상의",
+    "code": 207,
+    "ja-JP": "トップス"
+  },
+  "c2.underwear": {
+    "lv-LV": "-1",
+    "en-US": "Underwear",
+    "ko-KR": "속옷",
+    "code": 50320,
+    "ja-JP": "下着"
+  },
+  "c2.swimsuits": {
+    "lv-LV": "-1",
+    "en-US": "Swimsuits",
+    "ko-KR": "수영복",
+    "code": 50319,
+    "ja-JP": "水着"
+  },
+  "c2.underwear_tops": {
+    "lv-LV": "fashion3",
+    "en-US": "Underwear tops",
+    "ko-KR": "속옷 상의",
+    "code": 208,
+    "ja-JP": "インナートップス"
+  },
+  "c2.swimsuits_tops": {
+    "lv-LV": "fashion2",
+    "en-US": "Swimsuit tops",
+    "ko-KR": "수영복 상의",
+    "code": 50322,
+    "ja-JP": "水着のトップス"
+  },
+  "c2.pants": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Pants",
+    "ko-KR": "바지",
+    "code": 210,
+    "ja-JP": "パンツ/ズボン"
+  },
+  "c2.skirts": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Skirts",
+    "ko-KR": "스커트",
+    "code": 211,
+    "ja-JP": "スカート"
+  },
+  "c2.underwear_bottoms": {
+    "lv-LV": "fashion3",
+    "en-US": "Underwear bottoms",
+    "ko-KR": "속옷 하의",
+    "code": 212,
+    "ja-JP": "インナーボトム/インナーズボン"
+  },
+  "c2.swimsuits_bottoms": {
+    "lv-LV": "fashion2",
+    "en-US": "Swimsuit bottoms",
+    "ko-KR": "수영복 하의",
+    "code": 50323,
+    "ja-JP": "水着ボトムス"
+  },
+  "c2.onepiece": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "One piece",
+    "ko-KR": "드레스류 원피스",
+    "code": 214,
+    "ja-JP": "ワンピース"
+  },
+  "c2.dresses": {
+    "lv-LV": "fashion3",
+    "en-US": "Dresses",
+    "ko-KR": "원피스",
+    "code": 949,
+    "ja-JP": "ドレス"
+  },
+  "c2.jumpsuits_overallpants": {
+    "lv-LV": "fashion3",
+    "en-US": "Jumpsuits/Overall pants",
+    "ko-KR": "점프수트/멜빵바지",
+    "code": 889,
+    "ja-JP": "ジャンプスーツ/サスペンダー"
+  },
+  "c2.underwear_onepiece": {
+    "lv-LV": "fashion3",
+    "en-US": "One piece underwear",
+    "ko-KR": "속옷 원피스",
+    "code": 215,
+    "ja-JP": "インナーワンピース"
+  },
+  "c2.swimsuits_onepiece": {
+    "lv-LV": "fashion2",
+    "en-US": "One piece swimsuits",
+    "ko-KR": "수영복 원피스",
+    "code": 50324,
+    "ja-JP": "水着ワンピース"
+  },
+  "c2.boots": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Boots",
+    "ko-KR": "부츠",
+    "code": 217,
+    "ja-JP": "ブーツ"
+  },
+  "c2.heels_pumps": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Heels/Pumps",
+    "ko-KR": "힐/펌프스 구두",
+    "code": 218,
+    "ja-JP": "ヒール/パンプス"
+  },
+  "c2.loafers": {
+    "lv-LV": "fashion2",
+    "en-US": "Loafers",
+    "ko-KR": "로퍼",
+    "code": 219,
+    "ja-JP": "ローファー"
+  },
+  "c2.sandals": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Sandals",
+    "ko-KR": "샌들",
+    "code": 220,
+    "ja-JP": "サンダル"
+  },
+  "c2.sneakers": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Sneakers",
+    "ko-KR": "운동화",
+    "code": 221,
+    "ja-JP": "運動靴"
+  },
+  "c2.sports_shoes": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Sports shoes",
+    "ko-KR": "스포츠 신발",
+    "code": 222,
+    "ja-JP": "運動靴"
+  },
+  "c2.dress_shoes": {
+    "lv-LV": "fashion3",
+    "en-US": "Dress shoes",
+    "ko-KR": "정장 구두",
+    "code": 950,
+    "ja-JP": "ドレスシューズ"
+  },
+  "c2.indoor_shoes": {
+    "lv-LV": "fashion3",
+    "en-US": "Indoor shoes",
+    "ko-KR": "실내화",
+    "code": 890,
+    "ja-JP": "室内靴/スリッパ/上履き"
+  },
+  "c2.flats": {
+    "lv-LV": "fashion3",
+    "en-US": "Flats",
+    "ko-KR": "단화",
+    "code": 957,
+    "ja-JP": "フラット/平な"
+  },
+  "c2.totebags": {
+    "lv-LV": "fashion2",
+    "en-US": "Tote bags",
+    "ko-KR": "토트백",
+    "code": 223,
+    "ja-JP": "トートバッグ"
+  },
+  "c2.shoulder_crossbags": {
+    "lv-LV": "fashion3",
+    "en-US": "Shoulder/Cross bags",
+    "ko-KR": "숄더/크로스백",
+    "code": 960,
+    "ja-JP": "ショルダー/クロスバック"
+  },
+  "c2.shoulder_cross_bags": {
+    "lv-LV": "fashion2",
+    "en-US": "Shoulder/Cross bags",
+    "ko-KR": "숄더/크로스백",
+    "code": 224,
+    "ja-JP": "ショルダー/クロスバック"
+  },
+  "c2.clutch_bags": {
+    "lv-LV": "fashion2",
+    "en-US": "Clutch bags",
+    "ko-KR": "클러치백",
+    "code": 225,
+    "ja-JP": "クラッチバッグ"
+  },
+  "c2.pouch_bags": {
+    "lv-LV": "fashion2",
+    "en-US": "Pouch bags",
+    "ko-KR": "파우치백",
+    "code": 226,
+    "ja-JP": "ポーチ"
+  },
+  "c2.backpacks": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Backpacks",
+    "ko-KR": "백팩",
+    "code": 227,
+    "ja-JP": "リュックサック/リュック/バックパック"
+  },
+  "c2.briefcases": {
+    "lv-LV": "fashion2",
+    "en-US": "Briefcases",
+    "ko-KR": "서류가방",
+    "code": 228,
+    "ja-JP": "ブリーフケース/書類鞄"
+  },
+  "c2.suitcases": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Suitcases",
+    "ko-KR": "캐리어",
+    "code": 229,
+    "ja-JP": "スーツケース"
+  },
+  "c2.fanny_pack": {
+    "lv-LV": "fashion2",
+    "en-US": "Fanny packs",
+    "ko-KR": "힙색",
+    "code": 230,
+    "ja-JP": "ウエストポーチ"
+  },
+  "c2.sports_bags": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Sports bags",
+    "ko-KR": "스포츠백",
+    "code": 231,
+    "ja-JP": "スポーツバッグ"
+  },
+  "c2.handbags": {
+    "lv-LV": "fashion3",
+    "en-US": "Hand bags",
+    "ko-KR": "핸드백",
+    "code": 891,
+    "ja-JP": "ハンドバッグ"
+  },
+  "c2.belts": {
+    "lv-LV": "-1",
+    "en-US": "Belts",
+    "ko-KR": "벨트",
+    "code": 344,
+    "ja-JP": "ベルト"
+  },
+  "c2.gloves": {
+    "lv-LV": "-1",
+    "en-US": "Gloves",
+    "ko-KR": "장갑",
+    "code": 345,
+    "ja-JP": "手袋"
+  },
+  "c2.hats": {
+    "lv-LV": "fashion3",
+    "en-US": "Hats",
+    "ko-KR": "모자",
+    "code": 346,
+    "ja-JP": "帽子"
+  },
+  "c2.inners": {
+    "lv-LV": "-1",
+    "en-US": "Inners",
+    "ko-KR": "이너",
+    "code": 347,
+    "ja-JP": "インナー"
+  },
+  "c2.jewelry": {
+    "lv-LV": "-1",
+    "en-US": "Jewelry",
+    "ko-KR": "쥬얼리",
+    "code": 348,
+    "ja-JP": "ジュエリー"
+  },
+  "c2.necktie": {
+    "lv-LV": "-1",
+    "en-US": "Necktie",
+    "ko-KR": "넥타이",
+    "code": 349,
+    "ja-JP": "ネクタイ"
+  },
+  "c2.scarf_or_muffler": {
+    "lv-LV": "-1",
+    "en-US": "Scarf/Muffler",
+    "ko-KR": "스카프/목도리",
+    "code": 350,
+    "ja-JP": "スカーフ/マフラー"
+  },
+  "c2.socks_or_tights": {
+    "lv-LV": "-1",
+    "en-US": "Socks/Tights",
+    "ko-KR": "양말/타이즈",
+    "code": 351,
+    "ja-JP": "靴下/タイツ"
+  },
+  "c2.sunglasses_or_eye_glasses": {
+    "lv-LV": "-1",
+    "en-US": "Sunglasses/Eyeglasses",
+    "ko-KR": "선글라스/안경",
+    "code": 352,
+    "ja-JP": "サングラスまたは眼鏡"
+  },
+  "c2.wallets": {
+    "lv-LV": "-1",
+    "en-US": "Wallets",
+    "ko-KR": "지갑",
+    "code": 353,
+    "ja-JP": "財布"
+  },
+  "c2.watches": {
+    "lv-LV": "-1",
+    "en-US": "Watches",
+    "ko-KR": "시계",
+    "code": 354,
+    "ja-JP": "腕時計"
+  },
+  "c2.swimsuit_bottoms": {
+    "lv-LV": "fashion3",
+    "en-US": "Swimsuit bottoms",
+    "ko-KR": "수영복 하의",
+    "code": 842,
+    "ja-JP": "水着ボトムス"
+  },
+  "c2.swimsuit_tops": {
+    "lv-LV": "fashion3",
+    "en-US": "Swimsuit tops",
+    "ko-KR": "수영복 상의",
+    "code": 841,
+    "ja-JP": "水着のトップス"
+  },
+  "c2.swimsuit_onepiece": {
+    "lv-LV": "fashion3",
+    "en-US": "One piece swimsuits",
+    "ko-KR": "수영복 원피스",
+    "code": 843,
+    "ja-JP": "水着ワンピース"
+  },
+  "c3.none": {
+    "lv-LV": "-1",
+    "en-US": "None",
+    "ko-KR": "없음",
+    "code": 318,
+    "ja-JP": "なし"
+  },
+  "c3.unknown": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Unknown",
+    "ko-KR": "알 수 없음",
+    "code": 304,
+    "ja-JP": "不明"
+  },
+  "c3.unsupported": {
+    "lv-LV": "fashion2",
+    "en-US": "Unsupported",
+    "ko-KR": "미지원",
+    "code": 331,
+    "ja-JP": "非対応"
+  },
+  "c3.cardigans": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Cardigans",
+    "ko-KR": "가디건",
+    "code": 232,
+    "ja-JP": "カーディガン"
+  },
+  "c3.jumpers": {
+    "lv-LV": "fashion2",
+    "en-US": "Jumpers",
+    "ko-KR": "점퍼",
+    "code": 233,
+    "ja-JP": "ジャンパー"
+  },
+  "c3.coats": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Coats",
+    "ko-KR": "코트",
+    "code": 234,
+    "ja-JP": "コート"
+  },
+  "c3.jackets": {
+    "lv-LV": "fashion2",
+    "en-US": "Jackets",
+    "ko-KR": "자켓",
+    "code": 235,
+    "ja-JP": "ジャケット"
+  },
+  "c3.vests": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Outwear Vests",
+    "ko-KR": "아우터 조끼",
+    "code": 236,
+    "ja-JP": "ベスト/ダウンベスト/チョッキ"
+  },
+  "c3.cape_coats": {
+    "lv-LV": "fashion3",
+    "en-US": "Cape coats",
+    "ko-KR": "망토",
+    "code": 892,
+    "ja-JP": "ケープコート"
+  },
+  "c3.trench_coats": {
+    "lv-LV": "fashion3",
+    "en-US": "Trench coats",
+    "ko-KR": "트렌치코트",
+    "code": 893,
+    "ja-JP": "トレンチコート"
+  },
+  "c3.rider_or_leatherjacket": {
+    "lv-LV": "fashion3",
+    "en-US": "Rider/Leather jackets",
+    "ko-KR": "라이더/가죽 자켓",
+    "code": 894,
+    "ja-JP": "ライダー/レザージャケット"
+  },
+  "c3.blazer_or_suitjackets": {
+    "lv-LV": "fashion3",
+    "en-US": "Blazer/Suit jackets",
+    "ko-KR": "블레이저/정장 자켓",
+    "code": 895,
+    "ja-JP": "ブレザー/スーツジャケット"
+  },
+  "c3.denim_jackets": {
+    "lv-LV": "fashion3",
+    "en-US": "Denim jackets",
+    "ko-KR": "청자켓",
+    "code": 896,
+    "ja-JP": "デニムジャケット"
+  },
+  "c3.trucker_jackets": {
+    "lv-LV": "fashion3",
+    "en-US": "Trucker jackets",
+    "ko-KR": "트러커 자켓",
+    "code": 897,
+    "ja-JP": "トラッカージャケット"
+  },
+  "c3.aviator_jackets": {
+    "lv-LV": "fashion3",
+    "en-US": "Aviator jackets",
+    "ko-KR": "무스탕",
+    "code": 898,
+    "ja-JP": "アビエイタージャケット/パイロットジャケット"
+  },
+  "c3.bomber_or_blousonjacket": {
+    "lv-LV": "fashion3",
+    "en-US": "Bomber/Blouson jackets",
+    "ko-KR": "봄버/블루종 점퍼",
+    "code": 899,
+    "ja-JP": "ボンバー/ブルゾン"
+  },
+  "c3.down_jackets": {
+    "lv-LV": "fashion3",
+    "en-US": "Down jackets",
+    "ko-KR": "다운패딩",
+    "code": 900,
+    "ja-JP": "ダウンジャケット"
+  },
+  "c3.parkas": {
+    "lv-LV": "fashion3",
+    "en-US": "Parkas",
+    "ko-KR": "파카",
+    "code": 901,
+    "ja-JP": "パーカー"
+  },
+  "c3.field_jackets": {
+    "lv-LV": "fashion3",
+    "en-US": "Field jackets",
+    "ko-KR": "필드/밀리터리 자켓",
+    "code": 902,
+    "ja-JP": "フィールドジャケット/ミリタリージャケット"
+  },
+  "c3.sports_outer": {
+    "lv-LV": "fashion3",
+    "en-US": "Sports jackets",
+    "ko-KR": "스포츠 점퍼",
+    "code": 903,
+    "ja-JP": "スポーツジャケット"
+  },
+  "c3.furjacket_coats": {
+    "lv-LV": "fashion3",
+    "en-US": "Fur jackets/coats",
+    "ko-KR": "퍼자켓/코트",
+    "code": 904,
+    "ja-JP": "ファージャケット/コート"
+  },
+  "c3.windbreakers": {
+    "lv-LV": "fashion3",
+    "en-US": "Windbreakers",
+    "ko-KR": "바람막이",
+    "code": 905,
+    "ja-JP": "ウィンドブレーカー"
+  },
+  "c3.tshirts": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "T-shirts",
+    "ko-KR": "티셔츠",
+    "code": 237,
+    "ja-JP": "シャツ/ｔシャツ"
+  },
+  "c3.sweatshirts": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Sweatshirts",
+    "ko-KR": "맨투맨",
+    "code": 238,
+    "ja-JP": "スウェット"
+  },
+  "c3.hoodies": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Hoodies",
+    "ko-KR": "후드",
+    "code": 239,
+    "ja-JP": "パーカー"
+  },
+  "c3.knitwear": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Knitwears",
+    "ko-KR": "니트",
+    "code": 240,
+    "ja-JP": "ニット"
+  },
+  "c3.blouses": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Blouses",
+    "ko-KR": "블라우스",
+    "code": 241,
+    "ja-JP": "ブラウス"
+  },
+  "c3.shirts": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Shirts",
+    "ko-KR": "셔츠",
+    "code": 242,
+    "ja-JP": "シャツ"
+  },
+  "c3.bustiers": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Bustiers",
+    "ko-KR": "뷔스티에",
+    "code": 243,
+    "ja-JP": "ビスチェ"
+  },
+  "c3.bras": {
+    "lv-LV": "fashion3",
+    "en-US": "Bras",
+    "ko-KR": "브레지어",
+    "code": 244,
+    "ja-JP": "ブラ/ブラジャー"
+  },
+  "c3.camisoles_slips": {
+    "lv-LV": "fashion3",
+    "en-US": "Camisoles/Slips",
+    "ko-KR": "캐미솔/슬립",
+    "code": 245,
+    "ja-JP": "キャミソール/スリップ"
+  },
+  "c3.running_shirts": {
+    "lv-LV": "fashion3",
+    "en-US": "Undershirts",
+    "ko-KR": "민소매 런닝",
+    "code": 246,
+    "ja-JP": "ランニングシャツ/シャツ"
+  },
+  "c3.bikini_tops": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Bikini tops",
+    "ko-KR": "비키니 상의",
+    "code": 247,
+    "ja-JP": "ビキニトップス"
+  },
+  "c3.rash_guards": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Rash guards",
+    "ko-KR": "래시가드",
+    "code": 248,
+    "ja-JP": "ラッシュガード"
+  },
+  "c3.long_pants": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Long pants",
+    "ko-KR": "긴 바지",
+    "code": 249,
+    "ja-JP": "長ズボン"
+  },
+  "c3.capri_pants": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Capri pants",
+    "ko-KR": "7부 바지",
+    "code": 250,
+    "ja-JP": "キャプリパンツ"
+  },
+  "c3.short_pants": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Short pants",
+    "ko-KR": "반바지",
+    "code": 251,
+    "ja-JP": "ショートパンツ"
+  },
+  "c3.long_skirts": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Long skirts",
+    "ko-KR": "롱 스커트",
+    "code": 252,
+    "ja-JP": "長いスカート"
+  },
+  "c3.midi_skirts": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Midi skirts",
+    "ko-KR": "미디 스커트",
+    "code": 253,
+    "ja-JP": "ミディスカート/膝丈スカート/ひざ丈スカート"
+  },
+  "c3.mini_skirts": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Mini skirts",
+    "ko-KR": "미니 스커트",
+    "code": 254,
+    "ja-JP": "ミニスカート"
+  },
+  "c3.panties": {
+    "lv-LV": "fashion3",
+    "en-US": "Panties",
+    "ko-KR": "팬티",
+    "code": 255,
+    "ja-JP": "パンティー/下着"
+  },
+  "c3.drawers": {
+    "lv-LV": "fashion3",
+    "en-US": "Underpants",
+    "ko-KR": "사각팬티",
+    "code": 256,
+    "ja-JP": "トランクス/パンツ"
+  },
+  "c3.underskirts": {
+    "lv-LV": "fashion3",
+    "en-US": "Underskirts",
+    "ko-KR": "속치마",
+    "code": 257,
+    "ja-JP": "アンダースカート"
+  },
+  "c3.bikini_bottoms": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Bikini bottoms",
+    "ko-KR": "비키니 하의",
+    "code": 258,
+    "ja-JP": "ビキニボトムス"
+  },
+  "c3.swim_briefs": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Swim briefs",
+    "ko-KR": "삼각 수영복",
+    "code": 259,
+    "ja-JP": "水泳パンツ/スイムブリーフ"
+  },
+  "c3.swim_trunks": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Swim trunks",
+    "ko-KR": "트렁크 수영복",
+    "code": 260,
+    "ja-JP": "水泳パンツ/スイムトランクス"
+  },
+  "c3.dresses": {
+    "lv-LV": "fashion2",
+    "en-US": "Dresses",
+    "ko-KR": "원피스",
+    "code": 261,
+    "ja-JP": "ドレス"
+  },
+  "c3.long_dresses": {
+    "lv-LV": "fashion3",
+    "en-US": "Long dresses",
+    "ko-KR": "롱 원피스",
+    "code": 906,
+    "ja-JP": "ロングドレス/長いワンピース"
+  },
+  "c3.midi_dresses": {
+    "lv-LV": "fashion3",
+    "en-US": "Midi dresses",
+    "ko-KR": "미디 원피스",
+    "code": 907,
+    "ja-JP": "膝丈ドレス/ひざ丈ドレス/ミディ丈ドレス"
+  },
+  "c3.mini_dresses": {
+    "lv-LV": "fashion3",
+    "en-US": "Mini dresses",
+    "ko-KR": "미니 원피스",
+    "code": 908,
+    "ja-JP": "ミニスカート/ミニスカ"
+  },
+  "c3.overall_pants": {
+    "lv-LV": "fashion3",
+    "en-US": "Overall pants",
+    "ko-KR": "멜빵바지",
+    "code": 909,
+    "ja-JP": "サロペット/サロペ/サロペットパンツ"
+  },
+  "c3.long_overall_pants": {
+    "lv-LV": "-1",
+    "en-US": "Long overall pants",
+    "ko-KR": "롱멜빵바지",
+    "code": 310,
+    "ja-JP": "ロングサロペット/ロングサロペ/ロングオーバーオールパンツ"
+  },
+  "c3.midi_overall_pants": {
+    "lv-LV": "-1",
+    "en-US": "Midi overall pants",
+    "ko-KR": "미디멜빵바지",
+    "code": 315,
+    "ja-JP": "ミディサロペットパンツ/ミディサロペット/ミディサロペット"
+  },
+  "c3.mini_overall_pants": {
+    "lv-LV": "-1",
+    "en-US": "Mini overall pants",
+    "ko-KR": "미니멜빵바지",
+    "code": 324,
+    "ja-JP": "ミニサロペット/ミニサロペ/ミニサロペットパンツ"
+  },
+  "c3.ballgown": {
+    "lv-LV": "fashion3",
+    "en-US": "Ballgowns",
+    "ko-KR": "볼가운",
+    "code": 910,
+    "ja-JP": "ロングドレス"
+  },
+  "c3.jumpsuits": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Jumpsuits",
+    "ko-KR": "점프수트",
+    "code": 262,
+    "ja-JP": "ジャンプスーツ"
+  },
+  "c3.long_jumpsuits": {
+    "lv-LV": "-1",
+    "en-US": "Long jumpsuits",
+    "ko-KR": "롱점프슈트",
+    "code": 300,
+    "ja-JP": "ロングジャンプスーツ"
+  },
+  "c3.midi_jumpsuits": {
+    "lv-LV": "-1",
+    "en-US": "Midi jumpsuits",
+    "ko-KR": "미디점프슈트",
+    "code": 301,
+    "ja-JP": "ミディジャンプスーツ/膝丈ジャンプスーツ/ミディ丈ジャンプスーツ"
+  },
+  "c3.mini_jumpsuits": {
+    "lv-LV": "-1",
+    "en-US": "Mini jumpsuits",
+    "ko-KR": "미니점프슈트",
+    "code": 305,
+    "ja-JP": "ミニジャンプスーツ"
+  },
+  "c3.yukatas_kimonos": {
+    "lv-LV": "-1",
+    "en-US": "Yukatas/kimonos",
+    "ko-KR": "유카타/기모노",
+    "code": 263,
+    "ja-JP": "浴衣/着物"
+  },
+  "c3.bodysuits": {
+    "lv-LV": "fashion3",
+    "en-US": "Bodysuits",
+    "ko-KR": "바디수트",
+    "code": 264,
+    "ja-JP": "ボディースーツ"
+  },
+  "c3.onepiece_swimsuits": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "One piece swimsuits",
+    "ko-KR": "수영복 원피스",
+    "code": 265,
+    "ja-JP": "ワンピース水着"
+  },
+  "c3.monokinis": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Monokinis",
+    "ko-KR": "모노키니",
+    "code": 266,
+    "ja-JP": "モノキニ"
+  },
+  "c3.wetsuits": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Wetsuits",
+    "ko-KR": "다이빙복",
+    "code": 267,
+    "ja-JP": "ウェットスーツ"
+  },
+  "c3.booties": {
+    "lv-LV": "fashion2",
+    "en-US": "Booties",
+    "ko-KR": "부티",
+    "code": 268,
+    "ja-JP": "ブーティー"
+  },
+  "c3.ankle_boots": {
+    "lv-LV": "fashion2",
+    "en-US": "Ankle boots",
+    "ko-KR": "앵클부츠",
+    "code": 269,
+    "ja-JP": "アンクルブーツ"
+  },
+  "c3.walkers": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Walkers",
+    "ko-KR": "워커",
+    "code": 270,
+    "ja-JP": "歩行者/ウォーカー/散歩する人"
+  },
+  "c3.long_boots": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Long boots",
+    "ko-KR": "롱부츠",
+    "code": 271,
+    "ja-JP": "ロングブーツ"
+  },
+  "c3.half_boots": {
+    "lv-LV": "fashion2",
+    "en-US": "Half boots",
+    "ko-KR": "하프부츠",
+    "code": 272,
+    "ja-JP": "ハーフブーツ"
+  },
+  "c3.rain_boots": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Rain boots",
+    "ko-KR": "장화",
+    "code": 273,
+    "ja-JP": "長靴,レインブーツ"
+  },
+  "c3.boots": {
+    "lv-LV": "fashion2",
+    "en-US": "Boots",
+    "ko-KR": "부츠",
+    "code": 274,
+    "ja-JP": "ブーツ"
+  },
+  "c3.pumps": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Pumps",
+    "ko-KR": "펌프스",
+    "code": 275,
+    "ja-JP": "パンプス"
+  },
+  "c3.stiletto_heels": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Stiletto heels",
+    "ko-KR": "스틸레토 구두",
+    "code": 276,
+    "ja-JP": "スティレットヒール"
+  },
+  "c3.wedge_heels": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Wedge heels",
+    "ko-KR": "통굽 구두",
+    "code": 277,
+    "ja-JP": "ウェッジヒール"
+  },
+  "c3.open_toed_heels": {
+    "lv-LV": "fashion2",
+    "en-US": "Open-toed heels",
+    "ko-KR": "토오픈힐",
+    "code": 278,
+    "ja-JP": "オープントゥヒール"
+  },
+  "c3.sling_back_shoes": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Sling back shoes",
+    "ko-KR": "슬링백구두",
+    "code": 279,
+    "ja-JP": "スリングバッグシューズ"
+  },
+  "c3.maryjane_strap_heels": {
+    "lv-LV": "-1",
+    "en-US": "Mary jane shoes/strap heels",
+    "ko-KR": "메리제인/스트랩힐",
+    "code": 50000,
+    "ja-JP": "メリージェーン/メリージェーンストラップ"
+  },
+  "c3.maryjane": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Mary jane shoes",
+    "ko-KR": "메리제인구두",
+    "code": 280,
+    "ja-JP": "メリージェーンシューズ"
+  },
+  "c3.flat_shoes": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Flat shoes",
+    "ko-KR": "플랫슈즈",
+    "code": 281,
+    "ja-JP": "平たい靴/フラットシューズ"
+  },
+  "c3.loafers": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Loafers",
+    "ko-KR": "로퍼",
+    "code": 282,
+    "ja-JP": "ローファー"
+  },
+  "c3.bloafers": {
+    "lv-LV": "fashion2",
+    "en-US": "Bloafers",
+    "ko-KR": "블로퍼",
+    "code": 283,
+    "ja-JP": "ブローファー"
+  },
+  "c3.oxford_shoes": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Oxford shoes",
+    "ko-KR": "옥스포드 구두",
+    "code": 284,
+    "ja-JP": "オックスフォードシューズ"
+  },
+  "c3.flat_sandals": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Flat sandals",
+    "ko-KR": "플랫샌들",
+    "code": 285,
+    "ja-JP": "平たいサンダル/フラットサンダル"
+  },
+  "c3.platform_sandals": {
+    "lv-LV": "fashion2",
+    "en-US": "Platform sandals",
+    "ko-KR": "플랫폼샌들",
+    "code": 286,
+    "ja-JP": "プラットフォームサンダル"
+  },
+  "c3.wedge_sandals": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Wedge sandals",
+    "ko-KR": "웨지샌들",
+    "code": 287,
+    "ja-JP": "ウェッジサンダル"
+  },
+  "c3.gladiator_sandals": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Gladiator sandals",
+    "ko-KR": "글래디에이터샌들",
+    "code": 288,
+    "ja-JP": "グラディエーターサンダル"
+  },
+  "c3.strap_sandals": {
+    "lv-LV": "-1",
+    "en-US": "Strap sandals",
+    "ko-KR": "스트랩샌들",
+    "code": 50001,
+    "ja-JP": "ストラップサンダル"
+  },
+  "c3.strap_sandal_heels": {
+    "lv-LV": "fashion2",
+    "en-US": "Strap sandal heels",
+    "ko-KR": "스트랩샌들힐",
+    "code": 289,
+    "ja-JP": "ストラップサンダルヒール"
+  },
+  "c3.slippers": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Slippers",
+    "ko-KR": "실내화",
+    "code": 290,
+    "ja-JP": "スリッパ"
+  },
+  "c3.flip_flops": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Flip flops",
+    "ko-KR": "쪼리",
+    "code": 291,
+    "ja-JP": "フリップフロップ"
+  },
+  "c3.mules": {
+    "lv-LV": "fashion2",
+    "en-US": "Mules",
+    "ko-KR": "뮬",
+    "code": 292,
+    "ja-JP": "ラバ"
+  },
+  "c3.hightop_shoes": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "High top shoes",
+    "ko-KR": "하이탑 운동화",
+    "code": 293,
+    "ja-JP": "ハイトップ·シューズ"
+  },
+  "c3.sneakers": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Sneakers",
+    "ko-KR": "운동화",
+    "code": 294,
+    "ja-JP": "運動靴/スニーカー"
+  },
+  "c3.slipon_shoes": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Slip on shoes",
+    "ko-KR": "슬립온",
+    "code": 295,
+    "ja-JP": "スリッポン"
+  },
+  "c3.dress_shoes": {
+    "lv-LV": "fashion2",
+    "en-US": "Dress shoes",
+    "ko-KR": "정장화",
+    "code": 296,
+    "ja-JP": "ドレスシューズ"
+  },
+  "c3.boat_shoes": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Boat shoes",
+    "ko-KR": "보트 슈즈",
+    "code": 297,
+    "ja-JP": "ボートシューズ"
+  },
+  "c3.sandals": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Sandals",
+    "ko-KR": "샌들",
+    "code": 298,
+    "ja-JP": "サンダル"
+  },
+  "c3.hiking_shoes": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Hiking shoes",
+    "ko-KR": "등산화",
+    "code": 299,
+    "ja-JP": "ハイキングシューズ/トレッキングシューズ"
+  },
+  "c3.ankleboots_or_booties": {
+    "lv-LV": "fashion3",
+    "en-US": "Ankle boots/Booties",
+    "ko-KR": "앵클부츠/부티",
+    "code": 911,
+    "ja-JP": "アンクルブーツ/ブーティー"
+  },
+  "c3.mid_calf_boots": {
+    "lv-LV": "fashion3",
+    "en-US": "Mid calf boots",
+    "ko-KR": "반부츠",
+    "code": 912,
+    "ja-JP": "ミッドカーフブーツ"
+  },
+  "c3.uggs": {
+    "lv-LV": "fashion3",
+    "en-US": "Uggs",
+    "ko-KR": "어그부츠",
+    "code": 913,
+    "ja-JP": "アグ/アグブーツ"
+  },
+  "c3.padding_boots": {
+    "lv-LV": "fashion3",
+    "en-US": "Padding boots",
+    "ko-KR": "패딩 부츠",
+    "code": 914,
+    "ja-JP": "パディングブーツ"
+  },
+  "c3.cowboy_boots": {
+    "lv-LV": "fashion3",
+    "en-US": "Cowboy boots",
+    "ko-KR": "카우보이 부츠",
+    "code": 915,
+    "ja-JP": "カウボーイブーツ"
+  },
+  "c3.chukka_boots": {
+    "lv-LV": "fashion3",
+    "en-US": "Chukka boots",
+    "ko-KR": "처커 부츠",
+    "code": 916,
+    "ja-JP": "チャッカブーツ"
+  },
+  "c3.chelsea_boots": {
+    "lv-LV": "fashion3",
+    "en-US": "Chlesea boots",
+    "ko-KR": "첼시 부츠",
+    "code": 917,
+    "ja-JP": "チェルシーブーツ"
+  },
+  "c3.platform_heels": {
+    "lv-LV": "fashion3",
+    "en-US": "Platform heels",
+    "ko-KR": "가보시 구두",
+    "code": 918,
+    "ja-JP": "プラットフォームヒール"
+  },
+  "c3.ankle_strap": {
+    "lv-LV": "fashion3",
+    "en-US": "Ankle straps",
+    "ko-KR": "발목스트랩",
+    "code": 919,
+    "ja-JP": "c3.ankle_strap"
+  },
+  "c3.mule_heels": {
+    "lv-LV": "fashion3",
+    "en-US": "Mule heels",
+    "ko-KR": "뮬 구두",
+    "code": 920,
+    "ja-JP": "ミュール/ミュールヒール/ヒールミュール"
+  },
+  "c3.clogs": {
+    "lv-LV": "fashion3",
+    "en-US": "Clogs",
+    "ko-KR": "클로그",
+    "code": 921,
+    "ja-JP": "クロックス/クロッグ"
+  },
+  "c3.espadrille": {
+    "lv-LV": "fashion3",
+    "en-US": "Espadrilles",
+    "ko-KR": "에스파듀",
+    "code": 922,
+    "ja-JP": "エスパドリーユ"
+  },
+  "c3.mule_flats": {
+    "lv-LV": "fashion3",
+    "en-US": "Mule flats",
+    "ko-KR": "플랫 뮬",
+    "code": 923,
+    "ja-JP": "ミュールフラット"
+  },
+  "c3.brogue_shoes": {
+    "lv-LV": "fashion3",
+    "en-US": "Brogue shoes",
+    "ko-KR": "브로그 구두",
+    "code": 924,
+    "ja-JP": "ブローグシューズ"
+  },
+  "c3.monkstraps": {
+    "lv-LV": "fashion3",
+    "en-US": "Monkstraps",
+    "ko-KR": "몽크스트랩 구두",
+    "code": 925,
+    "ja-JP": "モンクストラップ/モンクストラップシューズ"
+  },
+  "c3.sandal_heels": {
+    "lv-LV": "fashion3",
+    "en-US": "Sandal heels",
+    "ko-KR": "샌들 구두",
+    "code": 926,
+    "ja-JP": "ヒールサンダル"
+  },
+  "c3.sports_sandals": {
+    "lv-LV": "fashion3",
+    "en-US": "Sports sandals",
+    "ko-KR": "스포츠 샌들",
+    "code": 927,
+    "ja-JP": "スポーツサンダル"
+  },
+  "c3.slides": {
+    "lv-LV": "fashion3",
+    "en-US": "Slides",
+    "ko-KR": "슬리퍼",
+    "code": 928,
+    "ja-JP": "スリッパ/スライド"
+  },
+  "c3.mule_sneakers": {
+    "lv-LV": "fashion3",
+    "en-US": "Mule sneakers",
+    "ko-KR": "뮬 운동화",
+    "code": 929,
+    "ja-JP": "ミュールスニーカー"
+  },
+  "c3.soccer_shoes": {
+    "lv-LV": "fashion3",
+    "en-US": "Soccer shoes",
+    "ko-KR": "축구화",
+    "code": 930,
+    "ja-JP": "サッカーシューズ"
+  },
+  "c3.golf_shoes": {
+    "lv-LV": "fashion3",
+    "en-US": "Golf shoes",
+    "ko-KR": "골프화",
+    "code": 931,
+    "ja-JP": "ゴルフシューズ"
+  },
+  "c3.toe_shoes": {
+    "lv-LV": "fashion3",
+    "en-US": "Ballet shoes",
+    "ko-KR": "발레화",
+    "code": 932,
+    "ja-JP": "ゴルフシューズ"
+  },
+  "c3.aqua_shoes": {
+    "lv-LV": "fashion3",
+    "en-US": "Aqua shoes",
+    "ko-KR": "아쿠아 슈즈",
+    "code": 933,
+    "ja-JP": "アクアシューズ"
+  },
+  "c3.snowboard_shoes": {
+    "lv-LV": "fashion3",
+    "en-US": "Snowboard shoes",
+    "ko-KR": "스노우보드/스키 부츠",
+    "code": 934,
+    "ja-JP": "スノーボードシューズ"
+  },
+  "c3.backpacks": {
+    "lv-LV": "fashion3",
+    "en-US": "Backpacks",
+    "ko-KR": "백팩",
+    "code": 951,
+    "ja-JP": "リュック/リュックサック/バックパック"
+  },
+  "c3.suitcases": {
+    "lv-LV": "fashion3",
+    "en-US": "Suitcases",
+    "ko-KR": "캐리어",
+    "code": 952,
+    "ja-JP": "スーツケース"
+  },
+  "c3.duffle_bags": {
+    "lv-LV": "fashion3",
+    "en-US": "Duffle bags",
+    "ko-KR": "더플백",
+    "code": 935,
+    "ja-JP": "ダッフルバッグ"
+  },
+  "c3.golf_bags": {
+    "lv-LV": "fashion3",
+    "en-US": "Golf bags",
+    "ko-KR": "골프 가방",
+    "code": 936,
+    "ja-JP": "ゴルフバッグ/キャディバッグ"
+  },
+  "c3.boston_bags": {
+    "lv-LV": "fashion3",
+    "en-US": "Boston bags",
+    "ko-KR": "보스턴백",
+    "code": 937,
+    "ja-JP": "ボストンバッグ"
+  },
+  "c3.drawstring_bags": {
+    "lv-LV": "fashion3",
+    "en-US": "Drawstring bags",
+    "ko-KR": "짐색",
+    "code": 938,
+    "ja-JP": "ドローストリングバッグ"
+  },
+  "c3.pouch_bags": {
+    "lv-LV": "fashion3",
+    "en-US": "Pouch bags",
+    "ko-KR": "파우치백",
+    "code": 955,
+    "ja-JP": "ポーチ"
+  },
+  "c3.briefcases": {
+    "lv-LV": "fashion3",
+    "en-US": "Briefcases",
+    "ko-KR": "서류가방",
+    "code": 958,
+    "ja-JP": "ブリーフケース/書類鞄"
+  },
+  "c3.clutch_bags": {
+    "lv-LV": "fashion3",
+    "en-US": "Clutch bags",
+    "ko-KR": "클러치백",
+    "code": 959,
+    "ja-JP": "クラッチバッグ"
+  },
+  "c3.handbags": {
+    "lv-LV": "fashion3",
+    "en-US": "Hand bags",
+    "ko-KR": "핸드백",
+    "code": 939,
+    "ja-JP": "ハンドバッグ"
+  },
+  "c3.bucket_bags": {
+    "lv-LV": "fashion3",
+    "en-US": "Bucket bags",
+    "ko-KR": "버킷백",
+    "code": 940,
+    "ja-JP": "バケットバッグ"
+  },
+  "c3.hobo_bags": {
+    "lv-LV": "fashion3",
+    "en-US": "Hobo bags",
+    "ko-KR": "호보백",
+    "code": 941,
+    "ja-JP": "ホーボーバッグ/ホーボーハンドバッグ"
+  },
+  "c3.kellybags": {
+    "lv-LV": "fashion3",
+    "en-US": "Kelly bags",
+    "ko-KR": "켈리백",
+    "code": 942,
+    "ja-JP": "ケリーバッグ"
+  },
+  "c3.satchel_bags": {
+    "lv-LV": "fashion3",
+    "en-US": "Satchel bags",
+    "ko-KR": "사첼백",
+    "code": 943,
+    "ja-JP": "サッチェルバッグ"
+  },
+  "c3.canteen_bags": {
+    "lv-LV": "fashion3",
+    "en-US": "Canteen bags",
+    "ko-KR": "캔틴백",
+    "code": 944,
+    "ja-JP": "キャンティーンバッグ/キャンティーン/キャンティーン・バッグ/サークル・バッグ"
+  },
+  "c3.messenger_bags": {
+    "lv-LV": "fashion3",
+    "en-US": "Messenger bags",
+    "ko-KR": "메신저백",
+    "code": 945,
+    "ja-JP": "メッセンジャーバッグ"
+  },
+  "c3.cross_bags": {
+    "lv-LV": "fashion3",
+    "en-US": "Cross bags",
+    "ko-KR": "크로스백",
+    "code": 946,
+    "ja-JP": "クロスバック"
+  },
+  "c3.eco_bags": {
+    "lv-LV": "fashion3",
+    "en-US": "Canvas bags",
+    "ko-KR": "에코백",
+    "code": 947,
+    "ja-JP": "エコバッグ"
+  },
+  "c3.fanny_packs": {
+    "lv-LV": "fashion3",
+    "en-US": "Fanny packs",
+    "ko-KR": "힙색",
+    "code": 956,
+    "ja-JP": "ウエストポーチ"
+  },
+  "c3.sling_bags": {
+    "lv-LV": "fashion3",
+    "en-US": "Sling bags",
+    "ko-KR": "슬링백",
+    "code": 948,
+    "ja-JP": "スリングバッグ"
+  },
+  "c3.arm_warmer": {
+    "lv-LV": "-1",
+    "en-US": "Arm warmer",
+    "ko-KR": "팔토시",
+    "code": 355,
+    "ja-JP": "アームウォーマー"
+  },
+  "c3.beanies": {
+    "lv-LV": "fashion3",
+    "en-US": "Beanies",
+    "ko-KR": "비니",
+    "code": 356,
+    "ja-JP": "ニット帽/ビーニー帽"
+  },
+  "c3.belts": {
+    "lv-LV": "-1",
+    "en-US": "Belts",
+    "ko-KR": "벨트",
+    "code": 357,
+    "ja-JP": "ベルト"
+  },
+  "c3.berets": {
+    "lv-LV": "fashion3",
+    "en-US": "Berets",
+    "ko-KR": "베레모",
+    "code": 358,
+    "ja-JP": "ベレー帽"
+  },
+  "c3.bifold_wallets": {
+    "lv-LV": "-1",
+    "en-US": "Bifold wallets",
+    "ko-KR": "반지갑",
+    "code": 359,
+    "ja-JP": "折りたたみ財布"
+  },
+  "c3.bowtie": {
+    "lv-LV": "-1",
+    "en-US": "Bowtie",
+    "ko-KR": "보타이/나비넥타이",
+    "code": 360,
+    "ja-JP": "蝶ネクタイ"
+  },
+  "c3.bracelets_or_anklets": {
+    "lv-LV": "-1",
+    "en-US": "Bracelets or anklets",
+    "ko-KR": "팔찌/발찌",
+    "code": 361,
+    "ja-JP": "ブレスレット"
+  },
+  "c3.bucket_hats": {
+    "lv-LV": "fashion3",
+    "en-US": "Bucket hats",
+    "ko-KR": "버킷모자",
+    "code": 362,
+    "ja-JP": "バケットハット"
+  },
+  "c3.business_card_holder": {
+    "lv-LV": "-1",
+    "en-US": "Business card holder",
+    "ko-KR": "명함지갑",
+    "code": 363,
+    "ja-JP": "名刺入れ"
+  },
+  "c3.caps_or_snapbacks": {
+    "lv-LV": "fashion3",
+    "en-US": "Caps/Snapbacks",
+    "ko-KR": "야구모자/스냅백",
+    "code": 364,
+    "ja-JP": "キャップ/スナップバック"
+  },
+  "c3.card_holder": {
+    "lv-LV": "-1",
+    "en-US": "Card holder",
+    "ko-KR": "카드지갑",
+    "code": 365,
+    "ja-JP": "カードケース"
+  },
+  "c3.coin_purse": {
+    "lv-LV": "-1",
+    "en-US": "Coin purse",
+    "ko-KR": "동전지갑",
+    "code": 366,
+    "ja-JP": "小銭入れ"
+  },
+  "c3.cufflinks": {
+    "lv-LV": "-1",
+    "en-US": "Cufflinks",
+    "ko-KR": "커프링크스",
+    "code": 367,
+    "ja-JP": "カフス/カフリンクス"
+  },
+  "c3.earrings": {
+    "lv-LV": "-1",
+    "en-US": "Earrings",
+    "ko-KR": "귀걸이",
+    "code": 368,
+    "ja-JP": "イヤリング"
+  },
+  "c3.eye_glasses": {
+    "lv-LV": "-1",
+    "en-US": "Eye glasses",
+    "ko-KR": "안경",
+    "code": 369,
+    "ja-JP": "眼鏡"
+  },
+  "c3.fedora_or_floppy_hat": {
+    "lv-LV": "fashion3",
+    "en-US": "Fedora/Floppy hats",
+    "ko-KR": "페도라/플로피햇",
+    "code": 370,
+    "ja-JP": "フェドラ/フロッピーハット"
+  },
+  "c3.finger_gloves": {
+    "lv-LV": "-1",
+    "en-US": "Finger gloves",
+    "ko-KR": "손가락장갑",
+    "code": 371,
+    "ja-JP": "手袋/指が分かれている手袋"
+  },
+  "c3.fingerless_gloves": {
+    "lv-LV": "-1",
+    "en-US": "Fingerless gloves",
+    "ko-KR": "반장갑",
+    "code": 372,
+    "ja-JP": "指なし手袋"
+  },
+  "c3.high_top_shoes": {
+    "lv-LV": "-1",
+    "en-US": "High top shoes",
+    "ko-KR": "하이탑 운동화",
+    "code": 50318,
+    "ja-JP": "ハイトップ·シューズ"
+  },
+  "c3.long_wallets": {
+    "lv-LV": "-1",
+    "en-US": "Long wallets",
+    "ko-KR": "장지갑",
+    "code": 374,
+    "ja-JP": "長財布"
+  },
+  "c3.mittens": {
+    "lv-LV": "-1",
+    "en-US": "Mittens",
+    "ko-KR": "벙어리장갑",
+    "code": 375,
+    "ja-JP": "手袋/ミトン"
+  },
+  "c3.money_clips": {
+    "lv-LV": "-1",
+    "en-US": "Money clips",
+    "ko-KR": "머니클립",
+    "code": 376,
+    "ja-JP": "マネークリップ"
+  },
+  "c3.muffler": {
+    "lv-LV": "-1",
+    "en-US": "Muffler",
+    "ko-KR": "목도리",
+    "code": 377,
+    "ja-JP": "マフラー"
+  },
+  "c3.necklaces": {
+    "lv-LV": "-1",
+    "en-US": "Necklaces",
+    "ko-KR": "목걸이",
+    "code": 378,
+    "ja-JP": "ネックレス"
+  },
+  "c3.necktie": {
+    "lv-LV": "-1",
+    "en-US": "Necktie",
+    "ko-KR": "넥타이",
+    "code": 379,
+    "ja-JP": "ネクタイ"
+  },
+  "c3.necktie_pin": {
+    "lv-LV": "-1",
+    "en-US": "Necktie pin",
+    "ko-KR": "넥타이핀",
+    "code": 380,
+    "ja-JP": "ネクタイピン"
+  },
+  "c3.rings": {
+    "lv-LV": "-1",
+    "en-US": "Rings",
+    "ko-KR": "반지",
+    "code": 381,
+    "ja-JP": "指輪"
+  },
+  "c3.scarf": {
+    "lv-LV": "-1",
+    "en-US": "Scarf",
+    "ko-KR": "스카프",
+    "code": 382,
+    "ja-JP": "スカーフ"
+  },
+  "c3.socks": {
+    "lv-LV": "-1",
+    "en-US": "Socks",
+    "ko-KR": "양말",
+    "code": 383,
+    "ja-JP": "靴下"
+  },
+  "c3.suncaps": {
+    "lv-LV": "-1",
+    "en-US": "Suncaps",
+    "ko-KR": "썬캡",
+    "code": 384,
+    "ja-JP": "サンキャップ/サンバイザー/キャップ"
+  },
+  "c3.sunglasses": {
+    "lv-LV": "-1",
+    "en-US": "Sunglasses",
+    "ko-KR": "썬글라스",
+    "code": 385,
+    "ja-JP": "サングラス"
+  },
+  "c3.tights": {
+    "lv-LV": "-1",
+    "en-US": "Tights",
+    "ko-KR": "타이즈",
+    "code": 386,
+    "ja-JP": "タイツ"
+  },
+  "c3.top_vests": {
+    "lv-LV": "-1",
+    "en-US": "Vests",
+    "ko-KR": "조끼",
+    "code": 387,
+    "ja-JP": "ベスト"
+  },
+  "c3.watches": {
+    "lv-LV": "-1",
+    "en-US": "Watches",
+    "ko-KR": "손목시계",
+    "code": 388,
+    "ja-JP": "腕時計"
+  },
+  "c3.water_leggings": {
+    "lv-LV": "-1",
+    "en-US": "Water leggings",
+    "ko-KR": "수영레깅스",
+    "code": 389,
+    "ja-JP": "ウォーターレギンス"
+  },
+  "c3.hijabs": {
+    "lv-LV": "fashion3",
+    "en-US": "Hijabs",
+    "ko-KR": "히잡",
+    "code": 887,
+    "ja-JP": "ヒジャブ"
+  },
+  "none.unknown": {
+    "lv-LV": "-1",
+    "en-US": "Unknown",
+    "ko-KR": "알 수 없음",
+    "code": -1,
+    "ja-JP": "不明"
+  },
+  "sense.unknown": {
+    "lv-LV": "fashion2",
+    "en-US": "Unknown",
+    "ko-KR": "알 수 없음",
+    "code": 50303,
+    "ja-JP": "不明"
+  },
+  "sense.unsupported": {
+    "lv-LV": "fashion2",
+    "en-US": "Unsupported",
+    "ko-KR": "미지원",
+    "code": 319,
+    "ja-JP": "非対応"
+  },
+  "sense.casual": {
+    "lv-LV": "fashion2",
+    "en-US": "Casual",
+    "ko-KR": "캐쥬얼",
+    "code": 50295,
+    "ja-JP": "カジュアル/社会的な"
+  },
+  "sense.chic": {
+    "lv-LV": "fashion2",
+    "en-US": "Chic",
+    "ko-KR": "시크",
+    "code": 50296,
+    "ja-JP": "シック"
+  },
+  "sense.feminine": {
+    "lv-LV": "fashion2",
+    "en-US": "Feminine",
+    "ko-KR": "페미닌",
+    "code": 50297,
+    "ja-JP": "女性らしい"
+  },
+  "sense.formal": {
+    "lv-LV": "fashion2",
+    "en-US": "Formal",
+    "ko-KR": "포멀",
+    "code": 50298,
+    "ja-JP": "フォーマル"
+  },
+  "sense.lovely": {
+    "lv-LV": "fashion2",
+    "en-US": "Lovely",
+    "ko-KR": "러블리",
+    "code": 50299,
+    "ja-JP": "ラブリー/可愛らしい"
+  },
+  "sense.luxury": {
+    "lv-LV": "fashion2",
+    "en-US": "Luxury",
+    "ko-KR": "럭셔리",
+    "code": 50300,
+    "ja-JP": "ラグジュアリー"
+  },
+  "sense.sexy": {
+    "lv-LV": "fashion2",
+    "en-US": "Sexy",
+    "ko-KR": "섹시",
+    "code": 50301,
+    "ja-JP": "セクシー"
+  },
+  "sense.sportive": {
+    "lv-LV": "fashion2",
+    "en-US": "Sportive",
+    "ko-KR": "스포티",
+    "code": 50302,
+    "ja-JP": "スポーティブ"
+  },
+  "pattern.unknown": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Unknown",
+    "ko-KR": "알 수 없음",
+    "code": 306,
+    "ja-JP": "不明"
+  },
+  "pattern.none": {
+    "lv-LV": "fashion3",
+    "en-US": "None",
+    "ko-KR": "없음",
+    "code": 50,
+    "ja-JP": "なし"
+  },
+  "pattern.unsupported": {
+    "lv-LV": "fashion2",
+    "en-US": "Unsupported",
+    "ko-KR": "미지원",
+    "code": 320,
+    "ja-JP": "非対応"
+  },
+  "pattern.check": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Check",
+    "ko-KR": "체크",
+    "code": 51,
+    "ja-JP": "チェック/点検"
+  },
+  "pattern.stripe": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Stripe",
+    "ko-KR": "줄무늬",
+    "code": 52,
+    "ja-JP": "ストライプ"
+  },
+  "pattern.flower": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Flower",
+    "ko-KR": "꽃무늬",
+    "code": 53,
+    "ja-JP": "花"
+  },
+  "pattern.dot": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Dot",
+    "ko-KR": "땡땡이무늬",
+    "code": 54,
+    "ja-JP": "ドット"
+  },
+  "pattern.camouflage": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Camouflage",
+    "ko-KR": "캐머플러지/군대",
+    "code": 55,
+    "ja-JP": "カモフラージュ"
+  },
+  "pattern.leopard": {
+    "lv-LV": "fashion2",
+    "en-US": "Leopard",
+    "ko-KR": "호피",
+    "code": 50225,
+    "ja-JP": "ヒョウ"
+  },
+  "pattern.ethnic": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Ethnic",
+    "ko-KR": "에스닉",
+    "code": 57,
+    "ja-JP": "エスニック"
+  },
+  "pattern.paisley": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Paisley",
+    "ko-KR": "페이즐리",
+    "code": 58,
+    "ja-JP": "ペイズリー"
+  },
+  "pattern.geometry": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Geometry",
+    "ko-KR": "기하학무늬",
+    "code": 59,
+    "ja-JP": "幾何学"
+  },
+  "pattern.plain": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Plain",
+    "ko-KR": "민무늬",
+    "code": 60,
+    "ja-JP": "無地"
+  },
+  "pattern.print": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Print",
+    "ko-KR": "프린트",
+    "code": 61,
+    "ja-JP": "プリント"
+  },
+  "pattern.animal": {
+    "lv-LV": "fashion3",
+    "en-US": "Animal",
+    "ko-KR": "동물무늬",
+    "code": 837,
+    "ja-JP": "アニマル/動物"
+  },
+  "pattern.weaving": {
+    "lv-LV": "fashion3",
+    "en-US": "Weaving",
+    "ko-KR": "위빙/꼬임",
+    "code": 871,
+    "ja-JP": "製織/編む/織る"
+  },
+  "pattern.brand_logo": {
+    "lv-LV": "fashion3",
+    "en-US": "Brand logo",
+    "ko-KR": "브랜드로고",
+    "code": 838,
+    "ja-JP": "ブランドロゴ"
+  },
+  "fabric.unknown": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Unknown",
+    "ko-KR": "알 수 없음",
+    "code": 307,
+    "ja-JP": "不明"
+  },
+  "fabric.none": {
+    "lv-LV": "fashion3",
+    "en-US": "None",
+    "ko-KR": "없음",
+    "code": 70,
+    "ja-JP": "なし"
+  },
+  "fabric.unsupported": {
+    "lv-LV": "fashion2",
+    "en-US": "Unsupported",
+    "ko-KR": "미지원",
+    "code": 321,
+    "ja-JP": "非対応"
+  },
+  "fabric.leather": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Leather",
+    "ko-KR": "가죽",
+    "code": 71,
+    "ja-JP": "革製/革"
+  },
+  "fabric.cotton": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Cotton",
+    "ko-KR": "면",
+    "code": 72,
+    "ja-JP": "綿/コットン"
+  },
+  "fabric.knit/angora": {
+    "lv-LV": "-1",
+    "en-US": "Knit/angora",
+    "ko-KR": "니트/앙고라",
+    "code": 50004,
+    "ja-JP": "ニット/アンゴラ"
+  },
+  "fabric.knit_or_angora": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Knit/Angora",
+    "ko-KR": "니트/앙고라",
+    "code": 73,
+    "ja-JP": "ニット/アンゴラ"
+  },
+  "fabric.fur": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Fur",
+    "ko-KR": "퍼",
+    "code": 74,
+    "ja-JP": "毛皮/ファー"
+  },
+  "fabric.denim": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Denim",
+    "ko-KR": "데님/청",
+    "code": 75,
+    "ja-JP": "デニム"
+  },
+  "fabric.suede/velvet": {
+    "lv-LV": "-1",
+    "en-US": "Suede/Velvet",
+    "ko-KR": "스웨이드/벨벳",
+    "code": 50005,
+    "ja-JP": "スエード/ベルベット"
+  },
+  "fabric.suede_or_velvet": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Suede/Velvet",
+    "ko-KR": "스웨이드/벨벳",
+    "code": 76,
+    "ja-JP": "スエード/ベルベット"
+  },
+  "fabric.chiffon/silk": {
+    "lv-LV": "-1",
+    "en-US": "Chiffon/silk",
+    "ko-KR": "쉬폰/실크",
+    "code": 50006,
+    "ja-JP": "シフォン/シルク/絹"
+  },
+  "fabric.chiffon_or_silk": {
+    "lv-LV": "fashion2",
+    "en-US": "Chiffon/Silk",
+    "ko-KR": "쉬폰/실크",
+    "code": 50118,
+    "ja-JP": "シフォン/シルク/絹"
+  },
+  "fabric.linen": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Linen",
+    "ko-KR": "리넨",
+    "code": 78,
+    "ja-JP": "リネン/亜麻布"
+  },
+  "fabric.lace/mesh": {
+    "lv-LV": "-1",
+    "en-US": "Lace/mesh",
+    "ko-KR": "레이스/매쉬",
+    "code": 50007,
+    "ja-JP": "レース/メッシュ"
+  },
+  "fabric.lace_or_mesh": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Lace/Mesh",
+    "ko-KR": "레이스/매쉬",
+    "code": 79,
+    "ja-JP": "レース/メッシュ"
+  },
+  "fabric.tweed": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Tweed",
+    "ko-KR": "트위드",
+    "code": 80,
+    "ja-JP": "ツイード"
+  },
+  "fabric.sequin/spangle": {
+    "lv-LV": "-1",
+    "en-US": "Sequin/spangle",
+    "ko-KR": "시퀸/스팽글",
+    "code": 50008,
+    "ja-JP": "スパンコール"
+  },
+  "fabric.sequin_or_spangle": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Sequin/Spangle",
+    "ko-KR": "시퀸/스팽글",
+    "code": 81,
+    "ja-JP": "スパンコール"
+  },
+  "fabric.polyester": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Polyester",
+    "ko-KR": "폴리에스터",
+    "code": 82,
+    "ja-JP": "ポリエステル"
+  },
+  "fabric.wool": {
+    "lv-LV": "fashion3",
+    "en-US": "Wool",
+    "ko-KR": "울(모직)",
+    "code": 531,
+    "ja-JP": "羊毛/ウール"
+  },
+  "fabric.straw_or_rattan": {
+    "lv-LV": "fashion3",
+    "en-US": "Straw/Rattan",
+    "ko-KR": "밀짚/라탄",
+    "code": 812,
+    "ja-JP": "藁/わら/麦わら/ラタン"
+  },
+  "fabric.enamel": {
+    "lv-LV": "fashion3",
+    "en-US": "Enamel",
+    "ko-KR": "에나멜",
+    "code": 807,
+    "ja-JP": "エナメル"
+  },
+  "fabric.silk": {
+    "lv-LV": "fashion3",
+    "en-US": "Silk",
+    "ko-KR": "실크",
+    "code": 811,
+    "ja-JP": "シルク/絹"
+  },
+  "fabric.corduroy": {
+    "lv-LV": "fashion3",
+    "en-US": "Corduroy",
+    "ko-KR": "코듀로이/골덴",
+    "code": 525,
+    "ja-JP": "コーデュロイ"
+  },
+  "fabric.plastic": {
+    "lv-LV": "fashion3",
+    "en-US": "Plastic",
+    "ko-KR": "플라스틱",
+    "code": 809,
+    "ja-JP": "プラスチック"
+  },
+  "fabric.wood": {
+    "lv-LV": "fashion3",
+    "en-US": "Wood",
+    "ko-KR": "우드",
+    "code": 813,
+    "ja-JP": "木材/ウッド/木"
+  },
+  "fabric.rubber": {
+    "lv-LV": "fashion3",
+    "en-US": "Rubber",
+    "ko-KR": "고무",
+    "code": 810,
+    "ja-JP": "ゴム製品/ゴム"
+  },
+  "fabric.chiffon": {
+    "lv-LV": "fashion3",
+    "en-US": "Chiffon",
+    "ko-KR": "쉬폰",
+    "code": 806,
+    "ja-JP": "シフォン"
+  },
+  "fabric.metal": {
+    "lv-LV": "fashion3",
+    "en-US": "Metal",
+    "ko-KR": "메탈",
+    "code": 808,
+    "ja-JP": "メタル/金属"
+  },
+  "fabric.fleece": {
+    "lv-LV": "fashion3",
+    "en-US": "Fleece",
+    "ko-KR": "플리스",
+    "code": 526,
+    "ja-JP": "フリース"
+  },
+  "neckline.unknown": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Unknown",
+    "ko-KR": "알 수 없음",
+    "code": 308,
+    "ja-JP": "不明"
+  },
+  "neckline.none": {
+    "lv-LV": "fashion3",
+    "en-US": "None",
+    "ko-KR": "없음",
+    "code": 90,
+    "ja-JP": "なし"
+  },
+  "neckline.unsupported": {
+    "lv-LV": "fashion2",
+    "en-US": "Unsupported",
+    "ko-KR": "미지원",
+    "code": 322,
+    "ja-JP": "非対応"
+  },
+  "neckline.round_neck": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Round neck",
+    "ko-KR": "라운드넥",
+    "code": 91,
+    "ja-JP": "丸首/ラウンドネック"
+  },
+  "neckline.v_neck": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "V neck",
+    "ko-KR": "브이넥",
+    "code": 92,
+    "ja-JP": "ｖネック"
+  },
+  "neckline.square_neck": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Square neck",
+    "ko-KR": "스퀘어넥",
+    "code": 93,
+    "ja-JP": "スクエアネック"
+  },
+  "neckline.turtle_neck": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Turtle neck",
+    "ko-KR": "터틀넥/목티",
+    "code": 94,
+    "ja-JP": "タートルネック"
+  },
+  "neckline.off_shoulder": {
+    "lv-LV": "fashion2",
+    "en-US": "Off shoulder",
+    "ko-KR": "오프숄더",
+    "code": 95,
+    "ja-JP": "オフショルダー/オフショル"
+  },
+  "neckline.one_shoulder": {
+    "lv-LV": "fashion2",
+    "en-US": "One shoulder",
+    "ko-KR": "원숄더",
+    "code": 96,
+    "ja-JP": "ワンショルダー"
+  },
+  "neckline.henley_neck": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Henley neck",
+    "ko-KR": "헨리넥",
+    "code": 97,
+    "ja-JP": "ヘンリーネック"
+  },
+  "neckline.boat_neck": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Boat neck",
+    "ko-KR": "보트넥",
+    "code": 98,
+    "ja-JP": "ボートネック"
+  },
+  "neckline.halter_neck": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Halter neck",
+    "ko-KR": "홀터넥",
+    "code": 99,
+    "ja-JP": "ホルターネック"
+  },
+  "neckline.collar_neck": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Collar neck",
+    "ko-KR": "카라넥",
+    "code": 100,
+    "ja-JP": "襟首/首筋/うなじ"
+  },
+  "neckline.cowl_neck": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Cowl neck",
+    "ko-KR": "카울넥",
+    "code": 101,
+    "ja-JP": "カウルネック"
+  },
+  "neckline.hood_collar": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Hood collar",
+    "ko-KR": "후드넥",
+    "code": 102,
+    "ja-JP": "フード"
+  },
+  "neckline.strapless": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Strapless",
+    "ko-KR": "스트랩리스",
+    "code": 103,
+    "ja-JP": "ストラップレス"
+  },
+  "neckline.off_or_one_shoulder": {
+    "lv-LV": "fashion3",
+    "en-US": "Off/One shoulder",
+    "ko-KR": "오프/원 숄더",
+    "code": 104,
+    "ja-JP": "オフ/ワンショルダー"
+  },
+  "length_of_tops.unknown": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Unknown",
+    "ko-KR": "알 수 없음",
+    "code": 309,
+    "ja-JP": "不明"
+  },
+  "length_of_tops.none": {
+    "lv-LV": "fashion3",
+    "en-US": "None",
+    "ko-KR": "없음",
+    "code": 110,
+    "ja-JP": "なし"
+  },
+  "length_of_tops.unsupported": {
+    "lv-LV": "fashion2",
+    "en-US": "Unsupported",
+    "ko-KR": "미지원",
+    "code": 323,
+    "ja-JP": "非対応"
+  },
+  "length_of_tops.crop": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Crop",
+    "ko-KR": "크롭",
+    "code": 111,
+    "ja-JP": "クロップ/切り取る/トリミング"
+  },
+  "length_of_tops.medium": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Medium",
+    "ko-KR": "중간",
+    "code": 112,
+    "ja-JP": "中程度"
+  },
+  "length_of_tops.long": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Long",
+    "ko-KR": "롱",
+    "code": 113,
+    "ja-JP": "長い/ロング"
+  },
+  "length_of_onepiece.unknown": {
+    "lv-LV": "fashion2",
+    "en-US": "Unknown",
+    "ko-KR": "알 수 없음",
+    "code": 50220,
+    "ja-JP": "不明"
+  },
+  "length_of_onepiece.none": {
+    "lv-LV": "-1",
+    "en-US": "None",
+    "ko-KR": "없음",
+    "code": 50219,
+    "ja-JP": "なし"
+  },
+  "length_of_onepiece.unsupported": {
+    "lv-LV": "fashion2",
+    "en-US": "Unsupported",
+    "ko-KR": "미지원",
+    "code": 50221,
+    "ja-JP": "非対応"
+  },
+  "length_of_onepiece.mini": {
+    "lv-LV": "fashion2",
+    "en-US": "Mini",
+    "ko-KR": "미니",
+    "code": 50218,
+    "ja-JP": "ミニ"
+  },
+  "length_of_onepiece.midi": {
+    "lv-LV": "fashion2",
+    "en-US": "Midi",
+    "ko-KR": "미디",
+    "code": 50217,
+    "ja-JP": "ミディ"
+  },
+  "length_of_onepiece.long": {
+    "lv-LV": "fashion2",
+    "en-US": "Long",
+    "ko-KR": "롱",
+    "code": 50216,
+    "ja-JP": "長い/ロング"
+  },
+  "length_of_sleeve.unknown": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Unknown",
+    "ko-KR": "알 수 없음",
+    "code": 311,
+    "ja-JP": "不明"
+  },
+  "length_of_sleeve.none": {
+    "lv-LV": "fashion3",
+    "en-US": "None",
+    "ko-KR": "없음",
+    "code": 120,
+    "ja-JP": "なし"
+  },
+  "length_of_sleeve.unsupported": {
+    "lv-LV": "fashion2",
+    "en-US": "Unsupported",
+    "ko-KR": "미지원",
+    "code": 325,
+    "ja-JP": "非対応"
+  },
+  "length_of_sleeve.long_sleeve": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Long sleeve",
+    "ko-KR": "긴팔",
+    "code": 121,
+    "ja-JP": "長袖"
+  },
+  "length_of_sleeve.three_quarter_sleeve": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Three quarter sleeve",
+    "ko-KR": "7부",
+    "code": 122,
+    "ja-JP": "七分袖"
+  },
+  "length_of_sleeve.short_sleeve": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Short sleeve",
+    "ko-KR": "반팔",
+    "code": 123,
+    "ja-JP": "半袖"
+  },
+  "length_of_sleeve.sleeveless": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Sleeveless",
+    "ko-KR": "민소매",
+    "code": 124,
+    "ja-JP": "袖なし/ノンスリーブ"
+  },
+  "kind_of_sleeve.unknown": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Unknown",
+    "ko-KR": "알 수 없음",
+    "code": 312,
+    "ja-JP": "不明"
+  },
+  "kind_of_sleeve.none": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "None",
+    "ko-KR": "없음",
+    "code": 130,
+    "ja-JP": "なし"
+  },
+  "kind_of_sleeve.unsupported": {
+    "lv-LV": "fashion2",
+    "en-US": "Unsupported",
+    "ko-KR": "미지원",
+    "code": 326,
+    "ja-JP": "非対応"
+  },
+  "kind_of_sleeve.set-in_sleeve": {
+    "lv-LV": "-1",
+    "en-US": "Set-in sleeve",
+    "ko-KR": "세트인 슬리브",
+    "code": 50002,
+    "ja-JP": "セットインスリーブ"
+  },
+  "kind_of_sleeve.setin_sleeve": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Set-in sleeve",
+    "ko-KR": "셋인 슬리브",
+    "code": 131,
+    "ja-JP": "セットインスリーブ"
+  },
+  "kind_of_sleeve.drop_shoulder_sleeve": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Drop shoulder sleeve",
+    "ko-KR": "드롭숄더",
+    "code": 132,
+    "ja-JP": "ドロップショルダースリーブ"
+  },
+  "kind_of_sleeve.raglan_sleeve": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Raglan sleeve",
+    "ko-KR": "라글란 슬리브",
+    "code": 133,
+    "ja-JP": "ラグランスリーブ"
+  },
+  "kind_of_sleeve.puff_sleeve": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Puff sleeve",
+    "ko-KR": "퍼프 슬리브",
+    "code": 134,
+    "ja-JP": "パフスリーブ"
+  },
+  "kind_of_sleeve.trumpet_sleeve": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Trumpet sleeve",
+    "ko-KR": "트럼펫 슬리브",
+    "code": 135,
+    "ja-JP": "トランペットスリーブ"
+  },
+  "kind_of_sleeve.dolman_sleeve": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Dolman sleeve",
+    "ko-KR": "돌만 슬리브",
+    "code": 136,
+    "ja-JP": "ドルマンスリーブ"
+  },
+  "kind_of_sleeve.flutter_sleeve": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Flutter sleeve",
+    "ko-KR": "플러터 슬리브",
+    "code": 137,
+    "ja-JP": "フラッタースリーブ"
+  },
+  "shape_of_pants.unknown": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Unknown",
+    "ko-KR": "알 수 없음",
+    "code": 313,
+    "ja-JP": "不明"
+  },
+  "shape_of_pants.none": {
+    "lv-LV": "fashion3",
+    "en-US": "None",
+    "ko-KR": "없음",
+    "code": 150,
+    "ja-JP": "なし"
+  },
+  "shape_of_pants.unsupported": {
+    "lv-LV": "fashion2",
+    "en-US": "Unsupported",
+    "ko-KR": "미지원",
+    "code": 327,
+    "ja-JP": "非対応"
+  },
+  "shape_of_pants.skinny": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Skinny",
+    "ko-KR": "스키니",
+    "code": 151,
+    "ja-JP": "スキニー"
+  },
+  "shape_of_pants.straight": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Straight",
+    "ko-KR": "스트레이트",
+    "code": 152,
+    "ja-JP": "ストレート"
+  },
+  "shape_of_pants.boot-cut": {
+    "lv-LV": "-1",
+    "en-US": "Boot-cut",
+    "ko-KR": "부츠컷",
+    "code": 50003,
+    "ja-JP": "ブーツカット"
+  },
+  "shape_of_pants.bootcut": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Boot-cut",
+    "ko-KR": "부츠컷",
+    "code": 153,
+    "ja-JP": "ブーツカット"
+  },
+  "shape_of_pants.wide": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Wide",
+    "ko-KR": "와이드",
+    "code": 154,
+    "ja-JP": "ワイド"
+  },
+  "shape_of_pants.baggy": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Baggy",
+    "ko-KR": "배기",
+    "code": 155,
+    "ja-JP": "だぶだぶの/ぶかぶかの"
+  },
+  "shape_of_pants.leggings": {
+    "lv-LV": "fashion2",
+    "en-US": "Leggings",
+    "ko-KR": "레깅스",
+    "code": 156,
+    "ja-JP": "レギンス"
+  },
+  "shape_of_skirts.unknown": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Unknown",
+    "ko-KR": "알 수 없음",
+    "code": 314,
+    "ja-JP": "不明"
+  },
+  "shape_of_skirts.none": {
+    "lv-LV": "fashion3",
+    "en-US": "None",
+    "ko-KR": "없음",
+    "code": 160,
+    "ja-JP": "なし"
+  },
+  "shape_of_skirts.unsupported": {
+    "lv-LV": "fashion2",
+    "en-US": "Unsupported",
+    "ko-KR": "미지원",
+    "code": 328,
+    "ja-JP": "非対応"
+  },
+  "shape_of_skirts.h_line": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "H line",
+    "ko-KR": "H라인",
+    "code": 161,
+    "ja-JP": "Hライン"
+  },
+  "shape_of_skirts.flare": {
+    "lv-LV": "fashion2",
+    "en-US": "Flare",
+    "ko-KR": "플레어",
+    "code": 162,
+    "ja-JP": "フレア"
+  },
+  "shape_of_skirts.flare_or_bubble": {
+    "lv-LV": "fashion3",
+    "en-US": "Flare",
+    "ko-KR": "플레어",
+    "code": 169,
+    "ja-JP": "フレア"
+  },
+  "shape_of_skirts.a_line": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "A line",
+    "ko-KR": "A라인",
+    "code": 163,
+    "ja-JP": "Aライン"
+  },
+  "shape_of_skirts.pleats": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Pleats",
+    "ko-KR": "플리츠",
+    "code": 164,
+    "ja-JP": "プリーツ"
+  },
+  "shape_of_skirts.mermaid": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Mermaid",
+    "ko-KR": "머메이드",
+    "code": 165,
+    "ja-JP": "マーメイド"
+  },
+  "shape_of_skirts.wrap": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Wrap",
+    "ko-KR": "랩",
+    "code": 166,
+    "ja-JP": "包む"
+  },
+  "shape_of_skirts.tiered": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Tiered",
+    "ko-KR": "티어드/캉캉",
+    "code": 167,
+    "ja-JP": "ティアード"
+  },
+  "shape_of_skirts.asymmetrical": {
+    "lv-LV": "fashion3",
+    "en-US": "Asymmetrical",
+    "ko-KR": "언발란스",
+    "code": 168,
+    "ja-JP": "アンバランス/非対称"
+  },
+  "shape_of_dresses.unknown": {
+    "lv-LV": "fashion2",
+    "en-US": "Unknown",
+    "ko-KR": "알 수 없음",
+    "code": 50307,
+    "ja-JP": "不明"
+  },
+  "shape_of_dresses.none": {
+    "lv-LV": "-1",
+    "en-US": "None",
+    "ko-KR": "없음",
+    "code": 50306,
+    "ja-JP": "なし"
+  },
+  "shape_of_dresses.unsupported": {
+    "lv-LV": "fashion2",
+    "en-US": "Unsupported",
+    "ko-KR": "미지원",
+    "code": 50308,
+    "ja-JP": "非対応"
+  },
+  "shape_of_dresses.h_line": {
+    "lv-LV": "fashion2",
+    "en-US": "H line",
+    "ko-KR": "H라인",
+    "code": 50305,
+    "ja-JP": "Hライン"
+  },
+  "shape_of_dresses.a_line": {
+    "lv-LV": "fashion2",
+    "en-US": "A line",
+    "ko-KR": "A라인",
+    "code": 50304,
+    "ja-JP": "Aライン"
+  },
+  "shape_of_dresses.wrap": {
+    "lv-LV": "fashion2",
+    "en-US": "Wrap",
+    "ko-KR": "랩",
+    "code": 50309,
+    "ja-JP": "ラップ"
+  },
+  "color.unknown": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Unknown",
+    "ko-KR": "알 수 없음",
+    "code": 316,
+    "ja-JP": "不明"
+  },
+  "color.unsupported": {
+    "lv-LV": "fashion2",
+    "en-US": "Unsupported",
+    "ko-KR": "미지원",
+    "code": 330,
+    "ja-JP": "非対応"
+  },
+  "color.black": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Black",
+    "ko-KR": "검정",
+    "code": 181,
+    "ja-JP": "黒/黒色"
+  },
+  "color.gray": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Gray",
+    "ko-KR": "회색",
+    "code": 182,
+    "ja-JP": "灰色"
+  },
+  "color.silver": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Silver",
+    "ko-KR": "실버",
+    "code": 183,
+    "ja-JP": "銀色/銀"
+  },
+  "color.white": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "White",
+    "ko-KR": "흰색",
+    "code": 184,
+    "ja-JP": "白/白色"
+  },
+  "color.brown": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Brown",
+    "ko-KR": "브라운",
+    "code": 185,
+    "ja-JP": "茶色/茶"
+  },
+  "color.khaki": {
+    "lv-LV": "-1",
+    "en-US": "Khaki",
+    "ko-KR": "카키",
+    "code": 50321,
+    "ja-JP": "カーキ/カーキ色"
+  },
+  "color.navy": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Navy",
+    "ko-KR": "남색",
+    "code": 187,
+    "ja-JP": "ネイビー"
+  },
+  "color.orange": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Orange",
+    "ko-KR": "오렌지",
+    "code": 188,
+    "ja-JP": "オレンジ色/オレンジ"
+  },
+  "color.yellow": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Yellow",
+    "ko-KR": "노랑",
+    "code": 189,
+    "ja-JP": "黄色/黄"
+  },
+  "color.gold": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Gold",
+    "ko-KR": "골드",
+    "code": 190,
+    "ja-JP": "金/金色"
+  },
+  "color.green": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Green",
+    "ko-KR": "초록",
+    "code": 191,
+    "ja-JP": "緑/緑色"
+  },
+  "color.skyblue": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Skyblue",
+    "ko-KR": "하늘색",
+    "code": 192,
+    "ja-JP": "スカイブルー/水色"
+  },
+  "color.blue": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Blue",
+    "ko-KR": "파랑",
+    "code": 193,
+    "ja-JP": "青/青色"
+  },
+  "color.purple": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Purple",
+    "ko-KR": "보라",
+    "code": 194,
+    "ja-JP": "紫色/紫"
+  },
+  "color.pink": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Pink",
+    "ko-KR": "핑크",
+    "code": 195,
+    "ja-JP": "ピンク/ピンク色"
+  },
+  "color.red": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Red",
+    "ko-KR": "빨강",
+    "code": 196,
+    "ja-JP": "赤/赤色"
+  },
+  "color.beige": {
+    "lv-LV": "fashion2",
+    "en-US": "Beige",
+    "ko-KR": "베이지",
+    "code": 197,
+    "ja-JP": "ベージュ"
+  },
+  "color.multi": {
+    "lv-LV": "fashion3",
+    "en-US": "Multi",
+    "ko-KR": "멀티",
+    "code": 391,
+    "ja-JP": "マルチカラー"
+  },
+  "color.wine": {
+    "lv-LV": "fashion3",
+    "en-US": "Wine",
+    "ko-KR": "와인",
+    "code": 854,
+    "ja-JP": "ワイン/ワイン色/バーガンディ"
+  },
+  "color.beige_or_lightbrown": {
+    "lv-LV": "fashion3",
+    "en-US": "Beige/Light brown",
+    "ko-KR": "베이지/연갈색",
+    "code": 856,
+    "ja-JP": "ベージュ/ライトブラウン"
+  },
+  "color.olive": {
+    "lv-LV": "fashion2,fashion3",
+    "en-US": "Olive",
+    "ko-KR": "카키",
+    "code": 848,
+    "ja-JP": "カーキ/カーキ色"
+  },
+  "color.lavender": {
+    "lv-LV": "fashion3",
+    "en-US": "Lavender",
+    "ko-KR": "라벤더(연보라)",
+    "code": 853,
+    "ja-JP": "ラベンダー色"
+  },
+  "color.mint": {
+    "lv-LV": "fashion3",
+    "en-US": "Mint",
+    "ko-KR": "민트",
+    "code": 847,
+    "ja-JP": "ミント"
+  },
+  "color.light_pink": {
+    "lv-LV": "fashion3",
+    "en-US": "Light pink",
+    "ko-KR": "연핑크",
+    "code": 851,
+    "ja-JP": "ライトピンク"
+  },
+  "color.clear": {
+    "lv-LV": "-1",
+    "en-US": "Clear",
+    "ko-KR": "투명",
+    "code": 860,
+    "ja-JP": "澄んだ"
+  },
+  "color.hot_pink": {
+    "lv-LV": "fashion3",
+    "en-US": "Hot pink",
+    "ko-KR": "핫핑크",
+    "code": 852,
+    "ja-JP": "ホットピンク"
+  },
+  "age_group.adults": {
+    "lv-LV": "fashion3",
+    "en-US": "Adults",
+    "ko-KR": "성인",
+    "code": 341,
+    "ja-JP": "成人"
+  },
+  "age_group.seniors": {
+    "lv-LV": "fashion3",
+    "en-US": "Seniors",
+    "ko-KR": "중장년",
+    "code": 340,
+    "ja-JP": "シニア"
+  },
+  "age_group.young_adults": {
+    "lv-LV": "fashion3",
+    "en-US": "Young adults",
+    "ko-KR": "청소년",
+    "code": 339,
+    "ja-JP": "青年／青少年"
+  },
+  "age_group.unrelated": {
+    "lv-LV": "-1",
+    "en-US": "Unrelated",
+    "ko-KR": "나이불문",
+    "code": 342,
+    "ja-JP": "無関係"
+  },
+  "age_group.unknown": {
+    "lv-LV": "fashion3",
+    "en-US": "Unknown",
+    "ko-KR": "알 수 없음",
+    "code": 338,
+    "ja-JP": "不明"
+  },
+  "decoration.beads_or_jewelry": {
+    "lv-LV": "fashion3",
+    "en-US": "Beads/Jewelry",
+    "ko-KR": "비즈/쥬얼리",
+    "code": 392,
+    "ja-JP": "ビーズ/ジュエリー"
+  },
+  "decoration.buckle_or_belted": {
+    "lv-LV": "fashion3",
+    "en-US": "Buckle/Belted",
+    "ko-KR": "버클/벨트",
+    "code": 393,
+    "ja-JP": "バックル/ベルト"
+  },
+  "decoration.button": {
+    "lv-LV": "fashion3",
+    "en-US": "Button",
+    "ko-KR": "단추",
+    "code": 394,
+    "ja-JP": "ボタン"
+  },
+  "decoration.chain": {
+    "lv-LV": "fashion3",
+    "en-US": "Chain",
+    "ko-KR": "체인",
+    "code": 395,
+    "ja-JP": "チェーン/鎖"
+  },
+  "decoration.embroidery": {
+    "lv-LV": "fashion3",
+    "en-US": "Embroidery",
+    "ko-KR": "자수",
+    "code": 396,
+    "ja-JP": "刺繍"
+  },
+  "decoration.none": {
+    "lv-LV": "fashion3",
+    "en-US": "None",
+    "ko-KR": "없음",
+    "code": 397,
+    "ja-JP": "なし"
+  },
+  "decoration.ribbon": {
+    "lv-LV": "fashion3",
+    "en-US": "Ribbon",
+    "ko-KR": "리본",
+    "code": 399,
+    "ja-JP": "リボン"
+  },
+  "decoration.stud_or_metal": {
+    "lv-LV": "fashion3",
+    "en-US": "Stud/Metal",
+    "ko-KR": "스터드(징)/메탈",
+    "code": 400,
+    "ja-JP": "ボタン/飾りボタン/メタル/金属"
+  },
+  "decoration.tassel_or_fringe": {
+    "lv-LV": "fashion3",
+    "en-US": "Tassel/Fringe",
+    "ko-KR": "태슬/프린지",
+    "code": 402,
+    "ja-JP": "タッセル/ふさ/飾りふさ/フリンジ"
+  },
+  "decoration.unknown": {
+    "lv-LV": "fashion3",
+    "en-US": "Unknown",
+    "ko-KR": "알 수 없음",
+    "code": 403,
+    "ja-JP": "不明"
+  },
+  "decoration.zipper": {
+    "lv-LV": "fashion3",
+    "en-US": "Zipper",
+    "ko-KR": "지퍼",
+    "code": 404,
+    "ja-JP": "ジッパー"
+  },
+  "decoration.fur": {
+    "lv-LV": "fashion3",
+    "en-US": "Fur",
+    "ko-KR": "퍼/털",
+    "code": 799,
+    "ja-JP": "ファー/毛皮"
+  },
+  "decoration.keyring_or_strap": {
+    "lv-LV": "fashion3",
+    "en-US": "Keyring/Strap",
+    "ko-KR": "키링/스트랩",
+    "code": 801,
+    "ja-JP": "キーホルダー/ストラップ"
+  },
+  "decoration.flower": {
+    "lv-LV": "fashion3",
+    "en-US": "Flower",
+    "ko-KR": "꽃",
+    "code": 798,
+    "ja-JP": "花"
+  },
+  "decoration.punch": {
+    "lv-LV": "fashion3",
+    "en-US": "Punch",
+    "ko-KR": "펀칭",
+    "code": 803,
+    "ja-JP": "パンチ"
+  },
+  "decoration.quilt": {
+    "lv-LV": "fashion3",
+    "en-US": "Quilt",
+    "ko-KR": "퀼트/누빔",
+    "code": 804,
+    "ja-JP": "キルト"
+  },
+  "detail.destroyed": {
+    "lv-LV": "fashion3",
+    "en-US": "Destroyed",
+    "ko-KR": "디스트로이드",
+    "code": 513,
+    "ja-JP": "破壊された"
+  },
+  "detail.drape": {
+    "lv-LV": "fashion3",
+    "en-US": "Drape",
+    "ko-KR": "드레이프",
+    "code": 514,
+    "ja-JP": "ドレープ"
+  },
+  "detail.none": {
+    "lv-LV": "fashion3",
+    "en-US": "None",
+    "ko-KR": "없음",
+    "code": 516,
+    "ja-JP": "なし"
+  },
+  "detail.shirring_or_ruffle": {
+    "lv-LV": "fashion3",
+    "en-US": "Shirring/Ruffle",
+    "ko-KR": "셔링/러플",
+    "code": 517,
+    "ja-JP": "シャーリング/ラッフル/フリル"
+  },
+  "detail.slit": {
+    "lv-LV": "fashion3",
+    "en-US": "Slit",
+    "ko-KR": "슬릿",
+    "code": 518,
+    "ja-JP": "スリット"
+  },
+  "detail.unknown": {
+    "lv-LV": "fashion3",
+    "en-US": "Unknown",
+    "ko-KR": "알 수 없음",
+    "code": 519,
+    "ja-JP": "不明"
+  },
+  "detail.anorak": {
+    "lv-LV": "fashion3",
+    "en-US": "Anorak",
+    "ko-KR": "아노락",
+    "code": 515,
+    "ja-JP": "アノラック"
+  },
+  "direction.back": {
+    "lv-LV": "-1",
+    "en-US": "Back",
+    "ko-KR": "뒤",
+    "code": 520,
+    "ja-JP": "バック/背中/後ろ"
+  },
+  "direction.front": {
+    "lv-LV": "-1",
+    "en-US": "Front",
+    "ko-KR": "앞",
+    "code": 521,
+    "ja-JP": "正面/前"
+  },
+  "direction.side": {
+    "lv-LV": "-1",
+    "en-US": "Side",
+    "ko-KR": "옆(측면)",
+    "code": 522,
+    "ja-JP": "側面/横"
+  },
+  "direction.unknown": {
+    "lv-LV": "-1",
+    "en-US": "Unknown",
+    "ko-KR": "알 수 없음",
+    "code": 523,
+    "ja-JP": "不明"
+  },
+  "direction.sole": {
+    "lv-LV": "-1",
+    "en-US": "Sole",
+    "ko-KR": "밑창",
+    "code": 863,
+    "ja-JP": "靴底/ソール"
+  },
+  "fit.boxy": {
+    "lv-LV": "fashion3",
+    "en-US": "Boxy",
+    "ko-KR": "박시핏(오버핏)",
+    "code": 623,
+    "ja-JP": "ゆったりとした"
+  },
+  "fit.slim": {
+    "lv-LV": "fashion3",
+    "en-US": "Slim",
+    "ko-KR": "슬림핏",
+    "code": 624,
+    "ja-JP": "ほっそりした/スリム"
+  },
+  "fit.standard": {
+    "lv-LV": "fashion3",
+    "en-US": "Standard",
+    "ko-KR": "기본핏",
+    "code": 625,
+    "ja-JP": "基準/スタンダード"
+  },
+  "fit.unknown": {
+    "lv-LV": "fashion3",
+    "en-US": "Unknown",
+    "ko-KR": "알 수 없음",
+    "code": 626,
+    "ja-JP": "不明"
+  },
+  "frame_of_eyewear.half_rim": {
+    "lv-LV": "-1",
+    "en-US": "Half rim",
+    "ko-KR": "반테",
+    "code": 627,
+    "ja-JP": "ハーフリム"
+  },
+  "frame_of_eyewear.metal": {
+    "lv-LV": "-1",
+    "en-US": "Metal",
+    "ko-KR": "메탈",
+    "code": 628,
+    "ja-JP": "金属製の/メタル"
+  },
+  "frame_of_eyewear.plastic": {
+    "lv-LV": "-1",
+    "en-US": "Plastic",
+    "ko-KR": "플라스틱",
+    "code": 629,
+    "ja-JP": "プラスチック"
+  },
+  "frame_of_eyewear.rimless": {
+    "lv-LV": "-1",
+    "en-US": "Rimless",
+    "ko-KR": "무테",
+    "code": 630,
+    "ja-JP": "縁なし/リムレス"
+  },
+  "heel_height.high": {
+    "lv-LV": "fashion3",
+    "en-US": "High",
+    "ko-KR": "높음",
+    "code": 631,
+    "ja-JP": "高い"
+  },
+  "heel_height.low": {
+    "lv-LV": "fashion3",
+    "en-US": "Low",
+    "ko-KR": "낮음",
+    "code": 632,
+    "ja-JP": "低い"
+  },
+  "heel_height.middle": {
+    "lv-LV": "fashion3",
+    "en-US": "Middle",
+    "ko-KR": "중간",
+    "code": 633,
+    "ja-JP": "中間/ミドル"
+  },
+  "heel_height.unknown": {
+    "lv-LV": "fashion3",
+    "en-US": "Unknown",
+    "ko-KR": "알 수 없음",
+    "code": 634,
+    "ja-JP": "不明"
+  },
+  "heel_thickness.none": {
+    "lv-LV": "fashion3",
+    "en-US": "None",
+    "ko-KR": "없음",
+    "code": 635,
+    "ja-JP": "なし"
+  },
+  "heel_thickness.thick": {
+    "lv-LV": "fashion3",
+    "en-US": "Thick",
+    "ko-KR": "굵음",
+    "code": 636,
+    "ja-JP": "太い"
+  },
+  "heel_thickness.thin": {
+    "lv-LV": "fashion3",
+    "en-US": "Thin",
+    "ko-KR": "얇음",
+    "code": 637,
+    "ja-JP": "薄い"
+  },
+  "heel_thickness.unknown": {
+    "lv-LV": "fashion3",
+    "en-US": "Unknown",
+    "ko-KR": "알 수 없음",
+    "code": 638,
+    "ja-JP": "不明"
+  },
+  "kind_of_image.item": {
+    "lv-LV": "-1",
+    "en-US": "Item",
+    "ko-KR": "상품",
+    "code": 639,
+    "ja-JP": "アイテム/商品"
+  },
+  "kind_of_image.mannequin": {
+    "lv-LV": "-1",
+    "en-US": "Mannequin",
+    "ko-KR": "마네킹",
+    "code": 640,
+    "ja-JP": "マネキン"
+  },
+  "kind_of_image.person": {
+    "lv-LV": "-1",
+    "en-US": "Person",
+    "ko-KR": "사람",
+    "code": 641,
+    "ja-JP": "人"
+  },
+  "kind_of_image.unknown": {
+    "lv-LV": "-1",
+    "en-US": "Unknown",
+    "ko-KR": "알 수 없음",
+    "code": 642,
+    "ja-JP": "不明"
+  },
+  "kind_of_shoes_toes.open_toe": {
+    "lv-LV": "fashion3",
+    "en-US": "Open toe",
+    "ko-KR": "오픈토",
+    "code": 643,
+    "ja-JP": "オープントゥ"
+  },
+  "kind_of_shoes_toes.pointed_toe": {
+    "lv-LV": "fashion3",
+    "en-US": "Pointed toe",
+    "ko-KR": "포인트토(뾰족)",
+    "code": 644,
+    "ja-JP": "ポインテッドトゥ"
+  },
+  "kind_of_shoes_toes.round_toe": {
+    "lv-LV": "fashion3",
+    "en-US": "Round toe",
+    "ko-KR": "라운드토",
+    "code": 645,
+    "ja-JP": "ラウンドトゥ"
+  },
+  "kind_of_shoes_toes.square_toe": {
+    "lv-LV": "fashion3",
+    "en-US": "Square toe",
+    "ko-KR": "스퀘어토",
+    "code": 646,
+    "ja-JP": "スクエアトゥ"
+  },
+  "kind_of_shoes_toes.unknown": {
+    "lv-LV": "fashion3",
+    "en-US": "Unknown",
+    "ko-KR": "알 수 없음",
+    "code": 647,
+    "ja-JP": "不明"
+  },
+  "length_of_socks_or_tights.crew_or_ankle": {
+    "lv-LV": "-1",
+    "en-US": "Crew/Ankle",
+    "ko-KR": "크루(발목)",
+    "code": 653,
+    "ja-JP": "クルー/アンクル/かかと"
+  },
+  "length_of_socks_or_tights.invisible": {
+    "lv-LV": "-1",
+    "en-US": "Invisible",
+    "ko-KR": "안보이는/덧신",
+    "code": 654,
+    "ja-JP": "不可視/目に見えない"
+  },
+  "length_of_socks_or_tights.lowcut": {
+    "lv-LV": "-1",
+    "en-US": "Lowcut",
+    "ko-KR": "로우컷",
+    "code": 656,
+    "ja-JP": "ローカット"
+  },
+  "length_of_socks_or_tights.knee_or_overknee": {
+    "lv-LV": "-1",
+    "en-US": "Knee/Overknee",
+    "ko-KR": "무릎/무릎위",
+    "code": 657,
+    "ja-JP": "膝/膝上"
+  },
+  "length_of_socks_or_tights.tights": {
+    "lv-LV": "-1",
+    "en-US": "Tights",
+    "ko-KR": "타이즈",
+    "code": 658,
+    "ja-JP": "タイツ"
+  },
+  "occasion.date": {
+    "lv-LV": "fashion3",
+    "en-US": "Date",
+    "ko-KR": "데이트",
+    "code": 660,
+    "ja-JP": "日付"
+  },
+  "occasion.unknown": {
+    "lv-LV": "fashion3",
+    "en-US": "Unknown",
+    "ko-KR": "알 수 없음",
+    "code": 669,
+    "ja-JP": "不明"
+  },
+  "occasion.business_or_formal": {
+    "lv-LV": "fashion3",
+    "en-US": "Business/Formal",
+    "ko-KR": "비즈니스/포멀",
+    "code": 864,
+    "ja-JP": "ビジネス/フォーマル"
+  },
+  "occasion.outdoor": {
+    "lv-LV": "fashion3",
+    "en-US": "Outdoor",
+    "ko-KR": "야외/아웃도어",
+    "code": 867,
+    "ja-JP": "アウトドア/野外"
+  },
+  "occasion.casual_or_social": {
+    "lv-LV": "fashion3",
+    "en-US": "Casual/Social",
+    "ko-KR": "캐쥬얼",
+    "code": 869,
+    "ja-JP": "カジュアル/社会的な"
+  },
+  "occasion.club_or_nightout": {
+    "lv-LV": "fashion3",
+    "en-US": "Club/Nightout",
+    "ko-KR": "클럽",
+    "code": 868,
+    "ja-JP": "クラブ/ナイトクラブか"
+  },
+  "occasion.home_or_loungewear": {
+    "lv-LV": "fashion3",
+    "en-US": "Home/Loungewear",
+    "ko-KR": "홈/라운지웨어",
+    "code": 870,
+    "ja-JP": "ホーム/ラウンジウェア"
+  },
+  "occasion.gym": {
+    "lv-LV": "fashion3",
+    "en-US": "Gym",
+    "ko-KR": "헬스장",
+    "code": 866,
+    "ja-JP": "ジム"
+  },
+  "pocket.change_pocket": {
+    "lv-LV": "-1",
+    "en-US": "Change pocket",
+    "ko-KR": "체인지포켓",
+    "code": 740,
+    "ja-JP": "小銭入れ"
+  },
+  "pocket.flap_pocket": {
+    "lv-LV": "-1",
+    "en-US": "Flap pocket",
+    "ko-KR": "플랩포켓",
+    "code": 741,
+    "ja-JP": "フラップポケット"
+  },
+  "pocket.jetted_pocket": {
+    "lv-LV": "-1",
+    "en-US": "Jetted pocket",
+    "ko-KR": "제트포켓",
+    "code": 742,
+    "ja-JP": "ジェティッドポケット"
+  },
+  "pocket.none": {
+    "lv-LV": "-1",
+    "en-US": "None",
+    "ko-KR": "없음",
+    "code": 743,
+    "ja-JP": "なし"
+  },
+  "pocket.out_pocket": {
+    "lv-LV": "-1",
+    "en-US": "Out pocket",
+    "ko-KR": "아웃포켓",
+    "code": 744,
+    "ja-JP": "アウトポケット"
+  },
+  "pocket.unknown": {
+    "lv-LV": "-1",
+    "en-US": "Unknown",
+    "ko-KR": "알 수 없음",
+    "code": 745,
+    "ja-JP": "不明"
+  },
+  "pocket.vertical_pocket": {
+    "lv-LV": "-1",
+    "en-US": "Vertical pocket",
+    "ko-KR": "버티컬포켓",
+    "code": 746,
+    "ja-JP": "縦ポケット"
+  },
+  "rise.high_waist": {
+    "lv-LV": "fashion3",
+    "en-US": "High waist",
+    "ko-KR": "하이웨이스트",
+    "code": 747,
+    "ja-JP": "ハイウエスト"
+  },
+  "rise.low_waist": {
+    "lv-LV": "fashion3",
+    "en-US": "Low waist",
+    "ko-KR": "로우웨이스트",
+    "code": 748,
+    "ja-JP": "ローウエスト"
+  },
+  "rise.mid_waist": {
+    "lv-LV": "fashion3",
+    "en-US": "Mid waist",
+    "ko-KR": "미드웨이스트",
+    "code": 749,
+    "ja-JP": "ミッドウエスト"
+  },
+  "rise.unknown": {
+    "lv-LV": "fashion3",
+    "en-US": "Unknown",
+    "ko-KR": "알 수 없음",
+    "code": 750,
+    "ja-JP": "不明"
+  },
+  "season.autumn": {
+    "lv-LV": "fashion3",
+    "en-US": "Autumn",
+    "ko-KR": "가을",
+    "code": 751,
+    "ja-JP": "秋"
+  },
+  "season.spring": {
+    "lv-LV": "fashion3",
+    "en-US": "Spring",
+    "ko-KR": "봄",
+    "code": 752,
+    "ja-JP": "春"
+  },
+  "season.summer": {
+    "lv-LV": "fashion3",
+    "en-US": "Summer",
+    "ko-KR": "여름",
+    "code": 753,
+    "ja-JP": "夏"
+  },
+  "season.winter": {
+    "lv-LV": "fashion3",
+    "en-US": "Winter",
+    "ko-KR": "겨울",
+    "code": 754,
+    "ja-JP": "冬"
+  },
+  "season.none": {
+    "lv-LV": "fashion3",
+    "en-US": "None",
+    "ko-KR": "사계절",
+    "code": 756,
+    "ja-JP": "四季"
+  },
+  "season.unknown": {
+    "lv-LV": "fashion3",
+    "en-US": "Unknown",
+    "ko-KR": "알 수 없음",
+    "code": 757,
+    "ja-JP": "不明"
+  },
+  "shape_of_eyewear.aviator": {
+    "lv-LV": "-1",
+    "en-US": "Aviator",
+    "ko-KR": "에비에이터",
+    "code": 763,
+    "ja-JP": "アビエイター"
+  },
+  "shape_of_eyewear.cat_eye": {
+    "lv-LV": "-1",
+    "en-US": "Cat eye",
+    "ko-KR": "캣아이",
+    "code": 764,
+    "ja-JP": "キャットアイ"
+  },
+  "shape_of_eyewear.heart": {
+    "lv-LV": "-1",
+    "en-US": "Heart",
+    "ko-KR": "하트",
+    "code": 765,
+    "ja-JP": "ハート"
+  },
+  "shape_of_eyewear.oval": {
+    "lv-LV": "-1",
+    "en-US": "Oval",
+    "ko-KR": "타원",
+    "code": 766,
+    "ja-JP": "オーバル/楕円形/卵形"
+  },
+  "shape_of_eyewear.pantos": {
+    "lv-LV": "-1",
+    "en-US": "Pantos",
+    "ko-KR": "판토스",
+    "code": 767,
+    "ja-JP": "パントス"
+  },
+  "shape_of_eyewear.round": {
+    "lv-LV": "-1",
+    "en-US": "Round",
+    "ko-KR": "원형",
+    "code": 768,
+    "ja-JP": "ラウンド"
+  },
+  "shape_of_eyewear.square": {
+    "lv-LV": "-1",
+    "en-US": "Square",
+    "ko-KR": "사각형",
+    "code": 769,
+    "ja-JP": "スクエア"
+  },
+  "shape_of_eyewear.unknown": {
+    "lv-LV": "-1",
+    "en-US": "Unknown",
+    "ko-KR": "알 수 없음",
+    "code": 770,
+    "ja-JP": "不明"
+  },
+  "style.elegant_or_luxury": {
+    "lv-LV": "fashion3",
+    "en-US": "Elegant/Luxury",
+    "ko-KR": "럭셔리",
+    "code": 784,
+    "ja-JP": "エレガント/ラグジュアリー"
+  },
+  "style.feminine_or_romantic": {
+    "lv-LV": "fashion3",
+    "en-US": "Feminine/Romantic",
+    "ko-KR": "페미닌/여성스러운",
+    "code": 785,
+    "ja-JP": "女性的/ロマンチック"
+  },
+  "style.mannish_or_tomboy": {
+    "lv-LV": "fashion3",
+    "en-US": "Mannish/Tomboy",
+    "ko-KR": "남성적인/톰보이",
+    "code": 786,
+    "ja-JP": "男っぽい/おてんば"
+  },
+  "style.punk_or_rock": {
+    "lv-LV": "fashion3",
+    "en-US": "Punk/Rock",
+    "ko-KR": "펑크/락",
+    "code": 788,
+    "ja-JP": "パンクかロックか"
+  },
+  "style.retro_or_vintage": {
+    "lv-LV": "fashion3",
+    "en-US": "Retro/Vintage",
+    "ko-KR": "레트로",
+    "code": 789,
+    "ja-JP": "レトロ/ビンテージ"
+  },
+  "style.sexy": {
+    "lv-LV": "fashion3",
+    "en-US": "Sexy",
+    "ko-KR": "섹시",
+    "code": 790,
+    "ja-JP": "セクシー"
+  },
+  "style.unknown": {
+    "lv-LV": "fashion3",
+    "en-US": "Unknown",
+    "ko-KR": "알 수 없음",
+    "code": 792,
+    "ja-JP": "不明"
+  },
+  "style.preppy_or_school": {
+    "lv-LV": "fashion3",
+    "en-US": "Preppy/School",
+    "ko-KR": "스쿨/프레피",
+    "code": 881,
+    "ja-JP": "プレッピー/学校"
+  },
+  "style.bohemian_or_ethnic": {
+    "lv-LV": "fashion3",
+    "en-US": "Bohemian/Ethnic",
+    "ko-KR": "보헤미안",
+    "code": 880,
+    "ja-JP": "ボヘミアン/エスニック"
+  },
+  "style.sporty_or_athleisure": {
+    "lv-LV": "fashion3",
+    "en-US": "Sporty/Athleisure",
+    "ko-KR": "스포티",
+    "code": 883,
+    "ja-JP": "スポーティー"
+  },
+  "style.casual_or_girlnextdoor": {
+    "lv-LV": "fashion3",
+    "en-US": "Casual/Girl next door",
+    "ko-KR": "캐쥬얼",
+    "code": 877,
+    "ja-JP": "カジュアル"
+  },
+  "style.artsy_or_vibrant": {
+    "lv-LV": "fashion3",
+    "en-US": "Artsy/Vibrant",
+    "ko-KR": "아트",
+    "code": 882,
+    "ja-JP": "アート"
+  },
+  "style.chic_or_trendy": {
+    "lv-LV": "fashion3",
+    "en-US": "Chic/Trendy",
+    "ko-KR": "시크/트렌디",
+    "code": 879,
+    "ja-JP": "シック/トレンディー"
+  },
+  "style.basic_or_minimal": {
+    "lv-LV": "fashion3",
+    "en-US": "Basic/Minimal",
+    "ko-KR": "미니멀/심플",
+    "code": 878,
+    "ja-JP": "ベーシック/シンプル"
+  },
+  "wear_or_not.not_wear": {
+    "lv-LV": "-1",
+    "en-US": "Not wear",
+    "ko-KR": "미착용",
+    "code": 793,
+    "ja-JP": "未着用"
+  },
+  "wear_or_not.wear": {
+    "lv-LV": "-1",
+    "en-US": "Wear",
+    "ko-KR": "착용",
+    "code": 794,
+    "ja-JP": "着用"
+  },
+  "fastener.belt_or_buckle": {
+    "lv-LV": "-1",
+    "en-US": "Belt/Buckle",
+    "ko-KR": "벨트/버클",
+    "code": 814,
+    "ja-JP": "ベルト/バックル"
+  },
+  "fastener.button_or_snap": {
+    "lv-LV": "-1",
+    "en-US": "Button/Snap",
+    "ko-KR": "단추/스냅",
+    "code": 815,
+    "ja-JP": "ボタン/スナップ"
+  },
+  "fastener.none": {
+    "lv-LV": "-1",
+    "en-US": "None",
+    "ko-KR": "없음",
+    "code": 816,
+    "ja-JP": "なし"
+  },
+  "fastener.strap": {
+    "lv-LV": "-1",
+    "en-US": "Strap",
+    "ko-KR": "끈",
+    "code": 818,
+    "ja-JP": "ストラップ"
+  },
+  "fastener.tie": {
+    "lv-LV": "-1",
+    "en-US": "Tie",
+    "ko-KR": "매듭",
+    "code": 819,
+    "ja-JP": "タイ/ネクタイ"
+  },
+  "fastener.unknown": {
+    "lv-LV": "-1",
+    "en-US": "Unknown",
+    "ko-KR": "알 수 없음",
+    "code": 820,
+    "ja-JP": "不明"
+  },
+  "fastener.velcro": {
+    "lv-LV": "-1",
+    "en-US": "Velcro",
+    "ko-KR": "벨크로(찍찍이)",
+    "code": 821,
+    "ja-JP": "マジックテープ/ベルクロ"
+  },
+  "fastener.zipper": {
+    "lv-LV": "-1",
+    "en-US": "Zipper",
+    "ko-KR": "지퍼",
+    "code": 822,
+    "ja-JP": "ジッパー"
+  },
+  "leather.cow_leather": {
+    "lv-LV": "fashion3",
+    "en-US": "Cow leather",
+    "ko-KR": "소가죽",
+    "code": 824,
+    "ja-JP": "牛革"
+  },
+  "leather.animal_leather": {
+    "lv-LV": "fashion3",
+    "en-US": "Animal leather",
+    "ko-KR": "동물무늬 가죽",
+    "code": 825,
+    "ja-JP": "動物皮革/アニマルレザー"
+  },
+  "leather.suede_leather": {
+    "lv-LV": "fashion3",
+    "en-US": "Suede Leather",
+    "ko-KR": "스웨이드 가죽",
+    "code": 826,
+    "ja-JP": "スエードレザー"
+  },
+  "leather.none": {
+    "lv-LV": "fashion3",
+    "en-US": "None",
+    "ko-KR": "없음",
+    "code": 827,
+    "ja-JP": "なし"
+  },
+  "length_of_bottoms.floor": {
+    "lv-LV": "fashion3",
+    "en-US": "Floor",
+    "ko-KR": "플로어/땅에닿음",
+    "code": 828,
+    "ja-JP": "フロア"
+  },
+  "length_of_bottoms.long": {
+    "lv-LV": "fashion3",
+    "en-US": "Long",
+    "ko-KR": "롱",
+    "code": 829,
+    "ja-JP": "長い/ロング"
+  },
+  "length_of_bottoms.midi": {
+    "lv-LV": "fashion3",
+    "en-US": "Midi",
+    "ko-KR": "미디",
+    "code": 831,
+    "ja-JP": "ミディ"
+  },
+  "length_of_bottoms.mini": {
+    "lv-LV": "fashion3",
+    "en-US": "Mini",
+    "ko-KR": "미니",
+    "code": 832,
+    "ja-JP": "ミニ"
+  },
+  "length_of_bottoms.none": {
+    "lv-LV": "fashion3",
+    "en-US": "None",
+    "ko-KR": "없음",
+    "code": 833,
+    "ja-JP": "なし"
+  },
+  "length_of_bottoms.unknown": {
+    "lv-LV": "fashion3",
+    "en-US": "Unknown",
+    "ko-KR": "알 수 없음",
+    "code": 834,
+    "ja-JP": "不明"
+  },
+  "length_of_bottoms.unsupported": {
+    "lv-LV": "-1",
+    "en-US": "Unsupported",
+    "ko-KR": "미지원",
+    "code": 835,
+    "ja-JP": "非対応"
+  },
+  "state_of_fastener.closed": {
+    "lv-LV": "-1",
+    "en-US": "Closed",
+    "ko-KR": "닫혀있음",
+    "code": 873,
+    "ja-JP": "閉まった/クローズした/閉められている"
+  },
+  "state_of_fastener.none": {
+    "lv-LV": "-1",
+    "en-US": "None",
+    "ko-KR": "없음",
+    "code": 876,
+    "ja-JP": "なし"
+  },
+  "state_of_fastener.opened": {
+    "lv-LV": "-1",
+    "en-US": "Opened",
+    "ko-KR": "열려있음",
+    "code": 874,
+    "ja-JP": "開いている/開いた/オープンした"
+  },
+  "state_of_fastener.unknown": {
+    "lv-LV": "-1",
+    "en-US": "Unknown",
+    "ko-KR": "알 수 없음",
+    "code": 875,
+    "ja-JP": "不明"
+  },
+  "wash.dark": {
+    "lv-LV": "fashion3",
+    "en-US": "Dark",
+    "ko-KR": "진한",
+    "code": 886,
+    "ja-JP": "ダーク"
+  },
+  "wash.light": {
+    "lv-LV": "fashion3",
+    "en-US": "Light",
+    "ko-KR": "연한",
+    "code": 884,
+    "ja-JP": "軽い/ライト"
+  },
+  "wash.medium": {
+    "lv-LV": "fashion3",
+    "en-US": "Medium",
+    "ko-KR": "중간",
+    "code": 885,
+    "ja-JP": "ミディアム"
+  },
+  "wash.none": {
+    "lv-LV": "fashion3",
+    "en-US": "None",
+    "ko-KR": "없음",
+    "code": 830,
+    "ja-JP": "なし"
+  },
+  "type_of_pants.leggings": {
+    "lv-LV": "fashion3",
+    "en-US": "Leggings",
+    "ko-KR": "레깅스",
+    "code": 171,
+    "ja-JP": "レギンス"
+  },
+  "type_of_pants.slacks_or_dresspants": {
+    "lv-LV": "fashion3",
+    "en-US": "Slacks/Dress pants",
+    "ko-KR": "슬랙스/정장바지",
+    "code": 172,
+    "ja-JP": "スラックス/ドレスパンツ"
+  },
+  "type_of_pants.jeans": {
+    "lv-LV": "fashion3",
+    "en-US": "Jeans",
+    "ko-KR": "청바지",
+    "code": 173,
+    "ja-JP": "ジーンズ/ジーパン"
+  },
+  "type_of_pants.sweatpants": {
+    "lv-LV": "fashion3",
+    "en-US": "Sweat pants",
+    "ko-KR": "츄리닝바지",
+    "code": 174,
+    "ja-JP": "スウェットパンツ"
+  },
+  "type_of_pants.cargopants": {
+    "lv-LV": "fashion3",
+    "en-US": "Cargo pants",
+    "ko-KR": "카고바지",
+    "code": 175,
+    "ja-JP": "カーゴパンツ"
+  },
+  "type_of_pants.none": {
+    "lv-LV": "fashion3",
+    "en-US": "None",
+    "ko-KR": "없음",
+    "code": 176,
+    "ja-JP": "なし"
+  },
+  "type_of_pants.unknown": {
+    "lv-LV": "fashion3",
+    "en-US": "Unknown",
+    "ko-KR": "알 수 없음",
+    "code": 177,
+    "ja-JP": "不明"
+  },
+  "color.rose_gold": {
+    "lv-LV": "fashion3",
+    "en-US": "Rose gold",
+    "ko-KR": "로즈골드",
+    "code": 855,
+    "ja-JP": "PropertyTuple(data='rose_gold', meta={})"
+  },
+  "age_group.hidden": {
+    "lv-LV": "-1",
+    "en-US": "PropertyTuple(data='hidden', meta={})",
+    "ko-KR": "PropertyTuple(data='hidden', meta={})",
+    "code": 50325,
+    "ja-JP": "PropertyTuple(data='hidden', meta={})"
+  },
+  "color.hidden": {
+    "lv-LV": "-1",
+    "en-US": "PropertyTuple(data='hidden', meta={})",
+    "ko-KR": "PropertyTuple(data='hidden', meta={})",
+    "code": 50326,
+    "ja-JP": "PropertyTuple(data='hidden', meta={})"
+  },
+  "decoration.hidden": {
+    "lv-LV": "-1",
+    "en-US": "PropertyTuple(data='hidden', meta={})",
+    "ko-KR": "PropertyTuple(data='hidden', meta={})",
+    "code": 50327,
+    "ja-JP": "PropertyTuple(data='hidden', meta={})"
+  },
+  "detail.hidden": {
+    "lv-LV": "-1",
+    "en-US": "PropertyTuple(data='hidden', meta={})",
+    "ko-KR": "PropertyTuple(data='hidden', meta={})",
+    "code": 50328,
+    "ja-JP": "PropertyTuple(data='hidden', meta={})"
+  },
+  "fabric.hidden": {
+    "lv-LV": "-1",
+    "en-US": "PropertyTuple(data='hidden', meta={})",
+    "ko-KR": "PropertyTuple(data='hidden', meta={})",
+    "code": 50329,
+    "ja-JP": "PropertyTuple(data='hidden', meta={})"
+  },
+  "fit.hidden": {
+    "lv-LV": "-1",
+    "en-US": "PropertyTuple(data='hidden', meta={})",
+    "ko-KR": "PropertyTuple(data='hidden', meta={})",
+    "code": 50330,
+    "ja-JP": "PropertyTuple(data='hidden', meta={})"
+  },
+  "heel_height.hidden": {
+    "lv-LV": "-1",
+    "en-US": "PropertyTuple(data='hidden', meta={})",
+    "ko-KR": "PropertyTuple(data='hidden', meta={})",
+    "code": 50331,
+    "ja-JP": "PropertyTuple(data='hidden', meta={})"
+  },
+  "heel_thickness.hidden": {
+    "lv-LV": "-1",
+    "en-US": "PropertyTuple(data='hidden', meta={})",
+    "ko-KR": "PropertyTuple(data='hidden', meta={})",
+    "code": 50332,
+    "ja-JP": "PropertyTuple(data='hidden', meta={})"
+  },
+  "kind_of_shoes_toes.hidden": {
+    "lv-LV": "-1",
+    "en-US": "PropertyTuple(data='hidden', meta={})",
+    "ko-KR": "PropertyTuple(data='hidden', meta={})",
+    "code": 50333,
+    "ja-JP": "PropertyTuple(data='hidden', meta={})"
+  },
+  "kind_of_sleeve.hidden": {
+    "lv-LV": "-1",
+    "en-US": "PropertyTuple(data='hidden', meta={})",
+    "ko-KR": "PropertyTuple(data='hidden', meta={})",
+    "code": 50334,
+    "ja-JP": "PropertyTuple(data='hidden', meta={})"
+  },
+  "leather.hidden": {
+    "lv-LV": "-1",
+    "en-US": "PropertyTuple(data='hidden', meta={})",
+    "ko-KR": "PropertyTuple(data='hidden', meta={})",
+    "code": 50335,
+    "ja-JP": "PropertyTuple(data='hidden', meta={})"
+  },
+  "length_of_bottoms.hidden": {
+    "lv-LV": "-1",
+    "en-US": "PropertyTuple(data='hidden', meta={})",
+    "ko-KR": "PropertyTuple(data='hidden', meta={})",
+    "code": 50336,
+    "ja-JP": "PropertyTuple(data='hidden', meta={})"
+  },
+  "length_of_sleeve.hidden": {
+    "lv-LV": "-1",
+    "en-US": "PropertyTuple(data='hidden', meta={})",
+    "ko-KR": "PropertyTuple(data='hidden', meta={})",
+    "code": 50337,
+    "ja-JP": "PropertyTuple(data='hidden', meta={})"
+  },
+  "length_of_tops.hidden": {
+    "lv-LV": "-1",
+    "en-US": "PropertyTuple(data='hidden', meta={})",
+    "ko-KR": "PropertyTuple(data='hidden', meta={})",
+    "code": 50338,
+    "ja-JP": "PropertyTuple(data='hidden', meta={})"
+  },
+  "neckline.hidden": {
+    "lv-LV": "-1",
+    "en-US": "PropertyTuple(data='hidden', meta={})",
+    "ko-KR": "PropertyTuple(data='hidden', meta={})",
+    "code": 50339,
+    "ja-JP": "PropertyTuple(data='hidden', meta={})"
+  },
+  "occasion.hidden": {
+    "lv-LV": "-1",
+    "en-US": "PropertyTuple(data='hidden', meta={})",
+    "ko-KR": "PropertyTuple(data='hidden', meta={})",
+    "code": 50340,
+    "ja-JP": "PropertyTuple(data='hidden', meta={})"
+  },
+  "pattern.hidden": {
+    "lv-LV": "-1",
+    "en-US": "PropertyTuple(data='hidden', meta={})",
+    "ko-KR": "PropertyTuple(data='hidden', meta={})",
+    "code": 50341,
+    "ja-JP": "PropertyTuple(data='hidden', meta={})"
+  },
+  "rise.hidden": {
+    "lv-LV": "-1",
+    "en-US": "PropertyTuple(data='hidden', meta={})",
+    "ko-KR": "PropertyTuple(data='hidden', meta={})",
+    "code": 50342,
+    "ja-JP": "PropertyTuple(data='hidden', meta={})"
+  },
+  "season.hidden": {
+    "lv-LV": "-1",
+    "en-US": "PropertyTuple(data='hidden', meta={})",
+    "ko-KR": "PropertyTuple(data='hidden', meta={})",
+    "code": 50343,
+    "ja-JP": "PropertyTuple(data='hidden', meta={})"
+  },
+  "shape_of_pants.hidden": {
+    "lv-LV": "-1",
+    "en-US": "PropertyTuple(data='hidden', meta={})",
+    "ko-KR": "PropertyTuple(data='hidden', meta={})",
+    "code": 50344,
+    "ja-JP": "PropertyTuple(data='hidden', meta={})"
+  },
+  "shape_of_skirts.hidden": {
+    "lv-LV": "-1",
+    "en-US": "PropertyTuple(data='hidden', meta={})",
+    "ko-KR": "PropertyTuple(data='hidden', meta={})",
+    "code": 50345,
+    "ja-JP": "PropertyTuple(data='hidden', meta={})"
+  },
+  "style.hidden": {
+    "lv-LV": "-1",
+    "en-US": "PropertyTuple(data='hidden', meta={})",
+    "ko-KR": "PropertyTuple(data='hidden', meta={})",
+    "code": 50346,
+    "ja-JP": "PropertyTuple(data='hidden', meta={})"
+  },
+  "type_of_pants.hidden": {
+    "lv-LV": "-1",
+    "en-US": "PropertyTuple(data='hidden', meta={})",
+    "ko-KR": "PropertyTuple(data='hidden', meta={})",
+    "code": 50347,
+    "ja-JP": "PropertyTuple(data='hidden', meta={})"
+  },
+  "wash.hidden": {
+    "lv-LV": "-1",
+    "en-US": "PropertyTuple(data='hidden', meta={})",
+    "ko-KR": "PropertyTuple(data='hidden', meta={})",
+    "code": 50348,
+    "ja-JP": "PropertyTuple(data='hidden', meta={})"
+  },
+  "kind_of_image.hidden": {
+    "lv-LV": "-1",
+    "en-US": "PropertyTuple(data='hidden', meta={})",
+    "ko-KR": "PropertyTuple(data='hidden', meta={})",
+    "code": 50349,
+    "ja-JP": "PropertyTuple(data='hidden', meta={})"
+  },
+  "direction.hidden": {
+    "lv-LV": "-1",
+    "en-US": "PropertyTuple(data='hidden', meta={})",
+    "ko-KR": "PropertyTuple(data='hidden', meta={})",
+    "code": 50350,
+    "ja-JP": "PropertyTuple(data='hidden', meta={})"
+  },
+  "fastener.hidden": {
+    "lv-LV": "-1",
+    "en-US": "PropertyTuple(data='hidden', meta={})",
+    "ko-KR": "PropertyTuple(data='hidden', meta={})",
+    "code": 50351,
+    "ja-JP": "PropertyTuple(data='hidden', meta={})"
+  },
+  "decoration.unsupported": {
+    "lv-LV": "-1",
+    "en-US": "Unsupported",
+    "ko-KR": "미지원",
+    "code": 50352,
+    "ja-JP": "非対応"
+  },
+  "detail.unsupported": {
+    "lv-LV": "-1",
+    "en-US": "Unsupported",
+    "ko-KR": "미지원",
+    "code": 50353,
+    "ja-JP": "非対応"
+  },
+  "type_of_pants.unsupported": {
+    "lv-LV": "-1",
+    "en-US": "Unsupported",
+    "ko-KR": "미지원",
+    "code": 50354,
+    "ja-JP": "非対応"
+  },
+  "age_group.unsupported": {
+    "lv-LV": "-1",
+    "en-US": "Unsupported",
+    "ko-KR": "미지원",
+    "code": 50355,
+    "ja-JP": "非対応"
+  },
+  "kind_of_shoes_toes.unsupported": {
+    "lv-LV": "-1",
+    "en-US": "Unsupported",
+    "ko-KR": "미지원",
+    "code": 50356,
+    "ja-JP": "非対応"
+  },
+  "occasion.unsupported": {
+    "lv-LV": "-1",
+    "en-US": "Unsupported",
+    "ko-KR": "미지원",
+    "code": 50357,
+    "ja-JP": "非対応"
+  },
+  "style.unsupported": {
+    "lv-LV": "-1",
+    "en-US": "Unsupported",
+    "ko-KR": "미지원",
+    "code": 50358,
+    "ja-JP": "非対応"
+  },
+  "fastener.unsupported": {
+    "lv-LV": "-1",
+    "en-US": "Unsupported",
+    "ko-KR": "미지원",
+    "code": 50359,
+    "ja-JP": "非対応"
+  },
+  "kind_of_image.unsupported": {
+    "lv-LV": "-1",
+    "en-US": "Unsupported",
+    "ko-KR": "미지원",
+    "code": 50360,
+    "ja-JP": "非対応"
+  },
+  "-1": "none.unknown"
+}
