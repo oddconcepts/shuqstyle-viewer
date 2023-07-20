@@ -1,0 +1,45 @@
+.view2 {
+  padding: 40px;
+  color: #000;
+}
+.view2 .arrayProductLength {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 10px;
+}
+.view2 .arrayProduct a {
+  text-decoration: none;
+}
+.view2 .arrayProduct .product {
+  display: inline-block;
+  -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+  margin: 5px;
+  border: 1px solid #ccc;
+}
+.view2 .arrayProduct .product .img {
+  width: 150px;
+  height: 200px;
+  background-size: cover;
+  color: rgba(0, 0, 0, 0);
+}
+.view2 .arrayProduct .product .description_workaround {
+  width: 140px;
+  padding: 10px 5px;
+}
+.view2 .arrayProduct .product .description_workaround .name,
+.view2 .arrayProduct .product .description_workaround .price {
+  width: 140px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.view2 .arrayProduct .product .description_workaround .price {
+  color: #9F6DFA;
+  text-align: right;
+}
+/*# sourceMappingURL=less.css.map */
